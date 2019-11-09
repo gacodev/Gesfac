@@ -4,6 +4,7 @@
     <title>ARMAMENTO</title>
 @endsection
 
+
 @section('page_content')
 
     <!-- trigger modal -->

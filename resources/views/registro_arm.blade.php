@@ -1,6 +1,4 @@
 @extends('layouts.layouts')
-@extends('layouts.app')
-
 @section('title')
     <title>ARMAMENTO</title>
 @endsection
