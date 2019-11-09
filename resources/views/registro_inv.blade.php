@@ -1,6 +1,5 @@
-@extends('layouts.layouts')
-@extends('layouts.app')
 
+@extends('layouts.layouts')
 @section('title')
     <title>INVITADOS</title>
 @endsection

@@ -1,5 +1,4 @@
 @extends('layouts.layouts')
-@extends('layouts.app')
 @section('title')
     <title>INGRESO PERSONAL</title>
 @endsection
