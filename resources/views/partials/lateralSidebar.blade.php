@@ -45,6 +45,13 @@
             </div>
         </a>
 
+        <a href="{{ url('/listar') }}" class="bg-dark list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-start align-items-center">
+                <span class="fas fa-fighter-jet mr-3"></span>
+                <small><span class="menu-collapsed">ALUMNOS</span></small>
+            </div>
+        </a>
+
         <a href="{{ url('/asignar_arm') }}" class="bg-dark list-group-item list-group-item-action">
             <div class="d-flex w-100 justify-content-start align-items-center">
                 <span class="fas fa-arrow-alt-circle-right mr-3"></span>

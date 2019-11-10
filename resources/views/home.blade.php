@@ -128,6 +128,25 @@
                     </div>
                 </div>
                 @endcan
+
+    @can('armas')
+        <div class="col-sm-6 col-md-3">
+            <div class="card mb-4 box-shadow">
+                <img class="main-image" src="images/alumnos.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <div class="btn-group">
+                            <a href="{{ url('/listar') }}">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">
+                                    ALUMNOS
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endcan
                 @can('invitados')
                 <div class="col-sm-6 col-md-3">
                     <div class="card mb-4 box-shadow">

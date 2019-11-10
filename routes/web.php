@@ -22,9 +22,12 @@ Route::get('/welcome', 'HomeController@welcome')->name('welcome');
 Route::get('/armamento', 'AlumnoController@arm')->name('registro_arm');
 Route::get('/asignar_arm', 'AlumnoController@asignar_arm')->name('asignar_arm');
 Route::post('/asignar_fusil', 'AlumnoController@asignar_fusil');
+Route::get('/listar', 'AlumnoController@listar')->name('listar');
 Route::post('/desvincular_fusil', 'AlumnoController@desvincular_fusil');
 
 Route::get('/invitados', 'VisitanteController@visitantes')->name('registro_inv');
+
+
 Route::post('/alumnos_por_escuadron', 'AlumnoController@show_per_squadron');
 Route::post('/registrar_visitante', 'VisitanteController@create');
 

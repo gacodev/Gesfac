@@ -19,6 +19,8 @@ class CreateAlumnosTable extends Migration
             $table->string('telefono');
             $table->string('direccion');
             $table->string('correo');
+            $table->unsignedBigInteger('novedad')->nullable();
+            $table->foreign('novedad')->references('id')->on('novedades');
             $table->unsignedBigInteger('tipo_documento');
             $table->string('numero_documento');
             $table->unsignedBigInteger('escuadron');

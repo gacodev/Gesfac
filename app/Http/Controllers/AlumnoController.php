@@ -9,6 +9,7 @@ use App\visitante;
 use App\armerillo;
 use App\TipoDocumento;
 use App\Escuadron;
+//use PDF;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -182,6 +183,15 @@ class AlumnoController extends Controller
             ->with('alumnos' ,$alumno)
             ->with("success", request("success"));
     }
+
+    public function listar(){
+
+
+        $listar = alumno::all();
+        return view('listar')->with('listar', $listar);
+    }
+
+
 
     public function asignar_fusil()
     {
