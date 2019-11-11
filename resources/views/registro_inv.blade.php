@@ -86,9 +86,9 @@
     </form>
     <div class="row">
         <div class="form-group col-12 col-md-6">
-            <form action="{{route('excel')}}" method="post" enctype="multipart/form-data">
+            <form action="{{route('visitante')}}" method="post" enctype="multipart/form-data">
                 @csrf
-                <label for="excel" class="subir">
+                <label for="excel">
                     <i class="fas fa-cloud-upload-alt"></i> Cargar Excel
                 </label>
                 <input  class="m-auto" type="file" name="excel" id="excel"   style='display: none;'/>

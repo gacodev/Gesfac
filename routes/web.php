@@ -18,25 +18,26 @@ Route::get('/', function () {
 
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/armas-export', 'exportcontroller@exportarmas')->name('armas-export');
+Route::get('/personal-export', 'exportcontroller@exportpersonal')->name('personal-export');
+Route::get('/sanidad-export', 'exportcontroller@exportsanidad')->name('sanidad-export');
+
+
 Route::get('/welcome', 'HomeController@welcome')->name('welcome');
 Route::get('/armamento', 'AlumnoController@arm')->name('registro_arm');
 Route::get('/asignar_arm', 'AlumnoController@asignar_arm')->name('asignar_arm');
 Route::post('/asignar_fusil', 'AlumnoController@asignar_fusil');
 Route::get('/listar', 'AlumnoController@listar')->name('listar');
 Route::post('/desvincular_fusil', 'AlumnoController@desvincular_fusil');
-
 Route::post('import-armas', 'ReportesController@importarmas')->name('excel');
-Route::post('import-visitantes', 'ReportesController@visitantes')->name('visitantes');
+Route::post('import-visitantes', 'ReportesController@visitantes')->name('visitante');
 Route::get('export-sanidad-pdf', 'UserController@sanidad')->name('export-sanidad-pdf');
 Route::get('export-armas-pdf', 'UserController@armas')->name('export-armas-pdf');
 Route::get('export-personal-pdf', 'UserController@personal')->name('export-personal-pdf');
-
 Route::get('/invitados', 'VisitanteController@visitantes')->name('registro_inv');
-
-
 Route::post('/alumnos_por_escuadron', 'AlumnoController@show_per_squadron');
 Route::post('/registrar_visitante', 'VisitanteController@create');
-
 Route::post('/consultar_armas_disponibles', 'ArmerilloController@weaponAvailable');
 
 

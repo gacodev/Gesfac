@@ -12,14 +12,14 @@ class ReportesController extends Controller
     public function importarmas(Request $request){
 
         $file = $request->file('excel');
-        Excel::import(new InvitadosImport, $file);
+        Excel::import(new ArmerilloImport, $file);
         return back();
     }
 
     public function visitantes(Request $request){
 
         $file = $request->file('excel');
-        Excel::import(new ArmerilloImport, $file);
+        Excel::import(new InvitadosImport, $file);
         return back();
     }
 }

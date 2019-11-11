@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Imports;
-
 use App\visitante;
 use Maatwebsite\Excel\Concerns\ToModel;
 

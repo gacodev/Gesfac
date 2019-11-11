@@ -26,12 +26,9 @@
                         </tr>
                         </thead>
                         <tbody>
-                    @foreach($armas as $arma)
+
 
                         <tr>
-                            <td>{{$arma->fusil}}</td>
-                        </tr>
-@endforeach
                         </tbody>
                     </table>
                 </div>

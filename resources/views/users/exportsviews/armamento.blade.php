@@ -7,13 +7,8 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Roles</div>
 
-                <div class="panel-body">                    
-                    {!! Form::model($user, ['route' => ['users.update', $user->id],
-                    'method' => 'PUT']) !!}
+                <div class="panel-body">
 
-                        @include('users.partials.form')
-                        
-                    {!! Form::close() !!}
                 </div>
             </div>
         </div>
