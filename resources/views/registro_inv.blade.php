@@ -67,18 +67,6 @@
                 <button id="singlebutton" name="singlebutton" class="btn btn-primary">Enviar</button>
             </div>
         </div>
-
-
-        <div class="row">
-            <div class="form-group col-12 col-md-6">
-                <label for="excel" class="subir">
-                    <i class="fas fa-cloud-upload-alt"></i> Cargar Excel
-                </label>
-                <input type="file" id="excel" onchange='cambiar()'  style='display: none;'/>
-                <div id="info"></div>
-            </div>
-        </div>
-
         @if(isset($success)&& $success)
             <div class="form-group col-12 col-md-12">
                 <div class="alert alert-success" role="alert">
@@ -96,6 +84,7 @@
         @endif
 
     </form>
+
 
     <script>
         var escuadron = document.getElementById("escuadron")

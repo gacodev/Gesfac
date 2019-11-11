@@ -1,10 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\alumno;
+use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Http\Request;
 use Caffeinated\Shinobi\Models\Role;
 use App\User;
+use App\armerillo;
 
 class UserController extends Controller
 {
@@ -19,6 +21,35 @@ class UserController extends Controller
 
         return view('users.index', compact('users'));
     }
+//ecportar a pdf
+    public function sanidad()
+{
+    $users = User::get();
+    $pdf   = PDF::loadView('users.exports.sanidad', compact('users'));
+    return $pdf->download('sanidad.pdf');
+}
+
+    public function armas()
+    {
+        $armas = armerillo::get();
+        $pdf   = PDF::loadView('users.exports.armas', compact('armas'));
+        return $pdf->download('armas.pdf');
+    }
+
+    public function personal()
+    {
+        $listar = alumno::get();
+        $pdf   = PDF::loadView('users.exports.personal', compact('listar'));
+        return $pdf->download('personal.pdf');
+    }
+
+
+
+
+
+
+
+
 
     /**
      * Display the specified resource.

@@ -4,7 +4,18 @@
     <title>ASIGNACION DE ARMAMENTO</title>
 @endsection
 @section('page_content')
-
+    <div class="row">
+        <div class="form-group col-12 col-md-6">
+            <form action="{{route('import-excel')}}" method="post" enctype="multipart/form-data">
+                @csrf
+                <label for="excel" class="subir">
+                    <i class="fas fa-cloud-upload-alt"></i> Cargar Excel
+                </label>
+                <input  class="m-auto" type="file" name="excel" id="excel"   style='display: none;'/>
+                <button class="btn btn-dark card-body"><b>IMPORTAR ARMAS</b></button>
+            </form>
+        </div>
+    </div>
     <div id="data" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">

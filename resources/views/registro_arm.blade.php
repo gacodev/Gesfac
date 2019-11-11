@@ -8,7 +8,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-sm-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3 col-xl-6 offset-xl-3">
-                <form class="form-horizontal">
+                <form action="{{route('user.import.excel')}}" method="post" enctype="multipart/form-data">
                     <fieldset>
                         <b><legend>ASIGNACION DE ARMAMENTO</legend></b>
 
@@ -52,8 +52,12 @@
                                 <label for="excel" class="subir">
                                     <i class="fas fa-cloud-upload-alt"></i> Cargar Excel
                                 </label>
+
+                                @csrf
+
                                 <input type="file" id="excel" onchange='cambiar()'  style='display: none;'/>
                                 <div id="info"></div>
+
                             </div>
                         </div>
 
