@@ -25,7 +25,8 @@ Route::post('/asignar_fusil', 'AlumnoController@asignar_fusil');
 Route::get('/listar', 'AlumnoController@listar')->name('listar');
 Route::post('/desvincular_fusil', 'AlumnoController@desvincular_fusil');
 
-Route::post('import-excel', 'ReportesControllers@importexcel')->name('import-excel');
+Route::post('import-armas', 'ReportesController@importarmas')->name('excel');
+Route::post('import-visitantes', 'ReportesController@visitantes')->name('visitantes');
 Route::get('export-sanidad-pdf', 'UserController@sanidad')->name('export-sanidad-pdf');
 Route::get('export-armas-pdf', 'UserController@armas')->name('export-armas-pdf');
 Route::get('export-personal-pdf', 'UserController@personal')->name('export-personal-pdf');

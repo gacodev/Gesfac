@@ -6,7 +6,7 @@
 @section('page_content')
     <div class="row">
         <div class="form-group col-12 col-md-6">
-            <form action="{{route('import-excel')}}" method="post" enctype="multipart/form-data">
+            <form action="{{route('excel')}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <label for="excel" class="subir">
                     <i class="fas fa-cloud-upload-alt"></i> Cargar Excel
