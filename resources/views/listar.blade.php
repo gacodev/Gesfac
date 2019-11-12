@@ -61,10 +61,11 @@
             <thead>
 
             <tr>
-
-                <th>ALUMNO</th>
                 <th>ESCUADRON</th>
+                <th>ALUMNO</th>
+                <th>EXCUSADO</th>
                 <th>NOVEDAD</th>
+                <th>EDITAR</th>
             </tr>
 
             </thead>
@@ -73,14 +74,23 @@
             <tbody>
             @foreach($listar as $lista)
                 <tr>
-                    <td>{{$lista->nombre}}</td>
                     <td>{{$lista->escuadron}}</td>
-                    <td>
-                        <div class="onoffswitch">
+                    <td>{{$lista->alumno}}</td>
 
-                            <select name="" id="listar">
-                                <option value="{{$lista->id}}">{{$lista->novedad}}</option>
-                            </select>
+                    @if($lista->excusado===Null)
+                        <td></td>
+                    @else
+                        <td>{{$lista->excusado?"si":"no"}}</td>
+                    @endif
+
+                    <td>
+                        {{$lista->novedad}}
+                    </td>
+                    <td>
+                        <div class="round">
+                            <input class="span4 proj-div agendar" data-toggle="modal" data-target="#data"  type="checkbox"  class="asignar" id="{{$lista->id}}"/>
+                            <label for="{{$lista->id}}"></label>
+
                         </div>
                     </td>
                 </tr>
