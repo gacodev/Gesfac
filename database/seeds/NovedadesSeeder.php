@@ -11,7 +11,7 @@ class NovedadesSeeder extends Seeder
      */
     public function run()
     {
-      $inserted =  DB::table('novedades')
+        $inserted =  DB::table('novedades')
             ->insert(
                 [
                     ['novedad' => 'excusado',],
@@ -29,7 +29,7 @@ class NovedadesSeeder extends Seeder
                     ['novedad' => 'turno',],
                     ['novedad' => 'administrativa',],
                     ['novedad' => 'ensayo',],
-    ]
-                    );
+                ]
+            );
     }
 }

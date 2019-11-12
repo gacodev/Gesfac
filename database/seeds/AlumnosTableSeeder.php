@@ -18,7 +18,6 @@ class AlumnosTableSeeder extends Seeder
                 'nombre' => $faker->name,
                 'telefono' => $faker->phoneNumber,
                 'correo' => $faker->email,
-                'novedad' => $faker-> numberBetween(1,15),
                 'direccion' => $faker->address,
                 'numero_documento' => $faker->numberBetween(1000000000,1900000000),
                 'escuadron' => $faker-> numberBetween(1,4),

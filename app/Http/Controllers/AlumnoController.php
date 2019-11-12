@@ -11,6 +11,7 @@ use App\TipoDocumento;
 use App\Escuadron;
 //use PDF;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -186,9 +187,31 @@ class AlumnoController extends Controller
 
     public function listar(){
 
+        $date_now = Carbon::now();
 
-        $listar = alumno::all();
-        return view('listar')->with('listar', $listar);
+        $alumnos = alumno::leftJoin('escuadrones', 'escuadrones.id', '=', 'alumnos.escuadron')
+            ->get([
+            "alumnos.id AS id",
+            "alumnos.nombre AS alumno",
+            "escuadrones.escuadron AS escuadron",
+        ]);
+
+        $listar = alumno::join('alumno_novedad', 'alumno_novedad.alumno', '=', 'alumnos.id')
+            ->leftJoin('novedades', 'alumno_novedad.novedad', '=', 'novedades.id')
+            ->leftJoin('escuadrones', 'escuadrones.id', '=', 'alumnos.escuadron')
+            ->whereDate("alumno_novedad.fecha_inicio","<=", $date_now)
+            ->whereDate("alumno_novedad.fecha_final",">=", $date_now)
+            ->get([
+                "alumnos.id AS id",
+                "alumnos.nombre AS alumno",
+                "escuadrones.escuadron AS escuadron",
+                "novedades.novedad AS novedad",
+                "alumno_novedad.excusado AS excusado",
+            ]);
+
+//        return $alumnos->merge($listar);
+
+        return view('listar')->with('listar', $alumnos->merge($listar));
     }
 
 
