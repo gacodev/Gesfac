@@ -27,11 +27,22 @@
 
                     <div class="card text-white bg-dark mb-3">
                         <div class="card-header">ALFA</div>
-                        <div id="norinco" class="card-body">Contenido</div>
-                        <div id="m16" class="card-body">Contenido</div>
-                        <div id="m16" class="card-body">Contenido</div>
-                        <div id="m16" class="card-body">Contenido</div>
-                        <div id="m16" class="card-body">Contenido</div>
+                        <div id="norinco" class="card-body">
+                            <ul style="list-style-type: none">
+                                <li>FORMAN:</li>
+                                <li>EXCUSADOS:</li>
+                                <li>SERVICIO:</li>
+                                <li>COMISION EXTERIOR:</li>
+                                <li>COMISION INTERIOR:</li>
+                                <li>TURNO:</li>
+                                <li>ADMINISTRATIVA:</li>
+                                <li>CLASE:</li>
+                                <li>GRALU:</li>
+                                <li>AUTORIZADOS:</li>
+                                <li><b>TOTAL:</b></li>
+                                </ul>
+                        </div>
+
 
 
 
@@ -39,16 +50,26 @@
 
                     <div class="card text-white bg-dark mb-3">
                         <div class="card-header">BRAVO</div>
-                        <div id="m16" class="card-body">Contenido</div>
-                        <div id="m16" class="card-body">Contenido</div>
-                        <div id="m16" class="card-body">Contenido</div>
-                        <div id="m16" class="card-body">Contenido</div>
-                        <div id="m16" class="card-body">Contenido</div>
+                        <div id="norinco" class="card-body">
+                            <ul style="list-style-type: none">
+                            <li>FORMAN:</li>
+                            <li>EXCUSADOS:</li>
+                            <li>SERVICIO:</li>
+                            <li>COMISION EXTERIOR:</li>
+                            <li>COMISION INTERIOR:</li>
+                            <li>TURNO:</li>
+                            <li>ADMINISTRATIVA:</li>
+                            <li>CLASE:</li>
+                            <li>GRALU:</li>
+                                <li>AUTORIZADOS:</li>
+                            <li><b>TOTAL:</b></li>
+                    </ul>
+                        </div>
                     </div>
 
                     <div class="card text-white bg-dark mb-3">
                         <div class="card-header">TOTAL ALUMNOS</div>
-                        <div id="total_count_weapons" class="card-body">Contenido</div>
+                        <div id="total_count_weapons" class="card-body text-center"></div>
                     </div>
 
                 </div>
@@ -65,7 +86,6 @@
                 <th>ALUMNO</th>
                 <th>EXCUSADO</th>
                 <th>NOVEDAD</th>
-                <th>EDITAR</th>
             </tr>
 
             </thead>
@@ -85,13 +105,6 @@
 
                     <td>
                         {{$lista->novedad}}
-                    </td>
-                    <td>
-                        <div class="round">
-                            <input class="span4 proj-div agendar" data-toggle="modal" data-target="#data"  type="checkbox"  class="asignar" id="{{$lista->id}}"/>
-                            <label for="{{$lista->id}}"></label>
-
-                        </div>
                     </td>
                 </tr>
             @endforeach
