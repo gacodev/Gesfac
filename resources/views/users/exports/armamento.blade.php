@@ -4,7 +4,7 @@
 </head>
  <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-12 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading text-center">
                                     <b>FUERZAS MILITARES DE COLOMBIA <br> FUERZA AEREA COLOMBIANA<br>
@@ -12,25 +12,135 @@
 
                         </b></div>
 
-                    <div class="panel-body">
-                        <p>Es un software diseñado y desarrollado  por el <b>AT Contreras Villamizar Luis Gabriel</b> para controlar y reportar las actividades
-                            realizadas a diario desde las diferentes areas
-                            de accion del proceso de formacion de los alumnos de la escuela de suboficiales </p>
-                    </div>
-
                     <table class="table thead-dark  text-center">
                         <thead>
 
                         <tr>
-                            <th>FUSIL</th>
+                            <th>PARTE DE ARMAMENTO</th>
                         </tr>
                         </thead>
-                        <tbody>
 
-
+                        <table style="width: 100%;" border="3" cellpadding="10">
+                            <tbody>
+                            <tr>
+                                <td colspan="2"><b>FECHA</b></td>
+                                <td colspan="2"  rowspan="2" class="text-center"><b>ALFA</b></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><b></b></td>
+                            </tr>
                         <tr>
+                            <td><b>FUERZA EFECTIVA</b></td>
+                            <td><b>GALIL</b></td>
+                            <td><b>PROVEEDORES</b></td>
+                            <td><b>CARTUCHOS</b></td>
+                        </tr>
+
+
+
+                            <tr>
+                                <td><b>COMISION DE ESTUDIOS</b></td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+
+                            </tr>
+                            <tr>
+                                <td><b>SERVICIOS</b></td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td><b>ARMERILLO</b></td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td><b>OTROS</b></td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td><b>EN MANO</b></td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td><b>TOTAL</b></td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
                         </tbody>
                     </table>
+
+
+
+<BR><BR>
+
+                        <table style="width: 100%;" border="3" cellpadding="10">
+                            <tbody>
+                            <tr>
+                                <td colspan="2"><b>FECHA</b></td>
+                                <td colspan="2"  rowspan="2" class="text-center"><b>BRAVO</b></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><b></b></td>
+                            </tr>
+                            <tr>
+                                <td><b>FUERZA EFECTIVA</b></td>
+                                <td><b>GALIL</b></td>
+                                <td><b>PROVEEDORES</b></td>
+                                <td><b>CARTUCHOS</b></td>
+                            </tr>
+
+
+
+                            <tr>
+                                <td><b>COMISION DE ESTUDIOS</b></td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+
+                            </tr>
+                            <tr>
+                                <td><b>SERVICIOS</b></td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td><b>ARMERILLO</b></td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td><b>OTROS</b></td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td><b>EN MANO</b></td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td><b>TOTAL</b></td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                        <b>TOTAL ARMAMENTO</b>
                 </div>
             </div>
         </div>

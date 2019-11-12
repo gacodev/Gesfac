@@ -4,7 +4,7 @@
 </head>
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-12 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading text-center">
                     <b>FUERZAS MILITARES DE COLOMBIA <br> FUERZA AEREA COLOMBIANA<br>
@@ -12,17 +12,11 @@
 
                     </b></div>
 
-                <div class="panel-body">
-                    <p>Es un software diseñado y desarrollado  por el <b>AT Contreras Villamizar Luis Gabriel</b> para controlar y reportar las actividades
-                        realizadas a diario desde las diferentes areas
-                        de accion del proceso de formacion de los alumnos de la escuela de suboficiales </p>
-                </div>
-
                 <table class="table thead-dark  text-center">
                     <thead>
 
                     <tr>
-                        <th>SANIDAD</th>
+                        <th><h3>REPORTE DE SANIDAD</h3></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -31,6 +25,52 @@
                     <tr>
                     </tbody>
                 </table>
+
+
+                <table style="width: 100%;" border="3" cellpadding="10">
+                    <thead>
+                    <tr>
+                        <th colspan="2"><b>FECHA</b></th>
+                        <th colspan="2"  rowspan="2" class="text-center"><b>ALFA</b></th>
+                    </tr>
+                    <tr>
+                        <th colspan="2"><b></b></th>
+                    </tr>
+                    <tr>
+                        <th><b>DESDE</b></th>
+                        <th><b>HASTA</b></th>
+                        <th><b>EXCUSADOS</b></th>
+                        <th><b>NOVEDAD</b></th>
+                    </tr>
+                    <thead>
+                    </table>
+
+
+
+
+                <BR>
+                <BR>
+
+
+                <table style="width: 100%;" border="3" cellpadding="10">
+                    <thead>
+                    <tr>
+                        <th colspan="2"><b>FECHA</b></th>
+                        <th colspan="2"  rowspan="2" class="text-center"><b>BRAVO</b></th>
+                    </tr>
+                    <tr>
+                        <th colspan="2"><b></b></th>
+                    </tr>
+                    <tr>
+                        <th><b>DESDE</b></th>
+                        <th><b>HASTA</b></th>
+                        <th><b>EXCUSADOS</b></th>
+                        <th><b>NOVEDAD</b></th>
+                    </tr>
+                    <thead>
+                </table>
+
+
             </div>
         </div>
     </div>
