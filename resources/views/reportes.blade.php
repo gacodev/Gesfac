@@ -10,11 +10,12 @@
         <div class="title_page">
             REPORTES
         </div>
-        <div>
+
+        <div class="col-sm-12" >
         <div class="album album-modify py-5 bg-light" >
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-6 col-md-4">
+                    <div class="col-sm-4">
                         <div class="card mb-4 box-shadow">
                             <img class="main-image" src="images/logo.png" alt="Card image cap">
                             <div class="card-body">
@@ -55,7 +56,7 @@
                     <div class="album album-modify py-5 bg-light" >
                         <div class="container">
                             <div class="row">
-                                <div class="col-sm-6 col-md-4">
+                                <div class="col-sm-4">
                                     <div class="card mb-4 box-shadow">
                                         <img class="main-image" src="images/logo.png" alt="Card image cap">
                                         <div class="card-body">
@@ -98,7 +99,7 @@
                                 <div class="album album-modify py-5 bg-light" >
                                     <div class="container">
                                         <div class="row">
-                                            <div class="col-sm-4 col-md-4">
+                                            <div class="col-sm-4">
                                                 <div class="card mb-4 box-shadow">
                                                     <img class="main-image" src="images/logo.png" alt="Card image cap">
                                                     <div class="card-body">
@@ -136,5 +137,7 @@
                                                 </div>
                                             </div>
                                         </div>
+
+
 @endsection
 

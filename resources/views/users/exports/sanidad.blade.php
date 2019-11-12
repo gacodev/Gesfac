@@ -70,7 +70,19 @@
                     <thead>
                 </table>
 
+<div class="row">
+                <div class="col-sm-4">
+                    <u><b>COMANDANTE ESUFA</b></u>
+                </div>
 
+                <div class="col-sm-4">
+                    <u><b>CONTROL ALUMNOS</b></u>
+                </div>
+
+                <div class="col-sm-4">
+                    <u><b>COMANDANTE GRUAL</b></u>
+                </div>
+</div>
             </div>
         </div>
     </div>
