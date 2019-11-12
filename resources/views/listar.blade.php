@@ -104,7 +104,9 @@
                     @endif
 
                     <td>
-                        {{$lista->novedad}}
+                        <select class="form-control" name="" id="">
+                            <option value="">{{$lista->novedad}}</option>
+                        </select>
                     </td>
                 </tr>
             @endforeach
