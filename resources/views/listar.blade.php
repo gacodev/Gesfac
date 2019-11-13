@@ -40,7 +40,7 @@
                                 <li>GRALU:</li>
                                 <li>AUTORIZADOS:</li>
                                 <li><b>TOTAL:</b></li>
-                                </ul>
+                            </ul>
                         </div>
 
 
@@ -52,18 +52,18 @@
                         <div class="card-header">BRAVO</div>
                         <div id="norinco" class="card-body">
                             <ul style="list-style-type: none">
-                            <li>FORMAN:</li>
-                            <li>EXCUSADOS:</li>
-                            <li>SERVICIO:</li>
-                            <li>COMISION EXTERIOR:</li>
-                            <li>COMISION INTERIOR:</li>
-                            <li>TURNO:</li>
-                            <li>ADMINISTRATIVA:</li>
-                            <li>CLASE:</li>
-                            <li>GRALU:</li>
+                                <li>FORMAN:</li>
+                                <li>EXCUSADOS:</li>
+                                <li>SERVICIO:</li>
+                                <li>COMISION EXTERIOR:</li>
+                                <li>COMISION INTERIOR:</li>
+                                <li>TURNO:</li>
+                                <li>ADMINISTRATIVA:</li>
+                                <li>CLASE:</li>
+                                <li>GRALU:</li>
                                 <li>AUTORIZADOS:</li>
-                            <li><b>TOTAL:</b></li>
-                    </ul>
+                                <li><b>TOTAL:</b></li>
+                            </ul>
                         </div>
                     </div>
 
@@ -96,17 +96,23 @@
                 <tr>
                     <td>{{$lista->escuadron}}</td>
                     <td>{{$lista->alumno}}</td>
-
-                    @if($lista->excusado===Null)
-                        <td></td>
-                    @else
-                        <td>{{$lista->excusado?"si":"no"}}</td>
-                    @endif
-
                     <td>
-                        <select class="form-control" name="" id="">
-                            <option value="">{{$lista->novedad}}</option>
-                        </select>
+                        <div class="onoffswitch">
+
+                            <input type="checkbox" name="onoffswitch" class="arma onoffswitch-checkbox" id="{{$lista->id}}" {{$lista->excusado?"checked":null}} />
+
+                            <label class="onoffswitch-label" for="{{$lista->id}}">
+                                <span class="onoffswitch-inner"></span>
+                                <span class="onoffswitch-switch"></span>
+                            </label>
+                        </div>
+                    </td>
+{{--                    <td>{{$lista->excusado?"si":"no"}}</td>--}}
+                    <td>
+{{--                        <select class="form-control" name="" id="">--}}
+{{--                            <option value="">{{$lista->novedad}}</option>--}}
+{{--                        </select>--}}
+                        {{Form::select('sede', $novedades, $lista->novedad, array('class'=>'form-control', 'placeholder'=>'Seleccionar ...'))}}
                     </td>
                 </tr>
             @endforeach

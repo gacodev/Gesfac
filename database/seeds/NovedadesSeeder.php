@@ -14,6 +14,7 @@ class NovedadesSeeder extends Seeder
         $inserted =  DB::table('novedades')
             ->insert(
                 [
+                    ['novedad' => 'ninguna',],
                     ['novedad' => 'excusado',],
                     ['novedad' => 'sanidad',],
                     ['novedad' => 'servicio',],

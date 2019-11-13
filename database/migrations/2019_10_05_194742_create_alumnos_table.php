@@ -19,11 +19,20 @@ class CreateAlumnosTable extends Migration
             $table->string('telefono');
             $table->string('direccion');
             $table->string('correo');
-            $table->unsignedBigInteger('tipo_documento');
+
             $table->string('numero_documento');
+            $table->string('excusado');
+
             $table->unsignedBigInteger('escuadron');
             $table->foreign('escuadron')->references('id')->on('escuadrones');
+
+            $table->unsignedBigInteger('tipo_documento');
             $table->foreign('tipo_documento')->references('id')->on('tipo_documento');
+
+            $table->unsignedBigInteger('novedad')->nullable();
+            $table->foreign('novedad')->references('id')->on('novedades');
+
+
             $table->timestamps();
         });
     }
