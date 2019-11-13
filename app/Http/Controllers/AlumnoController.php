@@ -193,12 +193,12 @@ class AlumnoController extends Controller
         $listar = alumno::leftJoin('escuadrones', 'escuadrones.id', '=', 'alumnos.escuadron')
             ->leftJoin('novedades', 'novedades.id', '=', 'alumnos.novedad')
             ->get([
-            "alumnos.id AS id",
-            "alumnos.nombre AS alumno",
-            "escuadrones.escuadron AS escuadron",
-            "alumnos.excusado AS excusado",
-            "novedades.id AS novedad",
-        ]);
+                "alumnos.id AS id",
+                "alumnos.nombre AS alumno",
+                "escuadrones.escuadron AS escuadron",
+                "alumnos.excusado AS excusado",
+                "novedades.id AS novedad",
+            ]);
 
         return view('listar')->with('listar', $listar)
             ->with('novedades', $novedades);;
@@ -215,6 +215,33 @@ class AlumnoController extends Controller
             ]);
 
         return "success";
+    }
+
+    public function contar_novedades(){
+
+        $novedades = novedad::pluck('id', 'novedad');
+        $escuadrones = Escuadron::pluck('escuadron');
+
+        foreach ($novedades as $key => $novedad)
+            $novedades[$key] = 0;
+
+        $novedades_escuadrones = [];
+
+        foreach ($escuadrones as $escuadron){
+            $novedades_escuadrones[$escuadron] = clone $novedades;
+
+            $filtrar_novedades = alumno::leftJoin('escuadrones', 'escuadrones.id', '=', 'alumnos.escuadron')
+                ->leftJoin('novedades', 'novedades.id', '=', 'alumnos.novedad')
+                ->where('escuadrones.escuadron', '=', $escuadron);
+
+            foreach ($filtrar_novedades->get(["novedades.novedad AS novedad"]) as $index)
+                $novedades_escuadrones[$escuadron][$index->novedad] +=1;
+
+            $novedades_escuadrones[$escuadron]["total"]=$filtrar_novedades->count();
+
+        }
+
+        return $novedades_escuadrones;
     }
 
     public function actualizar_excusa(){

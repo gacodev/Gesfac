@@ -33,6 +33,8 @@ Route::get('/listar', 'AlumnoController@listar')->name('listar');
 Route::post('/actualizar_novedad', 'AlumnoController@actualizar_novedad')->name('actualizar_novedad');
 Route::post('/actualizar_excusa', 'AlumnoController@actualizar_excusa')->name('actualizar_excusa');
 
+Route::post('/contar_novedades', 'AlumnoController@contar_novedades')->name('contar_novedades');
+
 
 Route::post('/desvincular_fusil', 'AlumnoController@desvincular_fusil');
 Route::post('import-armas', 'ReportesController@importarmas')->name('excel');

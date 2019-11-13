@@ -7,109 +7,112 @@
 
 @section('page_content')
 
-    <!-- trigger modal -->
-    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" id="total_weapons">
-        CONTAR ALUMNOS
-    </button>
+    <div class="table-container">
 
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel"><b>TOTAL ALUMNOS</b></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
+        <!-- trigger modal -->
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" id="total_weapons">
+            CONTAR ALUMNOS
+        </button>
 
-                <div class="modal-body">
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"><b>TOTAL ALUMNOS</b></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
 
-                    <div class="card text-white bg-dark mb-3">
-                        <div class="card-header">ALFA</div>
-                        <div id="norinco" class="card-body">
-                            <ul style="list-style-type: none">
-                                <li>FORMAN:</li>
-                                <li>EXCUSADOS:</li>
-                                <li>SERVICIO:</li>
-                                <li>COMISION EXTERIOR:</li>
-                                <li>COMISION INTERIOR:</li>
-                                <li>TURNO:</li>
-                                <li>ADMINISTRATIVA:</li>
-                                <li>CLASE:</li>
-                                <li>GRALU:</li>
-                                <li>AUTORIZADOS:</li>
-                                <li><b>TOTAL:</b></li>
-                            </ul>
+                    <div class="modal-body">
+
+                        <div class="card text-white bg-dark mb-3">
+                            <div class="card-header">ALFA</div>
+                            <div id="norinco" class="card-body">
+                                <ul style="list-style-type: none">
+                                    <li>FORMAN:</li>
+                                    <li>EXCUSADOS:</li>
+                                    <li>SERVICIO:</li>
+                                    <li>COMISION EXTERIOR:</li>
+                                    <li>COMISION INTERIOR:</li>
+                                    <li>TURNO:</li>
+                                    <li>ADMINISTRATIVA:</li>
+                                    <li>CLASE:</li>
+                                    <li>GRALU:</li>
+                                    <li>AUTORIZADOS:</li>
+                                    <li><b>TOTAL:</b></li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                        <div class="card text-white bg-dark mb-3">
+                            <div class="card-header">BRAVO</div>
+                            <div id="norinco" class="card-body">
+                                <ul style="list-style-type: none">
+                                    <li>FORMAN:</li>
+                                    <li>EXCUSADOS:</li>
+                                    <li>SERVICIO:</li>
+                                    <li>COMISION EXTERIOR:</li>
+                                    <li>COMISION INTERIOR:</li>
+                                    <li>TURNO:</li>
+                                    <li>ADMINISTRATIVA:</li>
+                                    <li>CLASE:</li>
+                                    <li>GRALU:</li>
+                                    <li>AUTORIZADOS:</li>
+                                    <li><b>TOTAL:</b></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="card text-white bg-dark mb-3">
+                            <div class="card-header">TOTAL ALUMNOS</div>
+                            <div id="total_count_weapons" class="card-body text-center"></div>
                         </div>
 
                     </div>
-
-                    <div class="card text-white bg-dark mb-3">
-                        <div class="card-header">BRAVO</div>
-                        <div id="norinco" class="card-body">
-                            <ul style="list-style-type: none">
-                                <li>FORMAN:</li>
-                                <li>EXCUSADOS:</li>
-                                <li>SERVICIO:</li>
-                                <li>COMISION EXTERIOR:</li>
-                                <li>COMISION INTERIOR:</li>
-                                <li>TURNO:</li>
-                                <li>ADMINISTRATIVA:</li>
-                                <li>CLASE:</li>
-                                <li>GRALU:</li>
-                                <li>AUTORIZADOS:</li>
-                                <li><b>TOTAL:</b></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="card text-white bg-dark mb-3">
-                        <div class="card-header">TOTAL ALUMNOS</div>
-                        <div id="total_count_weapons" class="card-body text-center"></div>
-                    </div>
-
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="row table table-responsive">
-        <table class="table thead-dark  text-center " id="mitabla">
-            <thead>
+        <div class="row table table-responsive">
+            <table class="table thead-dark  text-center " id="mitabla">
+                <thead>
 
-            <tr>
-                <th>ESCUADRON</th>
-                <th>ALUMNO</th>
-                <th>EXCUSADO</th>
-                <th>NOVEDAD</th>
-            </tr>
-
-            </thead>
-
-            <tbody>
-            @foreach($listar as $lista)
                 <tr>
-                    <td>{{$lista->escuadron}}</td>
-                    <td>{{$lista->alumno}}</td>
-                    <td>
-                        <div class="onoffswitch">
-
-                            <input type="checkbox" name="onoffswitch" class="excusa onoffswitch-checkbox" id="{{"excusa:".$lista->id}}" {{$lista->excusado?"checked":null}} />
-
-                            <label class="onoffswitch-label" for="{{"excusa:".$lista->id}}">
-                                <span class="onoffswitch-inner"></span>
-                                <span class="onoffswitch-switch"></span>
-                            </label>
-                        </div>
-                    </td>
-                    <td>
-                        {{Form::select("novedad:", $novedades, $lista->novedad, array('class'=>'form-control novedad', 'id' => "novedad:".$lista->id))}}
-                    </td>
+                    <th>ESCUADRON</th>
+                    <th>ALUMNO</th>
+                    <th>EXCUSADO</th>
+                    <th>NOVEDAD</th>
                 </tr>
-            @endforeach
-            </tbody>
-        </table>
+
+                </thead>
+
+                <tbody>
+                @foreach($listar as $lista)
+                    <tr>
+                        <td>{{$lista->escuadron}}</td>
+                        <td>{{$lista->alumno}}</td>
+                        <td>
+                            <div class="onoffswitch">
+
+                                <input type="checkbox" name="onoffswitch" class="excusa onoffswitch-checkbox" id="{{"excusa:".$lista->id}}" {{$lista->excusado?"checked":null}} />
+
+                                <label class="onoffswitch-label" for="{{"excusa:".$lista->id}}">
+                                    <span class="onoffswitch-inner"></span>
+                                    <span class="onoffswitch-switch"></span>
+                                </label>
+                            </div>
+                        </td>
+                        <td>
+                            {{Form::select("novedad:", $novedades, $lista->novedad, array('class'=>'form-control novedad', 'id' => "novedad:".$lista->id))}}
+                        </td>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <script>
@@ -158,5 +161,21 @@
                 guardar_cambios(this.id, estado, excusa_url)
             })
         }
+
+        var total_novedades = document.getElementById("total_weapons");
+
+        total_novedades.addEventListener('click', function() {
+
+            axios.post("contar_novedades")
+                .then(function(response) {
+
+                    console.log(response.data)
+
+                })
+                .catch(function(error) {
+                    location.reload();
+                });
+        })
+
     </script>
 @endsection
