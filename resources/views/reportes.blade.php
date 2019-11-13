@@ -13,7 +13,7 @@
 
             <div class="row">
 
-                <div class="col-4">
+                <div class="col-12 col-md-6 col-xl-4">
                     <div class=" card mb-4 box-shadow text-center">
                         <div class="card-header">SANIDAD</div>
                         <div class="card-body">
@@ -26,7 +26,7 @@
                     </div>
                 </div>
 
-                <div class="col-4">
+                <div class="col-12 col-md-6 col-xl-4">
                     <div class=" card mb-4 box-shadow text-center">
                         <div class="card-header">ARMAMENTO</div>
                         <div class="card-body">
@@ -39,7 +39,7 @@
                     </div>
                 </div>
 
-                <div class="col-4">
+                <div class="col-12 col-md-6 col-xl-4">
                     <div class=" card mb-4 box-shadow text-center">
                         <div class="card-header">PERSONAL</div>
                         <div class="card-body">
