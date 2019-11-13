@@ -28,7 +28,12 @@ Route::get('/welcome', 'HomeController@welcome')->name('welcome');
 Route::get('/armamento', 'AlumnoController@arm')->name('registro_arm');
 Route::get('/asignar_arm', 'AlumnoController@asignar_arm')->name('asignar_arm');
 Route::post('/asignar_fusil', 'AlumnoController@asignar_fusil');
+
 Route::get('/listar', 'AlumnoController@listar')->name('listar');
+Route::post('/actualizar_novedad', 'AlumnoController@actualizar_novedad')->name('actualizar_novedad');
+Route::post('/actualizar_excusa', 'AlumnoController@actualizar_excusa')->name('actualizar_excusa');
+
+
 Route::post('/desvincular_fusil', 'AlumnoController@desvincular_fusil');
 Route::post('import-armas', 'ReportesController@importarmas')->name('excel');
 Route::post('import-visitantes', 'ReportesController@visitantes')->name('visitante');

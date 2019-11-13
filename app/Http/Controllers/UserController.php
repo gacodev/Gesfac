@@ -43,14 +43,6 @@ class UserController extends Controller
         return $pdf->download('personal.pdf');
     }
 
-
-
-
-
-
-
-
-
     /**
      * Display the specified resource.
      *

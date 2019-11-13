@@ -204,7 +204,31 @@ class AlumnoController extends Controller
             ->with('novedades', $novedades);;
     }
 
+    public function actualizar_novedad(){
 
+        $id = \request("id");
+        $novedad = \request("value");
+
+        $novedad = alumno::where("id" , "=", $id)
+            ->update([
+                "novedad" => $novedad
+            ]);
+
+        return "success";
+    }
+
+    public function actualizar_excusa(){
+
+        $id = \request("id");
+        $excusa = \request("value");
+
+        $excusa = alumno::where("id" , "=", $id)
+            ->update([
+                "excusado" => $excusa
+            ]);
+
+        return "success";
+    }
 
     public function asignar_fusil()
     {
