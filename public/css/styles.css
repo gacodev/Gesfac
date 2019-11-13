@@ -435,3 +435,7 @@ a {
 }
 
 /* estilos del layout */
+.card-footer-custom{
+    display: flex;
+    justify-content: space-around;
+}
