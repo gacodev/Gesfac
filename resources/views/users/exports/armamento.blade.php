@@ -140,11 +140,11 @@
                             </tbody>
                         </table>
 
-                        <b>TOTAL ARMAMENTO</b>
+
                 </div>
 
 
-
+                <b>TOTAL ARMAMENTO</b>
                 <div class="row">
                     <div class="col-sm-4">
                         <u><b>COMANDANTE ESUFA</b></u>
