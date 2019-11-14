@@ -33,7 +33,7 @@
                             <img class="main-image" src="images/logo.png" alt="Card image cap">
                         </div>
                         <div class="card-footer card-footer-custom">
-                            <a href="{{route ('armas-export')}}"><button class="btn btn-primary">VER</button></a><br>
+                            <a href="{{route ('armas-export')}}" target="blank"><button class="btn btn-primary">VER</button></a><br>
                             <a href="{{route ('export-armas-pdf')}}"><button class="btn btn-danger">GENERAR</button></a>
                         </div>
                     </div>
