@@ -21,5 +21,6 @@ class ArmerilloImport implements ToModel
             'tipo_fusil' => $row[4],
 
         ]);
+
     }
 }

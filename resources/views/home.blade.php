@@ -168,7 +168,7 @@
                 @endcan
 
                 @can('sanidad')
-                <div class="col-sm-6 col-md-3">
+                <div class="col-sm-4 col-md-3">
                     <div class="card mb-4 box-shadow">
                         <img class="main-image" src="images/sanidad.png" alt="Card image cap">
                         <div class="card-body">
@@ -185,30 +185,6 @@
                     </div>
                 </div>
              @endcan
-
-                @can('agendar')
-                <div class="col-sm-6 col-md-3">
-                    <div class="card mb-4 box-shadow">
-                        <img class="main-image" src="images/agendar.png" alt="Card image cap">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-center align-items-center">
-                                <div class="btn-group">
-                                    <a href="{{ url('/agendar') }}">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">
-                                            Agendar
-                                        </button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-@endcan
-            </div>
-
-            <div class="row">
-
-
                 @can('registrar_alumno')
                 <div class="col-sm-6 col-md-3">
                     <div class="card mb-4 box-shadow">
@@ -281,13 +257,30 @@
                     </div>
                 </div>
 @endcan
+
+                    @can('agendar')
+                        <div class="col-sm-6 col-md-3">
+                            <div class="card mb-4 box-shadow">
+                                <img class="main-image" src="images/agendar.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <div class="btn-group">
+                                            <a href="{{ url('/agendar') }}">
+                                                <button type="button" class="btn btn-sm btn-outline-secondary">
+                                                    Agendar
+                                                </button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endcan
             </div>
 
         </div>
     </div>
 </div>
-
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
