@@ -14,9 +14,7 @@
     @include ("partials.modals.asignar_cita")
 
     <div class="table-container">
-        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal_agendar" id="total_weapons">
-            AGENDAR
-        </button>
+
 
         <div class="row table table-responsive">
             <table class="table thead-brand bordered  text-center" id="mitabla">
@@ -42,8 +40,9 @@
                         <td>{{$cita->tipo_cita}}</td>
                         <td>
                             <div class="round">
-                                <input class="span4 proj-div agendar" data-toggle="modal" data-target="#data"  type="checkbox"  class="asignar" id="{{$cita->cita}}" {{$cita->estado?"checked":null}}/>
-                                <label for="{{$cita->cita}}"></label>
+                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal_agendar" id="total_weapons">
+                                    AGENDAR
+                                </button>
 
                             </div>
                         </td>
@@ -126,3 +125,4 @@
 
         </script>
 @endsection
+

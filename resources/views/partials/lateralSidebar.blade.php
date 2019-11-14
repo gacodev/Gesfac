@@ -16,7 +16,7 @@
         <a href="{{ url('/sanidad') }}" class="bg-dark list-group-item list-group-item-action">
             <div class="d-flex w-100 justify-content-start align-items-center">
                 <span class="fas fa-ambulance mr-3"></span>
-                <small><span class="menu-collapsed">CONSULTAR</span></small>
+                <small><span class="menu-collapsed">SOLICITAR</span></small>
             </div>
         </a>
         <a href="{{ url('/informes') }}" class="bg-dark list-group-item list-group-item-action">
