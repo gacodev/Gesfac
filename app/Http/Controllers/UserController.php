@@ -33,7 +33,7 @@ class UserController extends Controller
     {
         $armas = armerillo::get();
         $pdf   = PDF::loadView('users.exports.armamento', compact('armas'));
-        return $pdf->download('armas.pdf');
+        return $pdf->setPaper('a4', 'landscape')->download('armas.pdf');
     }
 
     public function personal()

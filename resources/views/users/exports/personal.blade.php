@@ -405,39 +405,5 @@
         <u><b>COMANDANTE GRUAL</b></u>
     </div>
 </div>
-{{--<div class="container">--}}
-{{--    <div class="row">--}}
-{{--        <div class="col-md-12 col-md-offset-2">--}}
-{{--            <div class="panel panel-default">--}}
-{{--                <div class="panel-heading text-center">--}}
-{{--                    <b>FUERZAS MILITARES DE COLOMBIA <br> FUERZA AEREA COLOMBIANA<br>--}}
-{{--                        ESCUELA DE SUBOFICIALES <br>CT ANDRES M DIAZ--}}
-
-{{--                    </b></div>--}}
-
-{{--                <table class="table thead-dark  text-center">--}}
-{{--                    <thead>--}}
-
-{{--                    <tr>--}}
-{{--                        <th><h3>PARTE DE PERSONAL</h3></th>--}}
-{{--                    </tr>--}}
-{{--                    </thead>--}}
-{{--                    <tbody>--}}
-
-
-{{--                    <tr>--}}
-{{--                    </tbody>--}}
-{{--                </table>--}}
-
-
-
-
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</div>--}}
-{{--</div>--}}
 </body>
 </html>

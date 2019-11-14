@@ -9,7 +9,10 @@ use Illuminate\Http\Request;
 class exportcontroller extends Controller
 {
     public function exportarmas(){
-        return view('users.exports.armamento');
+        $listar = alumno::get();
+
+        $pdf   = PDF::loadView('users.exports.armamento', compact('listar'));
+        return $pdf->setPaper('a4', 'landscape')->stream('armamento.pdf');
     }
     public function exportsanidad(){
         return view('users.exports.sanidad');
@@ -18,6 +21,6 @@ class exportcontroller extends Controller
 //        return view('users.exports.personal');
         $listar = alumno::get();
         $pdf   = PDF::loadView('users.exports.personal', compact('listar'));
-        return $pdf->setPaper('a4', 'landscape')->stream('personal.pdf');;
+        return $pdf->setPaper('a4', 'landscape')->stream('personal.pdf');
     }
 }
