@@ -14,22 +14,22 @@ class NovedadesSeeder extends Seeder
         $inserted =  DB::table('novedades')
             ->insert(
                 [
-                    ['novedad' => 'ninguna',],
-                    ['novedad' => 'excusado',],
-                    ['novedad' => 'sanidad',],
-                    ['novedad' => 'servicio',],
-                    ['novedad' => 'comision iiafa',],
-                    ['novedad' => 'comision esima',],
-                    ['novedad' => 'autorizado',],
-                    ['novedad' => 'halcones',],
-                    ['novedad' => 'exterior',],
-                    ['novedad' => 'clase',],
-                    ['novedad' => 'ceremonia',],
-                    ['novedad' => 'interescuelas',],
-                    ['novedad' => 'calamidad',],
-                    ['novedad' => 'turno',],
-                    ['novedad' => 'administrativa',],
-                    ['novedad' => 'ensayo',],
+                    ['novedad' => 'NINGUNA',],
+                    ['novedad' => 'EXCUSADO',],
+                    ['novedad' => 'SANIDAD',],
+                    ['novedad' => 'SERVICIO',],
+                    ['novedad' => 'IIAFA',],
+                    ['novedad' => 'ESIMA',],
+                    ['novedad' => 'AUTORIZADO',],
+                    ['novedad' => 'HALCONES',],
+                    ['novedad' => 'COMISION',],
+                    ['novedad' => 'CLASE',],
+                    ['novedad' => 'CEREMONIA',],
+                    ['novedad' => 'INTERESCUELAS',],
+                    ['novedad' => 'CALAMIDAD',],
+                    ['novedad' => 'TURNO',],
+                    ['novedad' => 'ADMINISTRATIVA',],
+                    ['novedad' => 'GUARDIA',],
                 ]
             );
     }

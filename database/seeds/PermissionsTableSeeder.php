@@ -64,10 +64,12 @@ class PermissionsTableSeeder extends Seeder
         ]);
 
         Permission::create([
-            'name'          => 'Eliminar roles',
-            'slug'          => 'roles.destroy',
-            'description'   => 'Podría eliminar cualquier rol del sistema',
-        ]);
+        'name'          => 'Eliminar roles',
+        'slug'          => 'roles.destroy',
+        'description'   => 'Podría eliminar cualquier rol del sistema',
+    ]);
+
+
 
 
 
@@ -89,10 +91,29 @@ class PermissionsTableSeeder extends Seeder
         ]);
 
         Permission::create([
+            'name'          => 'listar',
+            'slug'          => 'listar',
+            'description'   => 'listar alumnos en la escuela',
+        ]);
+        Permission::create([
+            'name'          => 'listar',
+            'slug'          => 'alumnos',
+            'description'   => 'registrar alumnos',
+        ]);
+        Permission::create([
             'name'          => 'control de armerillo por parte del control alumnos',
             'slug'          => 'armas',
             'description'   => 'control del armerillo',
         ]);
+
+
+
+        Permission::create([
+            'name'          => 'asignacion de excusas',
+            'slug'          => 'atendido',
+            'description'   => 'acceso interfaz de asignacion de excusas',
+        ]);
+
 
         Permission::create([
             'name'          => 'principal para uso de app',
@@ -147,5 +168,7 @@ class PermissionsTableSeeder extends Seeder
             'slug'          => 'agendar_cita',
             'description'   => 'agendar citas alumnos',
         ]);
+
+        
     }
 }
