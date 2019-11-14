@@ -26,7 +26,7 @@ class UserController extends Controller
 {
     $users = User::get();
     $pdf   = PDF::loadView('users.exports.sanidad', compact('users'));
-    return $pdf->download('sanidad.pdf');
+    return $pdf->setPaper('a4', 'landscape')->download('sanidad.pdf');
 }
 
     public function armas()

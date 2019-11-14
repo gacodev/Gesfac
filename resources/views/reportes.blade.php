@@ -20,7 +20,7 @@
                             <img class="main-image" src="images/logo.png" alt="Card image cap">
                         </div>
                         <div class="card-footer card-footer-custom">
-                            <a href="{{route ('sanidad-export')}}"><button class="btn btn-primary">VER</button></a><br>
+                            <a href="{{route ('sanidad-export')}}" target="blank"><button class="btn btn-primary">VER</button></a><br>
                             <a href="{{route ('export-sanidad-pdf')}}"><button class="btn btn-warning">GENERAR</button></a>
                         </div>
                     </div>

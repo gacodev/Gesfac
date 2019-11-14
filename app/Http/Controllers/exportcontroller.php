@@ -15,7 +15,10 @@ class exportcontroller extends Controller
         return $pdf->setPaper('a4', 'landscape')->stream('armamento.pdf');
     }
     public function exportsanidad(){
-        return view('users.exports.sanidad');
+        $listar = alumno::get();
+
+        $pdf   = PDF::loadView('users.exports.sanidad', compact('listar'));
+        return $pdf->setPaper('a4', 'landscape')->stream('sanidad.pdf');
     }
     public function exportpersonal(){
 //        return view('users.exports.personal');
