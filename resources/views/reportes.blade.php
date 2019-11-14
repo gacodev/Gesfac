@@ -46,8 +46,8 @@
                             <img class="main-image" src="images/logo.png" alt="Card image cap">
                         </div>
                         <div class="card-footer card-footer-custom">
-                            <a href="{{route ('personal-export')}}"><button class="btn btn-primary">VER</button></a><br>
-                            <a href="{{route ('export-personal-pdf')}}"><button class="btn btn-success">GENERAR</button></a>
+                            <a href="{{route ('personal-export')}}" target="blank"><button class="btn btn-primary">VER</button></a><br>
+                            <a href="{{route ('export-personal-pdf')}}" ><button class="btn btn-success">GENERAR</button></a>
                         </div>
                     </div>
                 </div>
