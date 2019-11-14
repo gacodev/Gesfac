@@ -40,7 +40,7 @@ class UserController extends Controller
     {
         $listar = alumno::get();
         $pdf   = PDF::loadView('users.exports.personal', compact('listar'));
-        return $pdf->download('personal.pdf');
+        return $pdf->setPaper('a4', 'landscape')->download('personal.pdf');
     }
 
     /**

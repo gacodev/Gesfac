@@ -13,6 +13,6 @@ class exportcontroller extends Controller
         return view('users.exports.sanidad');
     }
     public function exportpersonal(){
-return view('users.exports.personal');
+        return view('users.exports.personal');
     }
 }
