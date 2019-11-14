@@ -48,27 +48,6 @@
     </div>
 
     <script>
-        var armas = document.querySelectorAll(".atender");
-
-        for (var i = 0; i < armas.length; i++) {
-
-            var alumno = armas[i]
-
-            alumno.addEventListener('change', function() {
-
-                if (this.checked) {
-                    estado = 1
-                } else {
-                    estado = 0
-                }
-
-                window.location.href = "/atendido/"+this.id;
-
-            })
-        }
-    </script>
-
-    <script>
         function informacion_solicitud_cita(id, estado) {
 
             axios.post('/informacion_solicitud_cita', {
@@ -139,5 +118,27 @@
         }
 
     </script>
+
+    <script>
+        var armas = document.querySelectorAll(".atender");
+
+        for (var i = 0; i < armas.length; i++) {
+
+            var alumno = armas[i]
+
+            alumno.addEventListener('change', function() {
+
+                if (this.checked) {
+                    estado = 1
+                } else {
+                    estado = 0
+                }
+
+                window.location.href = "/atendido/"+this.id;
+
+            })
+        }
+    </script>
+
 
 @endsection
