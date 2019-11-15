@@ -28,7 +28,7 @@
                     </button>
 
                     <!-- Branding Image -->
-                 <b>   <a class="navbar-brand" href="{{ url('/') }}">
+                 <b>   <a class="navbar-brand" href="{{ url('/welcome') }}">
                         {{ config('app.name', 'Laravel') }}
                     </a>
                  </b>

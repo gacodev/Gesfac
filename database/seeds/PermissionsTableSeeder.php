@@ -96,7 +96,7 @@ class PermissionsTableSeeder extends Seeder
             'description'   => 'listar alumnos en la escuela',
         ]);
         Permission::create([
-            'name'          => 'listar',
+            'name'          => 'registrar ',
             'slug'          => 'alumnos',
             'description'   => 'registrar alumnos',
         ]);
@@ -169,6 +169,12 @@ class PermissionsTableSeeder extends Seeder
             'description'   => 'agendar citas alumnos',
         ]);
 
-        
+        Permission::create([
+            'name'          => 'lateral sidebar',
+            'slug'          => 'lateralSidebar',
+            'description'   => 'acesso a interfaz secundaria',
+        ]);
+
+
     }
 }
