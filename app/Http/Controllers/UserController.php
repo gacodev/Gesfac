@@ -26,21 +26,21 @@ class UserController extends Controller
 {
     $users = User::get();
     $pdf   = PDF::loadView('users.exports.sanidad', compact('users'));
-    return $pdf->download('sanidad.pdf');
+    return $pdf->setPaper('a4', 'landscape')->download('sanidad.pdf');
 }
 
     public function armas()
     {
         $armas = armerillo::get();
         $pdf   = PDF::loadView('users.exports.armamento', compact('armas'));
-        return $pdf->download('armas.pdf');
+        return $pdf->setPaper('a4', 'landscape')->download('armas.pdf');
     }
 
     public function personal()
     {
         $listar = alumno::get();
         $pdf   = PDF::loadView('users.exports.personal', compact('listar'));
-        return $pdf->download('personal.pdf');
+        return $pdf->setPaper('a4', 'landscape')->download('personal.pdf');
     }
 
     /**
