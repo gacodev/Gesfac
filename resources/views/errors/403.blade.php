@@ -11,7 +11,7 @@
                     <p>Puedes cambiar los permisos a los que pueden acceder los usuarios en cualquier momento en la aplicación Ajustes
                         roles en tu dispositivo. Recuerda que, si desactivas los permisos, es posible
                         que no puedas utilizar algunas funciones de las aplicaciones del sistema de informacion</p>
-                    <h1><a class="btn btn-success align-items-md-start" href="">SACAME DE AQUI </a></h1>
+                    <h1><a class="btn btn-success align-items-md-start" href="{{route('home')}}">SACAME DE AQUI </a></h1>
                 </div>
             </div>
         </div>
