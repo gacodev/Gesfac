@@ -8,8 +8,11 @@
 
     @include("partials.success_message")
 
+    @include ("partials.modals.solicitar_cita")
+
+
     <div class="row table table-responsive">
-        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal_agendar" id="total_weapons">
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal_solicitar" id="total_weapons">
             SOLICITAR
         </button>
         <table class="table thead-brand bordered  text-center" id="mitabla">

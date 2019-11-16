@@ -11,7 +11,7 @@
 
     @include ("partials.modals.agendar_cita")
 
-    @include ("partials.modals.asignar_cita")
+    @include ("partials.modals.solicitar_cita")
 
     <div class="table-container">
 

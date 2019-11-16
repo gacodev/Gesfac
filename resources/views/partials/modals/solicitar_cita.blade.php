@@ -1,14 +1,15 @@
-<div id="modal_agendar" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div id="modal_solicitar" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <form class="form-horizontal" method="post" action="/agendar_cita">
                 {{ csrf_field() }}
                 <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel">AGENDAR CITA</h4>
+                    <h4 class="modal-title" id="myModalLabel">SOLICITAR CITA</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
+
                 <div class="modal-body">
                     <div class="form-group col-12 col-md-12">
                         <label for="agendar_alumno">Alumno</label>
