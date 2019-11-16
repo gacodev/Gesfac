@@ -47,7 +47,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <input type="submit" class="btn btn-success" value="AGENDAR">
+                    <input type="submit" class="btn btn-success" value="SOLICITAR">
                 </div>
             </form>
         </div>
