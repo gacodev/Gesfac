@@ -9,8 +9,16 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-
                 <div class="modal-body">
+                    <div class="form-group col-12 col-md-12">
+                        <label for="agendar_escuadron">Escuadron</label>
+                        <select name="agendar_escuadron" id="agendar_escuadron" class="form-control">
+                            <option value="0"></option>
+                            @foreach($errors as $escuadron)
+                                <option value="{{$escuadron->id}}">{{$escuadron->escuadron}}</option>
+                            @endforeach
+                        </select>
+                    </div>
                     <div class="form-group col-12 col-md-12">
                         <label for="agendar_alumno">Alumno</label>
                         <select name="agendar_alumno" id="agendar_alumno" class="form-control">
@@ -29,8 +37,13 @@
                         <input type="date" name="fecha_asignacion" id="fecha_asignacion" class="form-control" min='2019-11-01' value="{{$fecha_solicitud ?? ''}}" disabled>
                     </div>
                     <div class="form-group col-12 col-md-12">
-                        <label for="fecha_asignacion">FECHA DE ASIGNACION</label>
-                        <input type="date" name="fecha" id="fecha_asignacion" class="form-control">
+                        <label for="motivo">Motivo</label>
+                        <input type="text" name="motivo" id="motivo" class="form-control">
+                    </div>
+                    <div class="form-group col-12 col-md-12">
+                        <label for="agendar_descripcion">Descripción</label>
+                        <textarea name="agendar_descripcion" id="agendar_descripcion" class="form-control">
+                        </textarea>
                     </div>
                 </div>
                 <div class="modal-footer">

@@ -33,15 +33,13 @@
                     <td>{{$cita->cita}}</td>
                     <td>{{$cita->nombre}}</td>
                     <td>{{$cita->telefono}}</td>
-                    <td>{{$cita->tipo_cita}}</td>
                     <td>{{$cita->fecha_solicitud}}</td>
-                    <td>{{$cita->fecha_asignacion}}</td>
+                    <td>{{$cita->descripcion}}</td>
+                    <td>{{$cita->tipo_cita}}</td>
                     <td>
-                        <div class="container">
-                            <div class="round">
-                                <input type="checkbox" class="atender" id="{{$cita->cita}}" {{$cita->asistencia?"checked":null}}/>
-                                <label for="{{$cita->cita}}"></label>
-                            </div>
+                        <div class="round">
+                            <input type="checkbox" class="atender" id="{{$cita->cita}}" {{$cita->asistencia?"checked":null}}/>
+                            <label for="{{$cita->cita}}"></label>
                         </div>
                     </td>
                 </tr>

@@ -8,10 +8,8 @@
     <h2 class="title_page">ASIGNAR CITAS</h2>
 
     @include("partials.success_message")
-
     @include ("partials.modals.agendar_cita")
 
-    @include ("partials.modals.solicitar_cita")
 
     <div class="table-container">
 
