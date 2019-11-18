@@ -19,10 +19,8 @@ class CreateAlumnosTable extends Migration
             $table->string('telefono');
             $table->string('direccion');
             $table->string('correo');
-
             $table->string('numero_documento');
             $table->string('excusado');
-
             $table->unsignedBigInteger('escuadron');
             $table->foreign('escuadron')->references('id')->on('escuadrones');
 

@@ -34,7 +34,7 @@
                     </div>
                     <div class="form-group col-12 col-md-12">
                         <label for="fecha_asignacion">Fecha de solicitud</label>
-                        <input type="date" name="fecha_asignacion" id="fecha_asignacion" class="form-control" min='2019-11-01' value="{{$fecha_solicitud ?? ''}}" disabled>
+                        <input type="date" name="fecha_asignacion" id="fecha_asignacion" class="form-control" min='2019-11-01' value="{{$fecha_asignacion ?? ''}}" disabled>
                     </div>
                     <div class="form-group col-12 col-md-12">
                         <label for="motivo">Motivo</label>
