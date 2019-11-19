@@ -21,7 +21,8 @@ class CreateAlumnosTable extends Migration
             $table->string('correo');
 
             $table->string('numero_documento');
-            $table->string('excusado');
+            $table->boolean('excusado');
+            $table->boolean('editable');
 
             $table->unsignedBigInteger('escuadron');
             $table->foreign('escuadron')->references('id')->on('escuadrones');
@@ -29,7 +30,7 @@ class CreateAlumnosTable extends Migration
             $table->unsignedBigInteger('tipo_documento');
             $table->foreign('tipo_documento')->references('id')->on('tipo_documento');
 
-            $table->unsignedBigInteger('novedad')->nullable();
+            $table->unsignedBigInteger('novedad')->default(1);
             $table->foreign('novedad')->references('id')->on('novedades');
 
 

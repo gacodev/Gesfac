@@ -37,91 +37,16 @@
                         <td>{{$cita->descripcion}}</td>
                         <td>{{$cita->tipo_cita}}</td>
                         <td>
-                            <div class="round">
-                                <a href="{{route('sanidad_registro_agendar_cita', $cita->cita)}}"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal_agendar">
+                            <a href="{{route('sanidad_registro_agendar_cita', $cita->cita)}}">
+                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal_agendar">
                                     AGENDAR
                                 </button>
-                                </a>
-
-                            </div>
+                            </a>
                         </td>
                     </tr>
                 @endforeach
                 </tbody>
             </table>
         </div>
-
-
-        <script>
-            function informacion_solicitud_cita(id, estado) {
-
-                axios.post('/informacion_solicitud_cita', {
-                    id,
-                    estado
-                })
-                    .then(function(response) {
-
-                        if(response.data){
-                            var informacion_solicitud_cita = document.getElementById("alumno_information")
-
-                            var information = `
-                                <input type="hidden" value="${response.data.cita}" name="cita"/>
-                                <label class="form-control"><b>Alumno: </b> ${response.data.nombre}</label>
-                                <label class="form-control"><b>Numero documento: </b> ${response.data.numero_documento}</label>
-                                <label class="form-control"><b>Tipo cita: </b>${response.data.tipo_cita}</label>
-                                <label class="form-control"><b>Fecha solicitud:  </b>${response.data.fecha_solicitud}</label>
-                            `
-
-                            informacion_solicitud_cita.innerHTML = information
-                        }
-                    })
-                    .catch(function(error) {
-                        console.log(error);
-                    });
-            }
-
-            var armas = document.querySelectorAll(".agendar");
-
-            for (var i = 0; i < armas.length; i++) {
-
-                var alumno = armas[i]
-
-                alumno.addEventListener('change', function() {
-
-                    if (this.checked) {
-                        estado = 1
-                    } else {
-                        estado = 0
-                    }
-
-                    informacion_solicitud_cita(this.id, estado)
-                })
-            }
-
-            var escuadron = document.getElementById("agendar_escuadron")
-
-            escuadron.addEventListener('change', function() {
-
-                axios.post('/alumnos_por_escuadron', {
-                    escuadron: escuadron.value
-                })
-                    .then(function(response) {
-
-                        var alumnos = document.getElementById("agendar_alumno")
-
-                        alumnos.innerHTML =`<option value="0"></option>`
-                        response.data.forEach(agregar_alumnos)
-
-                    })
-                    .catch(function(error) {
-                        console.log(error);
-                    });
-            })
-
-            function agregar_alumnos(item,index) {
-                document.getElementById("agendar_alumno").innerHTML+=`<option value="${item.id}">${item.nombre}</option>`
-            }
-
-        </script>
 @endsection
 

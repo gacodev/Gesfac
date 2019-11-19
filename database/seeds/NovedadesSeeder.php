@@ -15,7 +15,7 @@ class NovedadesSeeder extends Seeder
             ->insert(
                 [
                     ['novedad' => 'NINGUNA',],
-                    ['novedad' => 'EXCUSADO',],
+//                    ['novedad' => 'EXCUSADO',],
                     ['novedad' => 'SANIDAD',],
                     ['novedad' => 'SERVICIO',],
                     ['novedad' => 'IIAFA',],

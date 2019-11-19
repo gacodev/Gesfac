@@ -48,10 +48,14 @@
 
     </div>
 
-    @if(count($errors) > 0)
-        <div class="alert alert-danger col-8" role="alert">
-            Todos los campos son obligatorios
-        </div>
+    @if($errors->any())
+
+        @foreach ($errors->all() as $error)
+            <div class="alert alert-danger col-12" role="alert">
+                {{ $error }}
+            </div>
+        @endforeach
+
     @endif
 
     <div class="form-group col-8">
