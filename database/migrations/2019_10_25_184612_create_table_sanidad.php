@@ -13,7 +13,7 @@ class CreateTableSanidad extends Migration
      */
     public function up()
     {
-        Schema::create('sanidad_solicitar', function (Blueprint $table) {
+        Schema::create('sanidad', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->boolean('estado')->default(0);
             $table->unsignedBigInteger('alumno');
@@ -22,7 +22,9 @@ class CreateTableSanidad extends Migration
             $table->foreign('tipo_cita')->references('id')->on('tipo_cita');
             $table->string('descripcion');
             $table->date('fecha_solicitud');
+            $table->date('fecha_asignacion')->nullable();
             $table->string('motivo');
+            $table->boolean('asistencia')->default(0);
             $table->timestamps();
         });
     }

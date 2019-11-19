@@ -8,8 +8,6 @@
     <h2 class="title_page">ASIGNAR CITAS</h2>
 
     @include("partials.success_message")
-    @include ("partials.modals.agendar_cita")
-
 
     <div class="table-container">
 
@@ -19,6 +17,7 @@
                 <thead>
                 <tr>
                     <th>CITA</th>
+                    <th>ESCUADRON</th>
                     <th>NOMBRE</th>
                     <th>TELEFONO</th>
                     <th>FECHA SOLICITUD</th>
@@ -31,6 +30,7 @@
                 @foreach($citas as $cita)
                     <tr>
                         <td>{{$cita->cita}}</td>
+                        <td>{{$cita->escuadron}}</td>
                         <td>{{$cita->nombre}}</td>
                         <td>{{$cita->telefono}}</td>
                         <td>{{$cita->fecha_solicitud}}</td>
@@ -38,9 +38,10 @@
                         <td>{{$cita->tipo_cita}}</td>
                         <td>
                             <div class="round">
-                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal_agendar" id="total_weapons">
+                                <a href="{{route('sanidad_registro_agendar_cita', $cita->cita)}}"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal_agendar">
                                     AGENDAR
                                 </button>
+                                </a>
 
                             </div>
                         </td>

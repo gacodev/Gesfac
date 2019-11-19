@@ -13,11 +13,11 @@ class CreateSanidadIncapacidadTable extends Migration
      */
     public function up()
     {
-        Schema::create('sanidad_incapacidad', function (Blueprint $table) {
+        Schema::create('sanidad_novedad', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('asignacion');
-            $table->foreign('asignacion')->references('id')->on('sanidad_asignar');
-            $table->date('fecha_incapacidad');
+            $table->unsignedBigInteger('cita');
+            $table->foreign('cita')->references('id')->on('sanidad');
+            $table->date('fecha_novedad');
             $table->string('observaciones');
             $table->string('motivo');
             $table->string('lugar');

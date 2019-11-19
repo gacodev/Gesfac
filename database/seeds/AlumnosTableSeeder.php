@@ -13,7 +13,7 @@ class AlumnosTableSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create();
-        for ($i=1; $i <= 60; $i++) {
+        for ($i=1; $i <= 90; $i++) {
             \DB::table('alumnos')->insert(array(
                 'nombre' => $faker->name,
                 'telefono' => $faker->phoneNumber,

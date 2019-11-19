@@ -8,17 +8,19 @@
 
     @include("partials.success_message")
 
-    @include ("partials.modals.solicitar_cita")
+    {{--    @include ("partials.modals.solicitar_cita")--}}
 
 
     <div class="row table table-responsive">
-        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal_solicitar" id="total_weapons">
-            SOLICITAR
-        </button>
+        <a href="{{route("sanidad_registrar_solicitud")}}"><button type="button" class="btn btn-success" id="total_weapons">
+                SOLICITAR
+            </button>
+        </a>
         <table class="table thead-brand bordered  text-center" id="mitabla">
             <thead>
             <tr>
                 <th>CITA</th>
+                <th>ESCUADRON</th>
                 <th>NOMBRE</th>
                 <th>TELEFONO</th>
                 <th>TIPO CITA</th>
@@ -31,11 +33,12 @@
             @foreach($citas as $cita)
                 <tr>
                     <td>{{$cita->cita}}</td>
+                    <td>{{$cita->escuadron}}</td>
                     <td>{{$cita->nombre}}</td>
+                    <td>{{$cita->tipo_cita}}</td>
                     <td>{{$cita->telefono}}</td>
                     <td>{{$cita->fecha_solicitud}}</td>
-                    <td>{{$cita->descripcion}}</td>
-                    <td>{{$cita->tipo_cita}}</td>
+                    <td>{{$cita->fecha_asignacion}}</td>
                     <td>
                         <div class="round">
                             <input type="checkbox" class="atender" id="{{$cita->cita}}" {{$cita->asistencia?"checked":null}}/>

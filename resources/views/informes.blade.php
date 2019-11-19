@@ -27,18 +27,8 @@
                         <td>{{$informe->escuadron}}</td>
                         <td>{{$informe->alumno}}</td>
                         <td>{{$informe->observacion}}</td>
-                        <td>
-                            <div class="onoffswitch">
-
-                                <input type="checkbox" name="onoffswitch" class="informe onoffswitch-checkbox" id="{{$informe->incapacidad}}" {{$informe->excusado?"checked":null}} />
-
-                                <label class="onoffswitch-label" for="{{$informe->incapacidad}}">
-                                    <span class="onoffswitch-inner"></span>
-                                    <span class="onoffswitch-switch"></span>
-                                </label>
-                            </div>
-                        </td>
-                        <td>{{$informe->dias_incapacidad}}</td>
+                        <td>{{$informe->excusado?"SI":"NO"}}</td>
+                        <td>{{$informe->dias_novedad}}</td>
                         <td>{{$informe->dias_restantes}}</td>
                     </tr>
                 @endforeach

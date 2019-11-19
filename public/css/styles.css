@@ -288,7 +288,7 @@ a {
 #total_weapons{
     position: absolute;
     right: 0;
-    top:1rem;
+    top:4rem;
     z-index:10;
 }
 
