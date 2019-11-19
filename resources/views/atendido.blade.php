@@ -6,111 +6,119 @@
 
     <h2 class="title_page">REGISTRAR ATENCION DE CITAS</h2>
 
-    <form class="form-horizontal" method="post" action="/registrar_atencion_citas">
-        {{ csrf_field() }}
+    {!! Form::open(['url' => 'registrar_atencion_citas']) !!}
 
-        <div class="row">
-            <div class="form-group col-12 col-md-6">
-                <input name="cita" type="hidden" class="form-control input-md" value="{{$sanidad->cita}}">
-                <label for="cita_disabled">Cita</label>
-                <input id="cita_disabled" name="cita_disabled" type="text" class="form-control input-md" value="{{$sanidad->cita}}" disabled required>
-            </div>
+    {{ Form::hidden('cita', $sanidad->cita) }}
+    {{ Form::hidden('fecha_asignacion', $sanidad->fecha_asignacion) }}
 
-            <!-- Text input-->
-            <div class="form-group col-12 col-md-6">
-                <label for="numero_documento">Numero Documento</label>
-                <input id="numero_documento" name="numero_documento" type="text" class="form-control input-md" value="{{$sanidad->numero_documento}}" disabled required>
-            </div>
+
+    <div class="row">
+
+        <div class="form-group col-12 col-lg-6">
+            {{ Form::label("cita_disable", "Cita", ['class' => 'control-label']) }}
+            {{ Form::text("cita_disable", $sanidad->cita, array_merge(['class' => 'form-control', 'required', 'disabled'], [])) }}
         </div>
 
-        <div class="row">
-            <div class="form-group col-12 col-md-6">
-                <label for="escuadron">Escuadron</label>
-                <input id="escuadron" name="escuadron" type="text" class="form-control input-md" value="{{$sanidad->escuadron}}" disabled required>
-            </div>
-
-            <!-- Text input-->
-            <div class="form-group col-12 col-md-6">
-                <label for="alumno">Alumno</label>
-                <input id="alumno" name="alumno" type="text" class="form-control input-md" value="{{$sanidad->nombre}}" disabled required>
-            </div>
+        <div class="form-group col-12 col-lg-6">
+            {{ Form::label("numero_documento", "Número documento", ['class' => 'control-label']) }}
+            {{ Form::text("numero_documento", $sanidad->numero_documento, array_merge(['class' => 'form-control', 'required', 'disabled'], [])) }}
         </div>
 
-        <div class="row">
-            <div class="form-group col-12 col-md-6">
-                <label for="telefono">Telefono</label>
-                <input id="telefono" name="telefono" type="text" class="form-control input-md" value="{{$sanidad->telefono}}" disabled required>
-            </div>
+    </div>
 
-            <!-- Text input-->
-            <div class="form-group col-12 col-md-6">
-                <label for="correo">Correo</label>
-                <input id="correo" name="correo" type="text" class="form-control input-md" value="{{$sanidad->correo}}" disabled required>
-            </div>
+    <div class="row">
+
+        <div class="form-group col-12 col-lg-6">
+            {{ Form::label("escuadron", "Escuadron", ['class' => 'control-label']) }}
+            {{ Form::text("escuadron", $sanidad->escuadron, array_merge(['class' => 'form-control', 'required', 'disabled'], [])) }}
         </div>
 
-        <div class="row">
-            <div class="form-group col-12 col-md-6">
-                <label for="fecha_solicitud">Fecha_solicitud</label>
-                <input id="fecha_solicitud" name="fecha_solicitud" type="date" class="form-control input-md" value="{{$sanidad->fecha_solicitud}}" disabled required>
-            </div>
-
-            <!-- Text input-->
-            <div class="form-group col-12 col-md-6">
-                <label for="fecha_asiganacion">Fecha Asiganción</label>
-                <input id="fecha_asiganacion" name="fecha_asiganacion" type="date" class="form-control input-md" value="{{$sanidad->fecha_asignacion}}" disabled required>
-            </div>
+        <div class="form-group col-12 col-lg-6">
+            {{ Form::label("alumno", "Alumno", ['class' => 'control-label']) }}
+            {{ Form::text("alumno", $sanidad->nombre, array_merge(['class' => 'form-control', 'required', 'disabled'], [])) }}
         </div>
 
-        <div class="row">
+    </div>
 
-            <div class="form-group col-12 col-md-6">
-                <label for="excusado">Excusado</label>
-                <select id="excusado" name="excusado" required class="form-control">
-                    <option value="0" >Sin Excusa</option>
-                    <option value="1" >Con Excusa</option>
+    <div class="row">
 
-                </select>
-            </div>
-
-            <div class="form-group col-12 col-md-6">
-                <label for="fecha_incapacidad">Fecha final de incapacidad</label>
-                <input id="fecha_incapacidad" name="fecha_incapacidad" type="date" required min="{{$fecha_minima}}" max="{{$fecha_maxima}}" class="form-control input-md" >
-            </div>
-
+        <div class="form-group col-12 col-lg-6">
+            {{ Form::label("telefono", "Teléfono", ['class' => 'control-label']) }}
+            {{ Form::text("telefono", $sanidad->telefono, array_merge(['class' => 'form-control', 'required', 'disabled'], [])) }}
         </div>
 
-        <div class="row">
-            <div class="form-group col-12 col-md-6">
-                <label for="lugar">Lugar incapacidad</label>
-                <input id="lugar" name="lugar" type="text" required class="form-control input-md">
-            </div>
-
-            <!-- Text input-->
-            <div class="form-group col-12 col-md-6">
-                <label for="motivo">Motivo incapacidad</label>
-                <input id="motivo" name="motivo" type="text" required class="form-control input-md">
-            </div>
+        <div class="form-group col-12 col-lg-6">
+            {{ Form::label("correo", "Correo", ['class' => 'control-label']) }}
+            {{ Form::text("correo", $sanidad->correo, array_merge(['class' => 'form-control', 'required', 'disabled'], [])) }}
         </div>
 
-        <div class="row">
+    </div>
 
-            <div class="form-group col-12 col-md-6">
-                <label for="observaciones">Observaciones</label>
-                <textarea name="observaciones" id="observaciones" required class="form-control"></textarea>
-            </div>
-            <!-- Text input-->
+    <div class="row">
 
+        <div class="form-group col-12 col-lg-6">
+            {{ Form::label("fecha_solicitud", "Fecha de solicitud", ['class' => 'control-label']) }}
+            {{ Form::date("fecha_solicitud", \Carbon\Carbon::parse($sanidad->fecha_solicitud), array_merge(['class' => 'form-control', 'required', 'disabled'], [])) }}
         </div>
 
-        <div class="row">
-            <div class="form-group col-12 col-md-6">
-                <label for="singlebutton"></label>
-                <button id="singlebutton" name="singlebutton" class="btn btn-primary">Guardar</button>
-            </div>
+        <div class="form-group col-12 col-lg-6">
+            {{ Form::label("fecha_asignacion", "Fecha de asignación", ['class' => 'control-label']) }}
+            {{ Form::date("fecha_asignacion", \Carbon\Carbon::parse($sanidad->fecha_solicitud), array_merge(['class' => 'form-control', 'required', 'disabled'], [])) }}
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="form-group col-12 col-lg-6">
+            {{ Form::label("fecha_incapacidad", "Fecha de incapacidad", ['class' => 'control-label']) }}
+            {{ Form::date("fecha_incapacidad", $sanidad->fecha_incapacidad?\Carbon\Carbon::parse($sanidad->fecha_incapacidad):null, array_merge(['class' => 'form-control', 'required'], [])) }}
         </div>
 
+        <div class="form-group col-12 col-lg-6">
+            {{ Form::label("excusado", "Excusado", ['class' => 'control-label']) }}
+            {{Form::select('excusado', ["0"=>"Sin excusa","1"=>"Excusado"], $sanidad->excusado, array('class'=>'form-control', 'required', 'placeholder'=>'Seleccionar ...'))}}
+        </div>
 
-    </form>
+    </div>
+
+    <div class="row">
+
+        <div class="form-group col-12 col-lg-6">
+            {{ Form::label("lugar_incapacidad", "Lugar incapacidad", ['class' => 'control-label']) }}
+            {{ Form::text("lugar_incapacidad", $sanidad->lugar_incapacidad, array_merge(['class' => 'form-control', 'required'], [])) }}
+        </div>
+
+        <div class="form-group col-12 col-lg-6">
+            {{ Form::label("motivo_incapacidad", "Motivo incapacidad", ['class' => 'control-label']) }}
+            {{ Form::text("motivo_incapacidad", $sanidad->motivo_incapacidad, array_merge(['class' => 'form-control', 'required'], [])) }}
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="form-group col-12 col-lg-6">
+            {{ Form::label("observaciones_incapacidad", "Observaciones incapacidad", ['class' => 'control-label']) }}
+            {{ Form::text("observaciones_incapacidad", $sanidad->observaciones_incapacidad, array_merge(['class' => 'form-control', 'required'], [])) }}
+        </div>
+
+    </div>
+
+    @if($errors->any())
+
+        @foreach ($errors->all() as $error)
+            <div class="alert alert-danger col-12" role="alert">
+                {{ $error }}
+            </div>
+        @endforeach
+
+    @endif
+
+    <div class="form-group col-8">
+        {{ Form::button('Guardar', ['type' => 'submit', 'class' => 'btn btn-success btn-sm'] )  }}
+
+    </div>
+
+    {!! Form::close() !!}
 
 @endsection

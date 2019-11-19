@@ -13,9 +13,9 @@ class CreateTableSanidad extends Migration
      */
     public function up()
     {
-        Schema::create('sanidad_solicitar', function (Blueprint $table) {
+        Schema::create('sanidad', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->boolean('estado')->default(0);
+            $table->boolean('asignado')->default(0);
             $table->unsignedBigInteger('alumno');
             $table->foreign('alumno')->references('id')->on('alumnos');
             $table->unsignedBigInteger('tipo_cita');
@@ -23,6 +23,12 @@ class CreateTableSanidad extends Migration
             $table->string('descripcion');
             $table->date('fecha_solicitud');
             $table->string('motivo');
+            $table->date('fecha_asignacion')->nullable();
+            $table->boolean('asistencia')->default(0);
+            $table->date('fecha_incapacidad')->nullable();
+            $table->string('observaciones_incapacidad')->nullable();
+            $table->string('motivo_incapacidad')->nullable();
+            $table->string('lugar_incapacidad')->nullable();
             $table->timestamps();
         });
     }

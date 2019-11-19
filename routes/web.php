@@ -69,6 +69,7 @@ Route::middleware(['auth'])->group(function () {
 
 //	filtro para acceder a las rutas
 
+
     Route::get('/armas-export', 'exportcontroller@exportarmas')->name('armas-export')
     ->middleware('can:armas-export');
 
@@ -159,20 +160,26 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/informes', 'SanidadController@informes')->name('informes')
     ->middleware('can:informes');
 
-    Route::get('/sanidad', 'SanidadController@index')->name('sanidad')
-    ->middleware('can:sanidad');
+
+    Route::get('/sanidad_registrar_solicitud', 'SanidadController@sanidad_registrar_solicitud')->name('sanidad_registrar_solicitud')->middleware('can:sanidad');
+
+    Route::get('/sanidad_registro_agendar_cita/{cita?}', 'SanidadController@sanidad_registro_agendar_cita')->name('sanidad_registro_agendar_cita')->middleware('can:sanidad');
+    Route::post('/post_registro_agendar_cita', 'SanidadController@post_sanidad_registro_agendar_cita')->name('post_sanidad_registro_agendar_cita')->middleware('can:sanidad');
+
 
     Route::get('/agendar', 'SanidadController@agendarCita')->name('agendarCita')
     ->middleware('can:agendarCita');
+
+    Route::get('/sanidad', 'SanidadController@index')->name('sanidad')->middleware('can:sanidad');
+
+    Route::post('/registrar_cita', 'SanidadController@create')->name('crear_cita')
+        ->middleware('can:crear_cita');
 
     Route::post('/informacion_solicitud_cita', 'SanidadController@informacionSolicitudCita')->name('solicitar_cita')
         ->middleware('can:solicitar_cita');
 
     Route::post('/asignar_cita', 'SanidadController@asignar_cita')->name('asignarcita')
         ->middleware('can:asignarcita');
-
-    Route::post('/agendar_cita', 'SanidadController@create')->name('crear_cita')
-        ->middleware('can:crear_cita');
 
     Route::get('atendido/{cita?}','SanidadController@atendido')->name('atendido')
         ->middleware('can:atendido');
