@@ -63,7 +63,7 @@
 
         <div class="form-group col-12 col-lg-6">
             {{ Form::label("fecha_asignacion", "Fecha de asignación", ['class' => 'control-label']) }}
-            {{ Form::date("fecha_asignacion", \Carbon\Carbon::parse($sanidad->fecha_solicitud), array_merge(['class' => 'form-control', 'required', 'disabled'], [])) }}
+            {{ Form::date("fecha_asignacion", \Carbon\Carbon::parse($sanidad->fecha_asignacion), array_merge(['class' => 'form-control', 'required', 'disabled'], [])) }}
         </div>
     </div>
 
