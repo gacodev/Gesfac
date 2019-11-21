@@ -98,13 +98,19 @@
             <td colspan="2"><b></b></td>
         </tr>
         <tr>
-            <td><b>FUERZA EFECTIVA</b></td>
+            <td><b></b></td>
             <td><b>GALIL</b></td>
             <td><b>PROVEEDORES</b></td>
             <td><b>CARTUCHOS</b></td>
         </tr>
 
+        <tr>
+            <td><b>FUERZA EFECTIVA</b></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
 
+        </tr>
 
         <tr>
             <td><b>COMISION DE ESTUDIOS</b></td>
@@ -156,12 +162,19 @@
             <td colspan="2"><b></b></td>
         </tr>
         <tr class="text-center">
-            <td><b>FUERZA EFECTIVA</b></td>
+            <td><b></b></td>
             <td><b>GALIL</b></td>
             <td><b>PROVEEDORES</b></td>
             <td><b>CARTUCHOS</b></td>
         </tr>
 
+        <tr>
+            <td><b>FUERZA EFECTIVA</b></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+
+        </tr>
         <tr>
             <td><b>COMISION DE ESTUDIOS</b></td>
             <td>&nbsp;</td>

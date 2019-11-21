@@ -50,6 +50,8 @@
             </div>
         </div>
 
+
+
         <!-- Text input-->
 
         <!-- Select Basic -->
@@ -71,90 +73,6 @@
 
 
 
-
-
-
-
-
-        <div class="row">
-
-            <hr><h1 class="text-center col-sm-12">MADRE</h1></hr>
-            <div class="form-group col-12 col-md-6">
-                <label class="control-label" for="direccion">Documento</label>
-                <select id="direccion" name="direccion" type="text" placeholder="" class="form-control" required="">
-
-                    <option value="">1</option>
-                </select>
-            </div>
-            <div class="form-group col-12 col-md-6">
-                <label class="control-label" for="direccion">Madre</label>
-                <input id="direccion" name="direccion" type="text" placeholder="" class="form-control input-md" required="">
-            </div>
-
-            <div class="form-group col-12 col-md-6">
-                <label class="control-label" for="correo">telefono</label>
-                <input id="correo" name="correo" type="email" placeholder="" class="form-control input-md" required="">
-            </div>
-
-
-            <div class="form-group col-12 col-md-6">
-                <label class="control-label" for="direccion">ocupacion</label>
-                <input id="direccion" name="direccion" type="text" placeholder="" class="form-control input-md" required="">
-            </div>
-
-            <div class="form-group col-12 col-md-6">
-                <label class="control-label" for="direccion">Direccion madre</label>
-                <input id="direccion" name="direccion" type="text" placeholder="" class="form-control input-md" required="">
-            </div>
-
-            <div class="form-group col-12 col-md-6">
-                <label class="control-label" for="correo">Correo</label>
-                <input id="correo" name="correo" type="email" placeholder="" class="form-control input-md" required="">
-            </div>
-
-
-        </div>
-
-
-
-        <div class="row">
-
-            <hr><h1 class="text-center col-sm-12">PADRE</h1></hr>
-            <div class="form-group col-12 col-md-6">
-                <label class="control-label" for="direccion">Documento</label>
-                <select id="direccion" name="direccion" type="text" placeholder="" class="form-control" required="">
-
-                    <option value="">1</option>
-                </select>
-            </div>
-            <div class="form-group col-12 col-md-6">
-                <label class="control-label" for="direccion">Madre</label>
-                <input id="direccion" name="direccion" type="text" placeholder="" class="form-control input-md" required="">
-            </div>
-
-            <div class="form-group col-12 col-md-6">
-                <label class="control-label" for="correo">telefono</label>
-                <input id="correo" name="correo" type="email" placeholder="" class="form-control input-md" required="">
-            </div>
-
-
-            <div class="form-group col-12 col-md-6">
-                <label class="control-label" for="direccion">ocupacion</label>
-                <input id="direccion" name="direccion" type="text" placeholder="" class="form-control input-md" required="">
-            </div>
-
-            <div class="form-group col-12 col-md-6">
-                <label class="control-label" for="direccion">Direccion madre</label>
-                <input id="direccion" name="direccion" type="text" placeholder="" class="form-control input-md" required="">
-            </div>
-
-            <div class="form-group col-12 col-md-6">
-                <label class="control-label" for="correo">Correo</label>
-                <input id="correo" name="correo" type="email" placeholder="" class="form-control input-md" required="">
-            </div>
-
-
-        </div>
 
 
 

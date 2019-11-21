@@ -7,11 +7,19 @@
 
 @section('page_content')
 
-    <h2 class="title_page">ASIGNAR CITAS</h2>
+    <h2 class="title_page">ARMAS</h2>
 
     <div class="row table table-responsive">
 
-        <!-- trigger modal -->
+<div class="form-group row">
+    <div class="form-group col-sm-6">
+        <form action="">
+        <label for="send">FORMANDO</label>
+        <input type="text" class="form-control" id="send" >
+    </div>
+    <button class="btn btn-primary">REPORTAR</button>
+    </form>
+</div>
         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" id="total_weapons">
             CONTAR ARMAMENTO
         </button>
@@ -21,7 +29,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel"><b>RESULTADO CONTEO ARMAMENTO</b></h5>
+                        <h5 class="modal-title" id="exampleModalLabel"><b>CONTEO ARMAMENTO EN ARMERILLO</b></h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -43,12 +51,6 @@
                             <div class="card-header">GALIL</div>
                             <div id="galil" class="card-body">Contenido</div>
                         </div>
-
-                        <div class="card text-white bg-dark mb-3">
-                            <div class="card-header">EN MANO</div>
-                            <div id="en_mano" class="card-body"><input type="text"><button class="btn btn-danger">REPORTAR</button></div>
-                        </div>
-
                         <div class="card text-white bg-dark mb-3">
                             <div class="card-header">TOTAL ARMAMENTO EN ARMERILLO</div>
                             <div id="total_count_weapons" class="card-body">Contenido</div>

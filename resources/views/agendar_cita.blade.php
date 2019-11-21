@@ -5,7 +5,7 @@
 
 @section('page_content')
 
-    <h2 class="title_page">ASIGNAR CITAS</h2>
+    <h2 class="title_page">AGENDAR CITAS</h2>
 
     @include("partials.success_message")
 

@@ -5,7 +5,7 @@
 @endsection
 @section('page_content')
 
-    <h2 class="title_page"><b>INFORMES DE SANIDAD</b></h2>
+    <h2 class="title_page"><b>INFORME DE EXCUSADOS</b></h2>
 
     <div class="table-container">
 
@@ -16,8 +16,7 @@
                     <th>ESCUADRON</th>
                     <th>ALUMNO</th>
                     <th>DIAGNOSTICO/OBSERVACIONES</th>
-                    <th>EXCUSADO</th>
-                    <th>CANTIDAD DE DIAS</th>
+                    <th>DIAS EXCUSADO</th>
                     <th>DIAS RESTANTES</th>
                 </tr>
                 </thead>
@@ -27,7 +26,6 @@
                         <td>{{$informe->escuadron}}</td>
                         <td>{{$informe->alumno}}</td>
                         <td>{{$informe->observacion}}</td>
-                        <td>{{$informe->excusado?"SI":"NO"}}</td>
                         <td>{{$informe->dias_novedad}}</td>
                         <td>{{$informe->dias_restantes}}</td>
                     </tr>

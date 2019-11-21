@@ -4,7 +4,7 @@
 @endsection
 @section('page_content')
 
-    <h2 class="title_page">ATENCION DE CITAS</h2>
+    <h1 class="title_page">SOLICITUD Y REGISTRO ATENCION DE CITAS</h1>
 
     @include("partials.success_message")
 
