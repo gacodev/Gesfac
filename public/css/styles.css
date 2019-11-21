@@ -432,23 +432,30 @@ a {
     /*min-width: 75vw;*/
 }
 
+.table-container{
+    position: relative;
+    overflow-x: auto;
+    max-width: 100%;
+    min-width: 100%;
+    font-size: .8rem;
+}
+
 @media (min-width: 768px) {
     .col-modify{
-        max-width: 65vw;
+        /*max-width: 65vw;*/
+        max-width: 65%;
     }
 }
 
 @media (min-width: 1100px) {
     .col-modify{
-        max-width: 75vw;
-        overflow-x: auto;
+        /*max-width: 75vw;*/
+        max-width: 75%;
+        /*overflow-x: auto;*/
     }
 }
 
-.table-container{
-    position: relative;
-    max-width: 100%;
-}
+
 
 /* estilos del layout */
 .card-footer-custom{

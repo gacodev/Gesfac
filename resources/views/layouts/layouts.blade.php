@@ -44,7 +44,16 @@
     $(document).ready(function(id) {
 
         if(document.getElementById("mitabla")!=null){
-            $('#mitabla').DataTable();
+
+            $('#mitabla').DataTable({
+                "columnDefs": [{
+                    "targets": '_all',
+                    "createdCell": function (td, cellData, rowData, row, col) {
+                        $(td).css('padding', '2px')
+                    }
+                }]
+            });
+
             var sidebar= document.getElementById("mitabla_filter").querySelector("label")
             sidebar.appendChild(document.createElement('i'))
             sidebar.querySelector("i").classList.add("fas");
