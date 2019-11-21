@@ -7,7 +7,14 @@
             <small>SANIDAD</small>
         </li>
         <!-- /END Separator -->
-
+        @can ('/solicitar')
+            <a href="{{ url('/solicitar_cita') }}" class="bg-dark list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-start align-items-center">
+                    <span class="fas fa-ambulance mr-3"></span>
+                    <small><span class="menu-collapsed">SOLICITAR</span></small>
+                </div>
+            </a>
+        @endcan
         @can ('/agendar')
         <a href="{{ url('/agendar') }}" class="bg-dark list-group-item list-group-item-action">
             <div class="d-flex w-100 justify-content-start align-items-center">
@@ -20,7 +27,7 @@
         <a href="{{ url('/sanidad') }}" class="bg-dark list-group-item list-group-item-action">
             <div class="d-flex w-100 justify-content-start align-items-center">
                 <span class="fas fa-ambulance mr-3"></span>
-                <small><span class="menu-collapsed">SOLICITAR</span></small>
+                <small><span class="menu-collapsed">ASISTENCIA</span></small>
             </div>
         </a>
         @endcan

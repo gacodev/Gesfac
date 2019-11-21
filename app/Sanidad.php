@@ -7,4 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Sanidad extends Model
 {
     protected $table = "sanidad";
+
+    public function Alumno()
+    {
+        return $this->hasOne('App\Alumno');
+    }
 }

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\alumno;
+use App\Alumno;
 use App\AlumnoArmerillo;
 use App\AlumnoVisitantes;
 use App\novedad;
@@ -51,7 +51,7 @@ class AlumnoController extends Controller
 
     public function show_per_squadron()
     {
-        $alumnos = alumno::where('escuadron', '=', request('escuadron'))
+        $alumnos = Alumno::where('escuadron', '=', request('escuadron'))
             ->orderBy('nombre', 'asc')
             ->get();
 
@@ -162,7 +162,7 @@ class AlumnoController extends Controller
     public function arm(alumno $alumno){
         $visitante = visitante::get();
         $armerillo = armerillo::all();
-        $alumno =alumno::all();
+        $alumno =Alumno::all();
         return view('registro_arm')
             ->with('armerillo',$armerillo)
             ->with('alumno' ,$alumno)
@@ -171,7 +171,7 @@ class AlumnoController extends Controller
 
     public  function asignar_arm(visitante $visitante){
 
-        $alumno = alumno::leftJoin('alumno_armerillo', 'alumno_armerillo.alumno', '=', 'alumnos.id')
+        $alumno = Alumno::leftJoin('alumno_armerillo', 'alumno_armerillo.alumno', '=', 'alumnos.id')
             ->leftJoin('armerillo', 'armerillo.id', '=', 'alumno_armerillo.fusil')
             ->leftJoin('tipo_fusil', 'tipo_fusil.id', '=', 'armerillo.tipo_fusil')
             ->leftJoin('escuadrones', 'escuadrones.id', '=', 'alumnos.escuadron')
@@ -191,7 +191,7 @@ class AlumnoController extends Controller
 
         $novedades = novedad::pluck('novedad', 'id');
 
-        $listar = alumno::leftJoin('escuadrones', 'escuadrones.id', '=', 'alumnos.escuadron')
+        $listar = Alumno::leftJoin('escuadrones', 'escuadrones.id', '=', 'alumnos.escuadron')
             ->leftJoin('novedades', 'novedades.id', '=', 'alumnos.novedad')
             ->get([
                 "alumnos.id AS id",
@@ -210,7 +210,7 @@ class AlumnoController extends Controller
         $id = \request("id");
         $novedad = \request("value");
 
-        $novedad = alumno::where("id" , "=", $id)
+        $novedad = Alumno::where("id" , "=", $id)
             ->update([
                 "novedad" => $novedad
             ]);
@@ -231,7 +231,7 @@ class AlumnoController extends Controller
         foreach ($escuadrones as $escuadron){
             $novedades_escuadrones[$escuadron] = clone $novedades;
 
-            $filtrar_novedades = alumno::leftJoin('escuadrones', 'escuadrones.id', '=', 'alumnos.escuadron')
+            $filtrar_novedades = Alumno::leftJoin('escuadrones', 'escuadrones.id', '=', 'alumnos.escuadron')
                 ->leftJoin('novedades', 'novedades.id', '=', 'alumnos.novedad')
                 ->where('escuadrones.escuadron', '=', $escuadron);
 
@@ -250,7 +250,7 @@ class AlumnoController extends Controller
         $id = \request("id");
         $excusa = \request("value");
 
-        $excusa = alumno::where("id" , "=", $id)
+        $excusa = Alumno::where("id" , "=", $id)
             ->update([
                 "excusado" => $excusa
             ]);

@@ -20,10 +20,7 @@ class SanidadController extends Controller
         $sanidad = Sanidad::join('alumnos', 'sanidad.alumno', '=', 'alumnos.id')
             ->leftJoin('escuadrones', 'escuadrones.id', '=', 'alumnos.escuadron')
             ->leftJoin('tipo_cita', 'sanidad.tipo_cita', '=', 'tipo_cita.id')
-//            ->where("sanidad.asistencia", "=", 0)
             ->where("sanidad.asignado", "=", 1)
-            ->whereDate("sanidad.fecha_asignacion", "=", $date_now)
-//            ->whereNotNull('fecha_asignacion')
             ->get([
                 'alumnos.*',
                 'sanidad.id AS cita',
@@ -34,19 +31,29 @@ class SanidadController extends Controller
                 'tipo_cita.tipo_cita AS tipo_cita'
             ]);
 
-        return view('sanidad')->with("citas", $sanidad)
+        return view('sanidad.sanidad')->with("citas", $sanidad)
             ->with("success", request("success"));
     }
 
     public function sanidad_registrar_solicitud()
     {
-
-        $escuadrones = Escuadron::pluck('escuadron', 'id');
         $tipo_citas = TipoCita::pluck('tipo_cita', 'id');
 
-        return view('sanidad.registrar_solicitud')
-            ->with("escuadrones", $escuadrones)
+        $cita = Sanidad::join('alumnos', 'sanidad.alumno', '=', 'alumnos.id')
+            ->leftJoin('escuadrones', 'escuadrones.id', '=', 'alumnos.escuadron')
+            ->where("sanidad.id", "=", \request("cita"))
+            ->get(
+                [
+                    "sanidad.id AS cita",
+                    "alumnos.nombre AS alumno",
+                    "escuadrones.escuadron AS escuadron",
+                ]
+            )
+            ->first();
+
+        return view('sanidad.formularios.registrar_solicitud')
             ->with("tipo_cita", $tipo_citas)
+            ->with("cita", $cita)
             ->with("fecha_solicitud", Carbon::now()->format('Y-m-d'));
     }
 
@@ -70,7 +77,7 @@ class SanidadController extends Controller
             )
             ->first();
 
-        return view('sanidad.registro_agendar_cita')
+        return view('sanidad.formularios.registro_agendar_cita')
             ->with("cita", $cita)
             ->with("min_date", $min_date)
             ->with("max_date", $max_date);
@@ -103,6 +110,7 @@ class SanidadController extends Controller
         $sanidad = Sanidad::join('alumnos', 'sanidad.alumno', '=', 'alumnos.id')
             ->leftJoin('tipo_cita', 'sanidad.tipo_cita', '=', 'tipo_cita.id')
             ->leftJoin('escuadrones', 'escuadrones.id', '=', 'alumnos.escuadron')
+            ->where('sanidad.estado','=', 1)
             ->where('sanidad.asignado','=', 0)
             ->get(['sanidad.*',
                 'alumnos.*',
@@ -111,7 +119,25 @@ class SanidadController extends Controller
                 "escuadrones.escuadron AS escuadron",
             ]);
 
-        return view('agendar_cita')->with("citas", $sanidad)
+        return view('sanidad.agendar_cita')->with("citas", $sanidad)
+            ->with("success", request("success"));
+    }
+
+    public function solicitar_cita()
+    {
+
+        $sanidad = Sanidad::join('alumnos', 'sanidad.alumno', '=', 'alumnos.id')
+            ->leftJoin('tipo_cita', 'sanidad.tipo_cita', '=', 'tipo_cita.id')
+            ->leftJoin('escuadrones', 'escuadrones.id', '=', 'alumnos.escuadron')
+            ->where('sanidad.estado','=', false)
+            ->get([
+                'alumnos.*',
+                'sanidad.id AS cita',
+                'tipo_cita.tipo_cita AS tipo_cita',
+                "escuadrones.escuadron AS escuadron",
+            ]);
+
+        return view('sanidad.solicitar_cita')->with("citas", $sanidad)
             ->with("success", request("success"));
     }
 
@@ -153,7 +179,7 @@ class SanidadController extends Controller
             }
         }
 
-        return view('informes')->with("informes",$incapacidad)
+        return view('sanidad.informes')->with("informes",$incapacidad)
             ->with("fecha", Carbon::now()->format('Y-m-d'));
 
     }
@@ -202,30 +228,23 @@ class SanidadController extends Controller
     {
 
         request()->validate([
-            'alumno' => 'required',
+            'cita' => 'required',
             'tipo_cita' => 'required',
             'motivo' => 'required',
         ]);
 
-
-        $alumno = request("alumno");
-        $tipo_cita = request("tipo_cita");
-        $motivo = request("motivo")?request("motivo"):"";
-        $descripcion = request("descripcion") ? request("descripcion") : "";
-
-
-        $sanidad_solicitar = new Sanidad;
-
-        $sanidad_solicitar->alumno = $alumno;
-        $sanidad_solicitar->tipo_cita = $tipo_cita;
-        $sanidad_solicitar->descripcion = $descripcion;
-        $sanidad_solicitar->motivo = $motivo;
-        $sanidad_solicitar->fecha_solicitud = Carbon::now();
-
-        $sanidad_solicitar->save();
+        $cita = Sanidad::where("sanidad.id", "=", \request("cita"))
+            ->update(
+                [
+                    "estado"=>1,
+                    "fecha_solicitud"=>Carbon::now(),
+                    "motivo"=>$request["motivo"],
+                    "descripcion"=>$request["descripcion"]?$request["descripcion"]:"",
+                    "tipo_cita"=>$request["tipo_cita"],
+                ]
+            );
 
         return redirect()->action('SanidadController@agendarCita', ['success' => true]);
-
 
     }
 
@@ -253,7 +272,7 @@ class SanidadController extends Controller
         $min_date = Carbon::parse($sanidad->fecha_asignacion)->format("Y-m-d");
         $max_date = Carbon::parse($sanidad->fecha_asignacion)->addDay(30)->format("Y-m-d");
 
-        return view("atendido")->with("sanidad", $sanidad)
+        return view("sanidad.formularios.atendido")->with("sanidad", $sanidad)
             ->with("fecha_minima",$min_date)
             ->with("fecha_maxima",$max_date);
     }

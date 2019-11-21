@@ -8,17 +8,20 @@
 
     {!! Form::open(['url' => 'registrar_cita']) !!}
 
+    {{ Form::hidden('cita', $cita->cita) }}
 
     <div class="row">
+
         <div class="form-group col-12 col-lg-6">
             {{ Form::label("escuadron", "Escuadron", ['class' => 'control-label']) }}
-            {{Form::select('escuadron', $escuadrones, null, array('class'=>'form-control', 'required', 'placeholder'=>'Seleccionar ...'))}}
+            {{ Form::text("escuadron", $cita->escuadron, array_merge(['class' => 'form-control', 'required', 'disabled'], [])) }}
         </div>
 
         <div class="form-group col-12 col-lg-6">
             {{ Form::label("alumno", "Alumno", ['class' => 'control-label']) }}
-            {{Form::select('alumno', [], null, array('class'=>'form-control', 'required', 'placeholder'=>'Seleccionar ...'))}}
+            {{ Form::text("alumno", $cita->alumno, array_merge(['class' => 'form-control', 'required', 'disabled'], [])) }}
         </div>
+
     </div>
 
     <div class="row">
@@ -48,10 +51,14 @@
         </div>
     </div>
 
-    @if(count($errors) > 0)
-        <div class="alert alert-danger col-8" role="alert">
-            Todos los campos son obligatorios
-        </div>
+    @if($errors->any())
+
+        @foreach ($errors->all() as $error)
+            <div class="alert alert-danger col-12" role="alert">
+                {{ $error }}
+            </div>
+        @endforeach
+
     @endif
 
     <div class="form-group col-8">
