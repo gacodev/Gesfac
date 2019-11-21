@@ -7,6 +7,7 @@
 <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
 <meta name="csrf-token" content="{{ csrf_token() }}">
 {{--<link href="{{ asset('css/app.css') }}" rel="stylesheet">--}}
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
 
 <head>
 
