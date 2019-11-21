@@ -24,6 +24,7 @@
                     <th>DESCRIPCION</th>
                     <th>TIPO CITA</th>
                     <th>AGENDAR</th>
+                    <th>ELIMINAR</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -40,6 +41,13 @@
                             <a href="{{route('sanidad_registro_agendar_cita', $cita->cita)}}">
                                 <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#modal_agendar">
                                     <i class="fas fa-plus"></i>
+                                </button>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="{{route('sanidad_registro_agendar_cita', $cita->cita)}}">
+                                <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#modal_agendar">
+                                    <i class="fas fa-minus"></i>
                                 </button>
                             </a>
                         </td>
