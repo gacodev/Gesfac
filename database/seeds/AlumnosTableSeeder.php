@@ -23,7 +23,7 @@ class AlumnosTableSeeder extends Seeder
                 'escuadron' => $faker-> numberBetween(1,4),
                 'tipo_documento' => $faker-> numberBetween(1,3),
                 'excusado' => $i>30?$faker-> numberBetween(0,1):1,
-                'editable' => $i>30?$faker-> numberBetween(0,1):1,
+                'editable' => $i<=20?0:1,
                 'novedad' => $faker-> numberBetween(1,15)
             ));
         }

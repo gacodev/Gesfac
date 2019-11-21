@@ -281,7 +281,7 @@ class SanidadController extends Controller
     {
         $min_date = Carbon::now()->subDay(1);
         $max_date = Carbon::now()->addDay(30);
-        $max_date_2 = Carbon::now()->addDay(1);
+//        $max_date_2 = Carbon::now()->addDay(1);
 
         request()->validate([
             'fecha_incapacidad' => 'required|date|after:'.$min_date.'|before:'.$max_date,
@@ -290,7 +290,7 @@ class SanidadController extends Controller
             'observaciones_incapacidad' => 'required',
             'excusado' => 'required',
             'cita' => 'required',
-            'fecha_asignacion' => 'required|date|after:'.$min_date.'|before:'.$max_date_2,
+//            'fecha_asignacion' => 'required|date|after:'.$min_date.'|before:'.$max_date_2,
         ]);
 
         $date_now = Carbon::now();
