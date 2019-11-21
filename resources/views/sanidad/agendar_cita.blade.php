@@ -16,20 +16,20 @@
             <table class="table thead-brand bordered  text-center" id="mitabla">
                 <thead>
                 <tr>
-                    <th>CITA</th>
+{{--                    <th>CITA</th>--}}
                     <th>ESCUADRON</th>
                     <th>NOMBRE</th>
                     <th>TELEFONO</th>
                     <th>FECHA SOLICITUD</th>
                     <th>DESCRIPCION</th>
                     <th>TIPO CITA</th>
-                    <th>ASIGNAR</th>
+                    <th>AGENDAR</th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach($citas as $cita)
                     <tr>
-                        <td>{{$cita->cita}}</td>
+{{--                        <td>{{$cita->cita}}</td>--}}
                         <td>{{$cita->escuadron}}</td>
                         <td>{{$cita->nombre}}</td>
                         <td>{{$cita->telefono}}</td>
@@ -38,8 +38,8 @@
                         <td>{{$cita->tipo_cita}}</td>
                         <td>
                             <a href="{{route('sanidad_registro_agendar_cita', $cita->cita)}}">
-                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal_agendar">
-                                    AGENDAR
+                                <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#modal_agendar">
+                                    <i class="fas fa-plus"></i>
                                 </button>
                             </a>
                         </td>

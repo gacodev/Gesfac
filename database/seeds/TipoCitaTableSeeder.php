@@ -15,6 +15,9 @@ class TipoCitaTableSeeder extends Seeder
             ->insert(
                 [
                     [
+                        'tipo_cita' => 'NO APLICA',
+                    ],
+                    [
                         'tipo_cita' => 'MEDICINA GENERAL',
                     ],
                     [

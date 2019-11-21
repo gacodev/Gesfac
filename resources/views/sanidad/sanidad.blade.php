@@ -12,14 +12,10 @@
 
 
     <div class="table-container">
-        <a href="{{route("sanidad_registrar_solicitud")}}"><button type="button" class="btn btn-success" id="total_weapons">
-                SOLICITAR
-            </button>
-        </a>
         <table class="table thead-brand bordered  text-center" id="mitabla">
             <thead>
             <tr>
-                <th>CITA</th>
+{{--                <th>CITA</th>--}}
                 <th>ESCUADRON</th>
                 <th>NOMBRE</th>
                 <th>TIPO CITA</th>
@@ -32,7 +28,7 @@
             <tbody>
             @foreach($citas as $cita)
                 <tr>
-                    <td>{{$cita->cita}}</td>
+{{--                    <td>{{$cita->cita}}</td>--}}
                     <td>{{$cita->escuadron}}</td>
                     <td>{{$cita->nombre}}</td>
                     <td>{{$cita->tipo_cita}}</td>
