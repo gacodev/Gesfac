@@ -86,7 +86,6 @@ class AlumnoController extends Controller
         $alumno->tipo_documento = request("tipo_documento");
         $alumno->numero_documento = request("numero_documento");
         $alumno->escuadron = request("escuadron");
-        $alumno->escuadron = request("escuadron");
 
         $alumno->save();
         if ($alumno) {

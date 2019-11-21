@@ -78,7 +78,7 @@
         @if(isset($success)&& !$success)
             <div class="form-group col-12 col-md-12">
                 <div class="alert alert-danger" role="alert">
-                    Se registro el visitante satisfactoriamente
+                  no   Se registro el visitante satisfactoriamente
                 </div>
             </div>
         @endif

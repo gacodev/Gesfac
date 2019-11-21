@@ -4,7 +4,6 @@
     <title>ARMAMENTO</title>
 @endsection
 
-
 @section('page_content')
 
     <h2 class="title_page">ARMAS</h2>
@@ -13,9 +12,9 @@
 
 <div class="form-group row">
     <div class="form-group col-sm-6">
-        <form action="">
+        <form action="{{route('armas')}}>
         <label for="send">FORMANDO</label>
-        <input type="text" class="form-control" id="send" >
+        <input type="text" class="form-control" id="send" required >
     </div>
     <button class="btn btn-primary">REPORTAR</button>
     </form>

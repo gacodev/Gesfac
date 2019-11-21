@@ -106,7 +106,7 @@
 
         <tr>
             <td><b>FUERZA EFECTIVA</b></td>
-            <td>&nbsp;</td>
+            <td class="text-center"><b>{{$data ?? ''}}</b></td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
 

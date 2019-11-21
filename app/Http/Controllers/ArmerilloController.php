@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\AlumnoArmerillo;
 use App\armerillo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 class ArmerilloController extends Controller
 {
@@ -17,5 +17,11 @@ class ArmerilloController extends Controller
 
         return $armerillo;
     }
+
+    public function reportar(Request $request)
+    {
+        return view('welcome');
+    }
+
 
 }
