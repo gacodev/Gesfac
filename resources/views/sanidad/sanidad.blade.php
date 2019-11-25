@@ -53,7 +53,7 @@
                             @endif
                         </td>
                         <td>
-                            <a href="{{route('atendido', $cita->cita)}}">
+                            <a href="{{route('limpiar_cita', $cita->cita)}}">
                                 <button type="button" class="btn btn-outline-danger">
                                     <i class="fas fa-minus"></i>
                                 </button>

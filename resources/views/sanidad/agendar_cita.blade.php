@@ -45,7 +45,7 @@
                             </a>
                         </td>
                         <td>
-                            <a href="{{route('sanidad_registro_agendar_cita', $cita->cita)}}">
+                            <a href="{{route('limpiar_cita', $cita->cita)}}">
                                 <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#modal_agendar">
                                     <i class="fas fa-minus"></i>
                                 </button>
