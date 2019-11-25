@@ -6,6 +6,7 @@ use App\Alumno;
 use App\AlumnoArmerillo;
 use App\AlumnoVisitantes;
 use App\novedad;
+use App\Sanidad;
 use App\visitante;
 use App\armerillo;
 use App\TipoDocumento;
@@ -64,8 +65,8 @@ class AlumnoController extends Controller
     }
     public function registrar_alumno()
     {
-        $tipo_documentos = TipoDocumento::get();
-        $escudrones = Escuadron::get();
+        $tipo_documentos = TipoDocumento::pluck('tipo', 'id');
+        $escudrones = Escuadron::pluck('escuadron', 'id');
 
 //        dd(request());
 
@@ -77,16 +78,41 @@ class AlumnoController extends Controller
 
     public function crear_alumno()
     {
-        $alumno = new alumno;
 
-        $alumno->nombre = request("nombre");
-        $alumno->telefono = request("telefono");
-        $alumno->direccion = request("direccion");
-        $alumno->correo = request("correo");
-        $alumno->tipo_documento = request("tipo_documento");
-        $alumno->numero_documento = request("numero_documento");
-        $alumno->escuadron = request("escuadron");
-        $alumno->save();
+        request()->validate([
+            'nombre' => 'required',
+            'telefono' => 'required',
+            'direccion' => 'required',
+            'correo' => 'required|email',
+            'tipo_documento' => 'required',
+            'numero_documento' => 'required|unique:alumnos',
+            'escuadron' => 'required',
+        ]);
+
+        $alumno = NULL;
+
+        DB::beginTransaction();
+
+        try {
+            $alumno = Alumno::create([
+                "nombre" => request("nombre"),
+                "telefono" => request("telefono"),
+                "direccion" => request("direccion"),
+                "correo" => request("correo"),
+                "tipo_documento" => request("tipo_documento"),
+                "numero_documento" => request("numero_documento"),
+                "escuadron" => request("escuadron"),
+            ]);
+
+            $sanidad = Sanidad::create([
+                "alumno" => $alumno ->id
+            ]);
+
+            DB::commit();
+        } catch (\Exception $e) {
+            DB::rollback();
+        }
+
         if ($alumno) {
             return redirect()->action('AlumnoController@registrar_alumno', ['success' => true]);
         }
