@@ -7,192 +7,290 @@
 @section('page_content')
     <h2 class="title_page">REGISTRAR ALUMNO</h2>
 
-    <form class="form-horizontal" method="post" action="/registrar_alumno">
-        {{ csrf_field() }}
+    {!! Form::open(['url' => 'registrar_alumno']) !!}
 
-        <div class="row">
-            <div class="form-group col-12 col-md-6">
-                <label class="control-label" for="tipo_documento">Documento</label>
-                <select id="tipo_documento" name="tipo_documento" class="form-control">
-                    @foreach($tipo_documentos as $tipo_documento)
-                        <option value="{{$tipo_documento->id}}">{{$tipo_documento->tipo}}</option>
-                    @endforeach
-                </select>
-            </div>
 
-            <div class="form-group col-12 col-md-6">
-                <label class="control-label" for="numero_documento">Numero</label>
-                <input id="numero_documento" name="numero_documento" type="text" placeholder="" class="form-control input-md" required="">
-            </div>
+    <div class="row">
+
+        <div class="form-group col-12 col-lg-6">
+            {{ Form::label("tipo_documento", "Tipo documento", ['class' => 'control-label']) }}
+            {{Form::select('tipo_documento', $tipo_documentos, null, array('class'=>'form-control', 'required', 'placeholder'=>'Seleccionar ...'))}}
         </div>
 
-        <div class="row">
-            <div class="form-group col-12 col-md-6">
-                <label class="control-label" for="nombre">Nombre</label>
-                <input id="nombre" name="nombre" type="text" placeholder="" class="form-control input-md" required="">
-            </div>
-
-            <div class="form-group col-12 col-md-6">
-                <label class="control-label" for="telefono">Telefono</label>
-                <input id="telefono" name="telefono" type="text" placeholder="" class="form-control input-md" required="">
-            </div>
+        <div class="form-group col-12 col-lg-6">
+            {{ Form::label("numero_documento", "Número", ['class' => 'control-label']) }}
+            {{ Form::text("numero_documento", null, array_merge(['class' => 'form-control', 'required',], [])) }}
         </div>
 
-        <div class="row">
-            <div class="form-group col-12 col-md-6">
-                <label class="control-label" for="direccion">Direccion</label>
-                <input id="direccion" name="direccion" type="text" placeholder="" class="form-control input-md" required="">
-            </div>
+    </div>
 
-            <div class="form-group col-12 col-md-6">
-                <label class="control-label" for="correo">Correo</label>
-                <input id="correo" name="correo" type="email" placeholder="" class="form-control input-md" required="">
-            </div>
+    <div class="row">
+
+        <div class="form-group col-12 col-lg-6">
+            {{ Form::label("nombre", "Nombre", ['class' => 'control-label']) }}
+            {{ Form::text("nombre", null, array_merge(['class' => 'form-control', 'required'], [])) }}
         </div>
 
-        <!-- Text input-->
+        <div class="form-group col-12 col-lg-6">
+            {{ Form::label("telefono", "Teléfono", ['class' => 'control-label']) }}
+            {{ Form::text("telefono", null, array_merge(['class' => 'form-control', 'required'], [])) }}
+        </div>
+    </div>
 
-        <!-- Select Basic -->
-        <div class="form-group col-12 col-md-6">
-            <label class="control-label" for="escuadron">Escuadron</label>
-            <select id="escuadron" name="escuadron" class="form-control">
-                @foreach($escuadrones as $escuadron)
-                    <option value="{{$escuadron->id}}">{{$escuadron->escuadron}}</option>
-                @endforeach
-            </select>
+    <div class="row">
+
+        <div class="form-group col-12 col-lg-6">
+            {{ Form::label("direccion", "Dirección", ['class' => 'control-label']) }}
+            {{ Form::text("direccion", null, array_merge(['class' => 'form-control', 'required'], [])) }}
         </div>
 
+        <div class="form-group col-12 col-lg-6">
+            {{ Form::label("correo", "Correo", ['class' => 'control-label']) }}
+            {{ Form::email("correo", null, array_merge(['class' => 'form-control', 'required'], [])) }}
+        </div>
+    </div>
 
+    <div class="row">
 
-
-
-
-
-
-
-
-
-
-
-
-
-        <div class="row">
-
-            <hr><h1 class="text-center col-sm-12">MADRE</h1></hr>
-            <div class="form-group col-12 col-md-6">
-                <label class="control-label" for="direccion">Documento</label>
-                <select id="direccion" name="direccion" type="text" placeholder="" class="form-control" required="">
-
-                    <option value="">1</option>
-                </select>
-            </div>
-            <div class="form-group col-12 col-md-6">
-                <label class="control-label" for="direccion">Madre</label>
-                <input id="direccion" name="direccion" type="text" placeholder="" class="form-control input-md" required="">
-            </div>
-
-            <div class="form-group col-12 col-md-6">
-                <label class="control-label" for="correo">telefono</label>
-                <input id="correo" name="correo" type="email" placeholder="" class="form-control input-md" required="">
-            </div>
-
-
-            <div class="form-group col-12 col-md-6">
-                <label class="control-label" for="direccion">ocupacion</label>
-                <input id="direccion" name="direccion" type="text" placeholder="" class="form-control input-md" required="">
-            </div>
-
-            <div class="form-group col-12 col-md-6">
-                <label class="control-label" for="direccion">Direccion madre</label>
-                <input id="direccion" name="direccion" type="text" placeholder="" class="form-control input-md" required="">
-            </div>
-
-            <div class="form-group col-12 col-md-6">
-                <label class="control-label" for="correo">Correo</label>
-                <input id="correo" name="correo" type="email" placeholder="" class="form-control input-md" required="">
-            </div>
-
-
+        <div class="form-group col-12 col-lg-6">
+            {{ Form::label("escuadron", "Escuadron", ['class' => 'control-label']) }}
+            {{Form::select('escuadron', $escuadrones, null, array('class'=>'form-control', 'required', 'placeholder'=>'Seleccionar ...'))}}
         </div>
 
+    </div>
 
+    <div class="row">
+        <div class="form-group col-12 col-lg-6 custom-form-group">
+            {{ Form::checkbox("madre", "madre", false, array_merge(['class' => 'big-checkbox', 'id' => 'madre'], [])) }}
+            {{ Form::label("madre", "Agregar información de la Madre", ['class' => 'control-label']) }}
+        </div>
+
+        <div class="form-group col-12 col-lg-6 custom-form-group">
+            {{ Form::checkbox("padre", "value", false, array_merge(['class' => 'big-checkbox', 'id' => 'padre'], [])) }}
+            {{ Form::label("padre", "Agregar información del Padre", ['class' => 'control-label']) }}
+        </div>
+    </div>
+
+    <div id="mother_registration" class="hidden">
+
+        <h2 class="title_page">REGISTRAR MADRE DE ALUMNO</h2>
 
         <div class="row">
 
-            <hr><h1 class="text-center col-sm-12">PADRE</h1></hr>
-            <div class="form-group col-12 col-md-6">
-                <label class="control-label" for="direccion">Documento</label>
-                <select id="direccion" name="direccion" type="text" placeholder="" class="form-control" required="">
-
-                    <option value="">1</option>
-                </select>
-            </div>
-            <div class="form-group col-12 col-md-6">
-                <label class="control-label" for="direccion">Madre</label>
-                <input id="direccion" name="direccion" type="text" placeholder="" class="form-control input-md" required="">
+            <div class="form-group col-12 col-lg-6">
+                {{ Form::label("tipo_documento_madre", "Tipo documento", ['class' => 'control-label']) }}
+                {{Form::select('tipo_documento_madre', $tipo_documentos, null, array('class'=>'form-control madre', 'placeholder'=>'Seleccionar ...'))}}
             </div>
 
-            <div class="form-group col-12 col-md-6">
-                <label class="control-label" for="correo">telefono</label>
-                <input id="correo" name="correo" type="email" placeholder="" class="form-control input-md" required="">
+            <div class="form-group col-12 col-lg-6">
+                {{ Form::label("numero_documento_madre", "Número", ['class' => 'control-label']) }}
+                {{ Form::text("numero_documento_madre", null, array_merge(['class' => 'form-control madre',], [])) }}
             </div>
-
-
-            <div class="form-group col-12 col-md-6">
-                <label class="control-label" for="direccion">ocupacion</label>
-                <input id="direccion" name="direccion" type="text" placeholder="" class="form-control input-md" required="">
-            </div>
-
-            <div class="form-group col-12 col-md-6">
-                <label class="control-label" for="direccion">Direccion madre</label>
-                <input id="direccion" name="direccion" type="text" placeholder="" class="form-control input-md" required="">
-            </div>
-
-            <div class="form-group col-12 col-md-6">
-                <label class="control-label" for="correo">Correo</label>
-                <input id="correo" name="correo" type="email" placeholder="" class="form-control input-md" required="">
-            </div>
-
 
         </div>
-
-
-
-
-
-
-
-        <!-- Button -->
-        <div class="form-group col-12 col-md-6">
-            <label class="control-label" for="singlebutton"></label>
-            <button id="singlebutton" name="singlebutton" class="btn btn-primary">Enviar</button>
-        </div>
-
 
         <div class="row">
-            <div class="form-group col-12 col-md-6">
-                <label for="excel" class="subir">
-                    <i class="fas fa-cloud-upload-alt"></i> Cargar Excel
-                </label>
-                <input type="file" id="excel" onchange='cambiar()'  style='display: none;'/>
-                <div id="info"></div>
+
+            <div class="form-group col-12 col-lg-6">
+                {{ Form::label("nombre_madre", "Nombre", ['class' => 'control-label']) }}
+                {{ Form::text("nombre_madre", null, array_merge(['class' => 'form-control madre'], [])) }}
+            </div>
+
+            <div class="form-group col-12 col-lg-6">
+                {{ Form::label("telefono_madre", "Teléfono", ['class' => 'control-label']) }}
+                {{ Form::text("telefono_madre", null, array_merge(['class' => 'form-control madre'], [])) }}
             </div>
         </div>
 
-        @if(isset($success)&& $success)
-            <div class="form-group col-12 col-md-12">
-                <div class="alert alert-success" role="alert">
-                    Se registro el alumno satisfactoriamente
-                </div>
-            </div>
-        @endif
+        <div class="row">
 
-        @if(isset($success)&& !$success)
-            <div class="form-group col-12 col-md-12">
-                <div class="alert alert-danger" role="alert">
-                    Se registro el alumno satisfactoriamente
-                </div>
+            <div class="form-group col-12 col-lg-6">
+                {{ Form::label("direccion_madre", "Dirección", ['class' => 'control-label']) }}
+                {{ Form::text("direccion_madre", null, array_merge(['class' => 'form-control madre'], [])) }}
             </div>
-        @endif
-    </form>
+
+            <div class="form-group col-12 col-lg-6">
+                {{ Form::label("correo_madre", "Correo", ['class' => 'control-label']) }}
+                {{ Form::email("correo_madre", null, array_merge(['class' => 'form-control madre'], [])) }}
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="form-group col-12 col-lg-6">
+                {{ Form::label("ocupacion_madre", "Ocupación", ['class' => 'control-label']) }}
+                {{ Form::text("ocupacion_madre", null, array_merge(['class' => 'form-control madre'], [])) }}
+            </div>
+
+        </div>
+    </div>
+
+    <div id="father_registration" class="hidden">
+
+        <h2 class="title_page">REGISTRAR PADRE DE ALUMNO</h2>
+
+        <div class="row">
+
+            <div class="form-group col-12 col-lg-6">
+                {{ Form::label("tipo_documento_padre", "Tipo documento", ['class' => 'control-label']) }}
+                {{Form::select('tipo_documento_padre', $tipo_documentos, null, array('class'=>'form-control padre', 'placeholder'=>'Seleccionar ...'))}}
+            </div>
+
+            <div class="form-group col-12 col-lg-6">
+                {{ Form::label("numero_documento_padre", "Número", ['class' => 'control-label']) }}
+                {{ Form::text("numero_documento_padre", null, array_merge(['class' => 'form-control padre',], [])) }}
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="form-group col-12 col-lg-6">
+                {{ Form::label("nombre_padre", "Nombre", ['class' => 'control-label']) }}
+                {{ Form::text("nombre_padre", null, array_merge(['class' => 'form-control padre'], [])) }}
+            </div>
+
+            <div class="form-group col-12 col-lg-6">
+                {{ Form::label("telefono_padre", "Teléfono", ['class' => 'control-label']) }}
+                {{ Form::text("telefono_padre", null, array_merge(['class' => 'form-control padre'], [])) }}
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="form-group col-12 col-lg-6">
+                {{ Form::label("direccion_padre", "Dirección", ['class' => 'control-label']) }}
+                {{ Form::text("direccion_padre", null, array_merge(['class' => 'form-control padre'], [])) }}
+            </div>
+
+            <div class="form-group col-12 col-lg-6">
+                {{ Form::label("correo_padre", "Correo", ['class' => 'control-label']) }}
+                {{ Form::email("correo_padre", null, array_merge(['class' => 'form-control padre'], [])) }}
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="form-group col-12 col-lg-6">
+                {{ Form::label("ocupacion_padre", "Ocupación", ['class' => 'control-label']) }}
+                {{ Form::text("ocupacion_padre", null, array_merge(['class' => 'form-control padre'], [])) }}
+            </div>
+
+        </div>
+    </div>
+
+    {{--    <div class="row">--}}
+
+    {{--        <div class="form-group col-12 form-header">--}}
+    {{--            {{ Form::checkbox("madre", null, false, array_merge(['class' => 'form-control'], [])) }}--}}
+    {{--            <h1 class="text-center">MADRE</h1>--}}
+    {{--        </div>--}}
+
+
+
+    {{--        <div class="form-group col-12 col-lg-6">--}}
+    {{--            {{ Form::label("tipo_documento_madre", "Tipo documento", ['class' => 'control-label']) }}--}}
+    {{--            {{Form::select('tipo_documento_madre', $tipo_documentos, null, array('class'=>'form-control', 'required', "disabled", 'placeholder'=>'Seleccionar ...'))}}--}}
+    {{--        </div>--}}
+
+    {{--    </div>--}}
+
+    @if($errors->any())
+
+        @foreach ($errors->all() as $error)
+            <div class="alert alert-danger col-12" role="alert">
+                {{ $error }}
+            </div>
+        @endforeach
+
+    @endif
+
+    <div class="form-group col-8">
+        {{ Form::button('Guardar', ['type' => 'submit', 'class' => 'btn btn-success btn-sm'] )  }}
+
+    </div>
+
+    {!! Form::close() !!}
+
+
+    {{--        <!-- Button -->--}}
+    {{--        <div class="form-group col-12 col-md-6">--}}
+    {{--            <label class="control-label" for="singlebutton"></label>--}}
+    {{--            <button id="singlebutton" name="singlebutton" class="btn btn-primary">Enviar</button>--}}
+    {{--        </div>--}}
+
+
+    {{--        <div class="row">--}}
+    {{--            <div class="form-group col-12 col-md-6">--}}
+    {{--                <label for="excel" class="subir">--}}
+    {{--                    <i class="fas fa-cloud-upload-alt"></i> Cargar Excel--}}
+    {{--                </label>--}}
+    {{--                <input type="file" id="excel" onchange='cambiar()'  style='display: none;'/>--}}
+    {{--                <div id="info"></div>--}}
+    {{--            </div>--}}
+    {{--        </div>--}}
+
+    @if(isset($success)&& $success)
+        <div class="form-group col-12 col-md-12">
+            <div class="alert alert-success" role="alert">
+                Se registro el alumno satisfactoriamente
+            </div>
+        </div>
+    @endif
+
+    @if(isset($success)&& !$success)
+        <div class="form-group col-12 col-md-12">
+            <div class="alert alert-danger" role="alert">
+                Ocurrio un error
+            </div>
+        </div>
+    @endif
+
+    <script>
+        var registrar_madre = document.getElementById("mother_registration");
+        var registrar_padre = document.getElementById("father_registration");
+        var madre = document.getElementById("madre");
+        var padre = document.getElementById("padre");
+
+        madre.addEventListener('click', function() {
+
+            if (this.checked) {
+                estado = 1
+                add_and_remove_required("madre", true);
+                registrar_madre.classList.remove("hidden");
+            } else {
+                estado = 0
+                add_and_remove_required("madre", false);
+                registrar_madre.classList.add("hidden");
+            }
+
+        })
+
+        padre.addEventListener('click', function() {
+
+            if (this.checked) {
+                estado = 1
+                add_and_remove_required("padre", true);
+                registrar_padre.classList.remove("hidden");
+
+            } else {
+                estado = 0
+                registrar_padre.classList.add("hidden");
+                add_and_remove_required("padre", false);
+            }
+
+        })
+
+        function add_and_remove_required(option, value) {
+
+            var  elementos = document.querySelectorAll("."+option);
+
+            for (var i = 0; i < elementos.length; i++) {
+
+                elementos[i].required = value
+            }
+        }
+
+    </script>
+
 @endsection

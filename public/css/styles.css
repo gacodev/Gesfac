@@ -483,3 +483,26 @@ a {
     justify-content: center;
 
 }
+
+.big-checkbox {width: 20px; height: 20px;}
+
+.custom-form-group{
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.custom-form-group label{
+    margin-bottom: 0;
+    margin-left: .5rem;
+    cursor: pointer;
+}
+
+.custom-form-group input{
+    cursor: pointer;
+}
+
+.hidden{
+    display: none;
+}
