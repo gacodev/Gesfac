@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Alumno;
 use App\AlumnoArmerillo;
 use App\AlumnoVisitantes;
+use App\Familiar;
 use App\novedad;
 use App\Sanidad;
 use App\visitante;
@@ -90,6 +91,32 @@ class AlumnoController extends Controller
         ]);
 
         $alumno = NULL;
+        $request_madre = \request("madre");
+        $request_padre = \request("padre");
+
+        if($request_madre){
+            request()->validate([
+                'nombre_madre' => 'required',
+                'telefono_madre' => 'required',
+                'direccion_madre' => 'required',
+                'correo_madre' => 'required|email',
+                'tipo_documento_madre' => 'required',
+                'numero_documento_madre' => 'required',
+                'ocupacion_madre' => 'required',
+            ]);
+        }
+
+        if($request_padre){
+            request()->validate([
+                'nombre_padre' => 'required',
+                'telefono_padre' => 'required',
+                'direccion_padre' => 'required',
+                'correo_padre' => 'required|email',
+                'tipo_documento_padre' => 'required',
+                'numero_documento_padre' => 'required',
+                'ocupacion_padre' => 'required',
+            ]);
+        }
 
         DB::beginTransaction();
 
@@ -104,6 +131,34 @@ class AlumnoController extends Controller
                 "escuadron" => request("escuadron"),
             ]);
 
+            if($request_madre) {
+                $madre = Familiar::create([
+                    "alumno" => $alumno ->id,
+                    "nombre" => request("nombre_madre"),
+                    "telefono" => request("telefono_madre"),
+                    "direccion" => request("direccion_madre"),
+                    "correo" => request("correo_madre"),
+                    "tipo_documento" => request("tipo_documento_madre"),
+                    "tipo_familiar" => 2,
+                    "numero_documento" => request("numero_documento_madre"),
+                    "ocupacion" => request("ocupacion_madre"),
+                ]);
+            }
+
+            if($request_padre) {
+                $padre = Familiar::create([
+                    "alumno" => $alumno ->id,
+                    "nombre" => request("nombre_padre"),
+                    "telefono" => request("telefono_padre"),
+                    "direccion" => request("direccion_padre"),
+                    "correo" => request("correo_padre"),
+                    "tipo_documento" => request("tipo_documento_padre"),
+                    "tipo_familiar" => 1,
+                    "numero_documento" => request("numero_documento_padre"),
+                    "ocupacion" => request("ocupacion_padre"),
+                ]);
+            }
+
             $sanidad = Sanidad::create([
                 "alumno" => $alumno ->id
             ]);
@@ -111,6 +166,7 @@ class AlumnoController extends Controller
             DB::commit();
         } catch (\Exception $e) {
             DB::rollback();
+            $alumno = null;
         }
 
         if ($alumno) {

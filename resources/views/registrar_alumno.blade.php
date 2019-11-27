@@ -57,6 +57,12 @@
             {{Form::select('escuadron', $escuadrones, null, array('class'=>'form-control', 'required', 'placeholder'=>'Seleccionar ...'))}}
         </div>
 
+        <div class="form-group col-12 col-lg-6 load-file">
+            {!! Html::decode(Form::label('excel', '<i class="fas fa-cloud-upload-alt fa-2x"></i> Cargar Excel', ['class' => 'subir'])) !!}
+            {{ Form::file("excel", array_merge(['class' => 'form-control hidden', 'onchange' => 'cambiar()'], [])) }}
+            <div id="info"></div>
+        </div>
+
     </div>
 
     <div class="row">
@@ -66,7 +72,7 @@
         </div>
 
         <div class="form-group col-12 col-lg-6 custom-form-group">
-            {{ Form::checkbox("padre", "value", false, array_merge(['class' => 'big-checkbox', 'id' => 'padre'], [])) }}
+            {{ Form::checkbox("padre", "padre", false, array_merge(['class' => 'big-checkbox', 'id' => 'padre'], [])) }}
             {{ Form::label("padre", "Agregar información del Padre", ['class' => 'control-label']) }}
         </div>
     </div>
@@ -179,24 +185,7 @@
         </div>
     </div>
 
-    {{--    <div class="row">--}}
-
-    {{--        <div class="form-group col-12 form-header">--}}
-    {{--            {{ Form::checkbox("madre", null, false, array_merge(['class' => 'form-control'], [])) }}--}}
-    {{--            <h1 class="text-center">MADRE</h1>--}}
-    {{--        </div>--}}
-
-
-
-    {{--        <div class="form-group col-12 col-lg-6">--}}
-    {{--            {{ Form::label("tipo_documento_madre", "Tipo documento", ['class' => 'control-label']) }}--}}
-    {{--            {{Form::select('tipo_documento_madre', $tipo_documentos, null, array('class'=>'form-control', 'required', "disabled", 'placeholder'=>'Seleccionar ...'))}}--}}
-    {{--        </div>--}}
-
-    {{--    </div>--}}
-
     @if($errors->any())
-
         @foreach ($errors->all() as $error)
             <div class="alert alert-danger col-12" role="alert">
                 {{ $error }}
@@ -207,28 +196,9 @@
 
     <div class="form-group col-8">
         {{ Form::button('Guardar', ['type' => 'submit', 'class' => 'btn btn-success btn-sm'] )  }}
-
     </div>
 
     {!! Form::close() !!}
-
-
-    {{--        <!-- Button -->--}}
-    {{--        <div class="form-group col-12 col-md-6">--}}
-    {{--            <label class="control-label" for="singlebutton"></label>--}}
-    {{--            <button id="singlebutton" name="singlebutton" class="btn btn-primary">Enviar</button>--}}
-    {{--        </div>--}}
-
-
-    {{--        <div class="row">--}}
-    {{--            <div class="form-group col-12 col-md-6">--}}
-    {{--                <label for="excel" class="subir">--}}
-    {{--                    <i class="fas fa-cloud-upload-alt"></i> Cargar Excel--}}
-    {{--                </label>--}}
-    {{--                <input type="file" id="excel" onchange='cambiar()'  style='display: none;'/>--}}
-    {{--                <div id="info"></div>--}}
-    {{--            </div>--}}
-    {{--        </div>--}}
 
     @if(isset($success)&& $success)
         <div class="form-group col-12 col-md-12">

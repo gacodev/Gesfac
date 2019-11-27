@@ -506,3 +506,12 @@ a {
 .hidden{
     display: none;
 }
+
+.load-file{
+    display: flex;
+    align-items: flex-end;
+}
+
+.subir{
+    cursor: pointer;
+}
