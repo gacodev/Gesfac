@@ -138,10 +138,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/armas', 'AlumnoController@show')->name('armas')
     ->middleware('can:armas');
 
-    Route::get('/ingreso', 'AlumnoController@ingreso')->name('ingreso')
+    Route::get('/ingreso', 'VisitanteController@ingreso')->name('ingreso')
     ->middleware('can:ingreso');
 
-    Route::get('/borrado', 'AlumnoController@truncate')->name('truncate')
+    Route::get('/borrado', 'VisitanteController@truncate')->name('truncate')
         ->middleware('can:truncate');
 
     Route::get('/reportes', 'AlumnoController@reportes')->name('reportes')

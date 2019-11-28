@@ -21,18 +21,6 @@ use Illuminate\Support\Facades\DB;
 class AlumnoController extends Controller
 {
 
-    public function truncate()
-    {
-        DB::statement('SET FOREIGN_KEY_CHECKS = 0;'); // Desactivamos la revisión de claves foráneas
-
-        AlumnoVisitantes::truncate();
-        visitante::truncate();
-
-        DB::statement('SET FOREIGN_KEY_CHECKS = 1;');
-
-        return redirect()->action('AlumnoController@ingreso');
-    }
-
     public function show(alumno $alumno)
     {
         $armas = armerillo::leftJoin('alumno_armerillo', 'alumno_armerillo.fusil', '=', 'armerillo.id')
@@ -175,22 +163,6 @@ class AlumnoController extends Controller
 
         return redirect()->action('AlumnoController@registrar_alumno', ['success' => false]);
     }
-
-    public function ingreso(visitante $visitante)
-    {
-
-        $visitante = visitante::join('alumno_visitantes', 'alumno_visitantes.visitante', '=', 'visitantes.id')
-            ->join('alumnos', 'alumnos.id', '=', 'alumno_visitantes.alumno')
-            ->get([
-                'alumnos.nombre AS alumno',
-                'visitantes.nombre AS visitante',
-                'visitantes.numero_documento AS visitante_numero_documento',
-                'visitantes.telefono AS visitante_telefono',
-            ]);
-
-        return view('ingreso')->with('visitante',$visitante);
-    }
-
 
     public function asignacion(visitante $visitante)
     {

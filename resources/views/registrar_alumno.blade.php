@@ -191,7 +191,6 @@
                 {{ $error }}
             </div>
         @endforeach
-
     @endif
 
     <div class="form-group col-8">
