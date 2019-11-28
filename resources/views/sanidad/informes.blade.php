@@ -7,7 +7,7 @@
 
     <h2 class="title_page"><b>INFORME DE EXCUSADOS</b></h2>
 
-    <div class="table-container">
+    <div class="table-container" id="table-container">
 
         <div class="row table table-responsive">
             <table class="table thead-brand bordered  text-center" id="mitabla">

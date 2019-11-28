@@ -7,6 +7,7 @@
 <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
 <meta name="csrf-token" content="{{ csrf_token() }}">
 {{--<link href="{{ asset('css/app.css') }}" rel="stylesheet">--}}
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
 
 <head>
 
@@ -44,7 +45,16 @@
     $(document).ready(function(id) {
 
         if(document.getElementById("mitabla")!=null){
-            $('#mitabla').DataTable();
+
+            $('#mitabla').DataTable({
+                "columnDefs": [{
+                    "targets": '_all',
+                    "createdCell": function (td, cellData, rowData, row, col) {
+                        $(td).css('padding', '2px')
+                    }
+                }]
+            });
+
             var sidebar= document.getElementById("mitabla_filter").querySelector("label")
             sidebar.appendChild(document.createElement('i'))
             sidebar.querySelector("i").classList.add("fas");

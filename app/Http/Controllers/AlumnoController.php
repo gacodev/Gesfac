@@ -6,6 +6,7 @@ use App\Alumno;
 use App\AlumnoArmerillo;
 use App\AlumnoVisitantes;
 use App\novedad;
+use App\Sanidad;
 use App\visitante;
 use App\armerillo;
 use App\TipoDocumento;
@@ -86,7 +87,6 @@ class AlumnoController extends Controller
         $alumno->tipo_documento = request("tipo_documento");
         $alumno->numero_documento = request("numero_documento");
         $alumno->escuadron = request("escuadron");
-
         $alumno->save();
         if ($alumno) {
             return redirect()->action('AlumnoController@registrar_alumno', ['success' => true]);

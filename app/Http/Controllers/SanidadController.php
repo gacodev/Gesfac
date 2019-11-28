@@ -104,6 +104,38 @@ class SanidadController extends Controller
         return redirect()->route('sanidad', ['success' => true]);
     }
 
+    public function limpiar_cita(){
+        $cita = \request("cita");
+        $previousUrl = app('url')->previous();
+
+        if($cita){
+            $eliminar_cita = Sanidad::where("id", "=", $cita)
+                ->update([
+                    "estado" => false,
+                    "asignado" => false,
+                    "tipo_cita" => 1,
+                    "descripcion" => null,
+                    "fecha_solicitud" => null,
+                    "motivo" => null,
+                    "fecha_asignacion" => null,
+                    "asistencia" => false,
+                    "fecha_incapacidad" => null,
+                    "observaciones_incapacidad" => null,
+                    "motivo_incapacidad" => null,
+                    "lugar_incapacidad" => null,
+                ]);
+
+            if (strpos($previousUrl, 'success') !== false) {
+                return redirect()->to($previousUrl);
+            }else{
+                return redirect()->to($previousUrl.'?'. http_build_query(['success'=>1]));
+            }
+        }
+
+        return redirect()->to($previousUrl.'?'. http_build_query(['success'=>0]));
+
+    }
+
     public function agendarCita()
     {
 
