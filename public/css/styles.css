@@ -515,3 +515,8 @@ a {
 .subir{
     cursor: pointer;
 }
+
+.custom-center{
+    display: flex;
+    justify-content: center;
+}

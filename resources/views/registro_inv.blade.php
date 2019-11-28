@@ -51,14 +51,6 @@
 
     </div>
 
-    <div class="row">
-        <div class="form-group col-12 col-lg-6 load-file">
-            {!! Html::decode(Form::label('excel', '<i class="fas fa-cloud-upload-alt fa-2x"></i> Cargar Excel', ['class' => 'subir'])) !!}
-            {{ Form::file("excel", array_merge(['class' => 'form-control hidden', 'onchange' => 'cambiar()'], [])) }}
-            <div id="info"></div>
-        </div>
-    </div>
-
     @if($errors->any())
         @foreach ($errors->all() as $error)
             <div class="alert alert-danger col-12" role="alert">
@@ -90,6 +82,24 @@
             </div>
         </div>
     @endif
+
+    <h2 class="title_page">SUBIR TABLA EXCEL</h2>
+
+    {!! Form::open(['url' => 'import-visitantes']) !!}
+
+    <div class="row">
+        <div class="form-group col-12 col-lg-6 load-file custom-center">
+            {!! Html::decode(Form::label('excel', '<i class="fas fa-cloud-upload-alt fa-2x"></i> Cargar Excel', ['class' => 'subir'])) !!}
+            {{ Form::file("excel", array_merge(['class' => 'form-control hidden', 'onchange' => 'cambiar()'], [])) }}
+            <div id="info"></div>
+        </div>
+
+        <div class="form-group col-12 col-lg-6 custom-center">
+            {{ Form::button('Guardar', ['type' => 'submit', 'class' => 'btn btn-success btn-sm'] )  }}
+        </div>
+    </div>
+
+    {!! Form::close() !!}
 
 
     {{--    </form>--}}
