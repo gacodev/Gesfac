@@ -69,6 +69,7 @@
                 <th>ASIGNADO A</th>
                 <th>FUSIL</th>
                 <th>ASIGNAR</th>
+                <th>ACTA</th>
             </tr>
             </thead>
             <tbody>
@@ -82,6 +83,13 @@
                         <input class="span4 proj-div alumno" data-toggle="modal" data-target="#data"  type="checkbox" id="{{$alumno->id.":".$alumno->fusil}}" {{$alumno->fusil?"checked":null}}/>
                         <label for="{{$alumno->id.":".$alumno->fusil}}"></label>
                     </div>
+                </td>
+                <td>
+                    <form action="{{'acta'}}">
+                    <div class="round">
+                        <input type="submit" class="btn btn-primary" value="GENERAR ACTA">
+                    </div>
+                    </form>
                 </td>
                 </tr>
             @endforeach

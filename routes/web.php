@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('armas2', 'ArmerilloController@reportar')->name('reportar');
+Route::get('acta', 'actacontroller@acta')->name('acta');
 
 
 
