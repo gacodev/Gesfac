@@ -11,6 +11,7 @@ use App\TipoDocumento;
 use App\visitante;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class VisitanteController extends Controller
 {
@@ -81,6 +82,11 @@ class VisitanteController extends Controller
         DB::statement('SET FOREIGN_KEY_CHECKS = 1;');
 
         return redirect()->action('VisitanteController@ingreso');
+    }
+
+    public function formato_invitados ()
+    {
+        return Storage::response("excel/formato_invitados.xlsx");
     }
 
 

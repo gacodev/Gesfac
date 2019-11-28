@@ -1,5 +1,6 @@
 <?php
 
+use App\Alumno;
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
 
@@ -27,5 +28,18 @@ class AlumnosTableSeeder extends Seeder
                 'novedad' => $faker-> numberBetween(1,15)
             ));
         }
+
+        Alumno::create([
+            'nombre' => "COMANDO",
+            'telefono' => NULL,
+            'correo' => NULL,
+            'direccion' => NULL,
+            'numero_documento' => NULL,
+            'escuadron' => 1,
+            'tipo_documento' => 1,
+            'excusado' => 1,
+            'editable' => false,
+            'novedad' => 1,
+        ]);
     }
 }

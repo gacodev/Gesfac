@@ -11,6 +11,8 @@
 |
 */
 
+use Illuminate\Support\Facades\Storage;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -113,6 +115,9 @@ Route::middleware(['auth'])->group(function () {
 
     Route::post('import-visitantes', 'ReportesController@visitantes')->name('visitante')
     ->middleware('can:visitante');
+
+    Route::get('formato_invitados', 'VisitanteController@formato_invitados')->name('formato_invitados')
+        ->middleware('can:visitante');
 
     Route::get('export-sanidad-pdf', 'UserController@sanidad')->name('export-sanidad-pdf')
     ->middleware('can:export-sanidad-pdf');
