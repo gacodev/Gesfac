@@ -62,7 +62,14 @@
             </div>
         </a>
             @endcan
-
+        @can ('intendencia')
+            <a href="{{ route('intendencia') }}" class="bg-dark list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-start align-items-center">
+                    <span class="fas fa-tshirt mr-3"></span>
+                    <small><span class="menu-collapsed">INTENDENCIA</span></small>
+                </div>
+            </a>
+        @endcan
                 @can('/listar')
         <a href="{{ url('/listar') }}" class="bg-dark list-group-item list-group-item-action">
             <div class="d-flex w-100 justify-content-start align-items-center">
