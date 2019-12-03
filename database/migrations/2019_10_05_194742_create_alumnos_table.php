@@ -26,15 +26,6 @@ class CreateAlumnosTable extends Migration
             $table->string('telefono_padre')->nullable();
             $table->string('ocupacion_padre')->nullable();
             $table->string('direccion_padre')->nullable();
-            $table->string('nombre_madre')->nullable();
-            $table->string('telefono_madre')->nullable();
-            $table->string('ocupacion_madre')->nullable();
-            $table->string('direccion_madre')->nullable();
-            $table->string('numero_documento_padre')->nullable();
-            $table->string('nombre_padre')->nullable();
-            $table->string('telefono_padre')->nullable();
-            $table->string('ocupacion_padre')->nullable();
-            $table->string('direccion_padre')->nullable();
             $table->string('numero_documento_madre')->nullable();
             $table->string('nombre_madre')->nullable();
             $table->string('telefono_madre')->nullable();

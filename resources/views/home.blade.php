@@ -102,7 +102,7 @@
 <div class="content">
 
     <div class="title">
-        ALESUFA
+        GESFAC
     </div>
 
     <div class="album album-modify py-5 bg-light" >
@@ -118,7 +118,7 @@
                                 <div class="btn-group">
                                     <a href="{{ url('/armas') }}">
                                         <button type="button" class="btn btn-sm btn-outline-secondary">
-                                            Armamento
+                                            ARMAMENTO
                                         </button>
                                     </a>
                                 </div>
@@ -155,7 +155,7 @@
                                 <div class="btn-group">
                                     <a href="{{ url('/invitados') }}">
                                         <button type="button" class="btn btn-sm btn-outline-secondary">
-                                            Registrar invitados
+                                            REGISTRO DE INVITADOS
                                         </button>
                                     </a>
                                 </div>
@@ -175,7 +175,7 @@
                                 <div class="btn-group">
                                     <a href="{{ url('/sanidad') }}">
                                         <button type="button" class="btn btn-sm btn-outline-secondary">
-                                            Sanidad
+                                            SANIDAD
                                         </button>
                                     </a>
                                 </div>
@@ -193,7 +193,7 @@
                                 <div class="btn-group">
                                     <a href="{{ url('/registrar_alumno') }}">
                                         <button type="button" class="btn btn-sm btn-outline-secondary">
-                                            Registrar alumnos
+                                            REGISTRO ALUMNOS
                                         </button>
                                     </a>
                                 </div>
@@ -211,7 +211,7 @@
                                 <div class="btn-group">
                                     <a href="{{ url('/ingreso') }}">
                                         <button type="button" class="btn btn-sm btn-outline-secondary">
-                                            Ingreso
+                                            INGRESO
                                         </button>
                                     </a>
                                 </div>
@@ -229,7 +229,7 @@
                                 <div class="btn-group">
                                     <a href="{{ url('/reportes') }}">
                                         <button type="button" class="btn btn-sm btn-outline-secondary">
-                                            Reportes
+                                            REPORTES
                                         </button>
                                     </a>
                                 </div>
@@ -247,7 +247,7 @@
                                 <div class="btn-group">
                                     <a href="{{ url('/asignar_arm') }}">
                                         <button type="button" class="btn btn-sm btn-outline-secondary">
-                                            Asignar
+                                            ASIGNACION
                                         </button>
                                     </a>
                                 </div>
@@ -266,7 +266,7 @@
                                         <div class="btn-group">
                                             <a href="{{ url('/agendar') }}">
                                                 <button type="button" class="btn btn-sm btn-outline-secondary">
-                                                    Agendar
+                                                    AGENDAR CITAS
                                                 </button>
                                             </a>
                                         </div>

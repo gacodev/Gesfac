@@ -15,9 +15,9 @@
                 <tr>
                     <th>ESCUADRON</th>
                     <th>ALUMNO</th>
-                    <th>DIAGNOSTICO/OBSERVACIONES</th>
-                    <th>DIAS EXCUSADO</th>
-                    <th>DIAS RESTANTES</th>
+                    <th>DICTAMEN <br>MEDICO</th>
+                    <th>EXCUSADO</th>
+                    <th>RESTANTE</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -26,8 +26,8 @@
                         <td>{{$informe->escuadron}}</td>
                         <td>{{$informe->alumno}}</td>
                         <td>{{$informe->observacion}}</td>
-                        <td>{{$informe->dias_novedad}}</td>
-                        <td>{{$informe->dias_restantes}}</td>
+                        <td>{{$informe->dias_novedad}} dias</td>
+                        <td>{{$informe->dias_restantes}} dias</td>
                     </tr>
                 @endforeach
                 </tbody>
