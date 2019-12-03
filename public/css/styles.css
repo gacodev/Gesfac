@@ -515,3 +515,18 @@ a {
 .subir{
     cursor: pointer;
 }
+
+.custom-center{
+    display: flex;
+    justify-content: center;
+}
+
+.custom-link{
+    color: black;
+    text-decoration: none;
+}
+
+.custom-link:hover{
+    text-decoration: none;
+    color: black;
+}

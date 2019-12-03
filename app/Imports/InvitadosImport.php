@@ -1,30 +1,38 @@
 <?php
 
 namespace App\Imports;
+use App\Alumno;
 use App\visitante;
-use Maatwebsite\Excel\Concerns\ToModel;
+use Maatwebsite\Excel\Concerns\{Importable, ToModel, WithHeadingRow};
 use Illuminate\Support\Facades\DB;
 
 
-class InvitadosImport implements ToModel
+class InvitadosImport implements ToModel, WithHeadingRow
 {
-    /**
-    * @param array $row
-    *
-    * @return \Illuminate\Database\Eloquent\Model|null
-    */
+
+    use Importable;
+
     public function model(array $row)
     {
 
-        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        $user = Alumno::where("nombre", "COMANDO")
+            ->whereNull('numero_documento')
+            ->first();
+
         return new visitante([
-            'tipo_documento'=>    $row[0],
-            'numero_documento' => $row[1],
-            'nombre' =>           $row[2],
-            'telefono' =>           $row[3],
-
-
+            'tipo_documento'=> 1,
+            'numero_documento' => $row["numero_documento"],
+            'nombre' => $row["nombre"],
+            'telefono' => $row["telefono"],
+            'alumno' => $user->id,
         ]);
-        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+    }
+
+    public function rules()
+    {
+        return [
+            'numero_documento' => 'regex:/[0-9]/',
+            'telefono' => 'regex:/[0-9]/'
+        ];
     }
 }

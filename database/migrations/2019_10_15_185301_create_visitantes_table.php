@@ -20,6 +20,8 @@ class CreateVisitantesTable extends Migration
             $table->string('nombre');
             $table->string('telefono');
             $table->foreign('tipo_documento')->references('id')->on('tipo_documento');
+            $table->unsignedBigInteger('alumno');
+            $table->foreign('alumno')->references('id')->on('alumnos');
             $table->timestamps();
         });
     }

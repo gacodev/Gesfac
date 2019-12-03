@@ -11,7 +11,8 @@ class visitante extends Model
         "tipo_documento",
         "numero_documento",
         "nombre",
-        "telefono"
+        "telefono",
+        "alumno",
     ];
 
     protected $table = "visitantes";

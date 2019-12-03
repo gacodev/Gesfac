@@ -11,6 +11,8 @@
 |
 */
 
+use Illuminate\Support\Facades\Storage;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -114,6 +116,9 @@ Route::middleware(['auth'])->group(function () {
     Route::post('import-visitantes', 'ReportesController@visitantes')->name('visitante')
     ->middleware('can:visitante');
 
+    Route::get('formato_invitados', 'VisitanteController@formato_invitados')->name('formato_invitados')
+        ->middleware('can:visitante');
+
     Route::get('export-sanidad-pdf', 'UserController@sanidad')->name('export-sanidad-pdf')
     ->middleware('can:export-sanidad-pdf');
 
@@ -138,10 +143,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/armas', 'AlumnoController@show')->name('armas')
     ->middleware('can:armas');
 
-    Route::get('/ingreso', 'AlumnoController@ingreso')->name('ingreso')
+    Route::get('/ingreso', 'VisitanteController@ingreso')->name('ingreso')
     ->middleware('can:ingreso');
 
-    Route::get('/borrado', 'AlumnoController@truncate')->name('truncate')
+    Route::get('/borrado', 'VisitanteController@truncate')->name('truncate')
         ->middleware('can:truncate');
 
     Route::get('/reportes', 'AlumnoController@reportes')->name('reportes')
