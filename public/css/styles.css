@@ -530,3 +530,7 @@ a {
     text-decoration: none;
     color: black;
 }
+
+.color-blue{
+    color:hsl(220,80%,60%);
+}
