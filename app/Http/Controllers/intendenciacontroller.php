@@ -30,6 +30,7 @@ class intendenciacontroller extends Controller
                     "articulo_intendencia.id AS id",
                     "intendencia.descripcion AS descripcion",
                     "intendencia.cantidad AS cantidad",
+                    "intendencia.id AS intendencia",
                 ]);
 
             $articulos = ArticuloIntendencia::get([

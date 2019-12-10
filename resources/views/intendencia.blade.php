@@ -50,15 +50,15 @@
                         <td class="align-middle">
                             {{ Form::text(null, $articulo->descripcion, array_merge(['class' => 'form-control article', 'id' => "description:".$request->alumno.":".$articulo->id], [])) }}
                         </td>
-                        <td class="align-middle">
-                            @if(!$articulo->guardar)
-                                <i class="fas fa-times" style="color: red"></i>
-                            @else
+                        <td class="align-middle" id="{{"save:".$request->alumno.":".$articulo->id}}">
+                            @if($articulo->intendencia)
                                 <i class="fas fa-check" style="color: green"></i>
+                            @else
+                                <i class="fas fa-times" style="color: red"></i>
                             @endif
                         </td>
-                        <td class="align-middle estado">
-                            @if($articulo->id)
+                        <td class="align-middle" id="{{"state:".$request->alumno.":".$articulo->id}}">
+                            @if($articulo->intendencia)
                                 <i class="fas fa-check" style="color: green"></i>
                             @else
                                 <i class="fas fa-exclamation" style="color: hsl(60,70%,50%)"></i>
@@ -91,6 +91,29 @@
 
         <script>
 
+            function icon_state(id){
+                var state = id.split(":").splice(1);
+                state.unshift("state");
+                state = state.join(":");
+
+                var icon_state_id = document.getElementById(state);
+
+                icon_state_id.innerHTML = `<i class="fas fa-check" style="color: green"></i>`;
+
+            }
+
+            function icon_save(id, option = true){
+                var save = id.split(":").splice(1);
+                save.unshift("save");
+                save = save.join(":");
+
+                var icon_save_id = document.getElementById(save);
+
+                if(option) icon_save_id.innerHTML = `<i class="fas fa-check" style="color: green"></i>`;
+                else icon_save_id.innerHTML = `<i class="fas fa-times" style="color: red"></i>`;
+
+            }
+
             function guardar_cambios(id, value, url) {
 
                 axios.post(url, {
@@ -98,7 +121,9 @@
                     value
                 })
                     .then(function(response) {
-                        console.log(response)
+                        // console.log(response)
+                        icon_state(id)
+                        icon_save(id)
                     })
                     .catch(function(error) {
                         console.log(error)
@@ -114,6 +139,10 @@
 
                 articulo.addEventListener('change', function() {
                     guardar_cambios(this.id, this.value, "/post_intendencia_articulo")
+                })
+
+                articulo.addEventListener('keydown', function(e) {
+                    if(e.key!=="Tab") icon_save(this.id, false)
                 })
             }
 
