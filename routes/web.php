@@ -16,10 +16,12 @@ use Illuminate\Support\Facades\Storage;
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('armas2', 'ArmerilloController@reportar')->name('reportar');
 Route::get('acta', 'actacontroller@acta')->name('acta');
 Route::get('intendencia', 'intendenciacontroller@index')->name('intendencia');
+Route::post('post_intendencia_articulo', 'intendenciacontroller@post_intendencia_articulo')->name('post_intendencia_articulo');
 
 
 

@@ -8,29 +8,23 @@
 
     <h1 class="title_page"><b>ENTREGA DE INTENDENCIA</b></h1>
 
-    {!! Form::open(['url' => 'registrar_visitante']) !!}
+    {!! Form::open(array('route' => 'intendencia', 'method' => 'get', 'id'=> 'form')) !!}
 
     <div class="row">
 
         <div class="form-group col-12 col-lg-6">
             {{ Form::label("escuadron", "Escuadron", ['class' => 'control-label']) }}
-            {{Form::select('escuadron', $escuadrones, null, array('class'=>'form-control', 'required', 'placeholder'=>'Seleccionar ...'))}}
+            {{Form::select('escuadron', $escuadrones, $request->escuadron, array('onChange'=>'form_submit("escuadron")', 'class'=>'form-control', 'placeholder'=>'Seleccionar ...'))}}
         </div>
 
         <div class="form-group col-12 col-lg-6">
             {{ Form::label("alumno", "Alumno", ['class' => 'control-label']) }}
-            {{Form::select('alumno', [], null, array('class'=>'form-control', 'required', 'placeholder'=>'Seleccionar ...'))}}
+            {{Form::select('alumno', $alumnos, $request->alumno, array('onChange'=>'form_submit("alumno")', 'class'=>'form-control', 'placeholder'=>'Seleccionar ...'))}}
         </div>
 
     </div>
 
-    @if($errors->any())
-        @foreach ($errors->all() as $error)
-            <div class="alert alert-danger col-12" role="alert">
-                {{ $error }}
-            </div>
-        @endforeach
-    @endif
+    {!! Form::close() !!}
 
     <div class="table-container" id="table-container">
 
@@ -40,30 +34,34 @@
                 <thead>
                 <tr>
                     <th>ARTICULO</th>
-                    <th>DESCRIPCION</th>
                     <th>CANTIDAD</th>
-                    <th>GUARDAR</th>
+                    <th>DESCRIPCION</th>
+                    <th>GUARDADO</th>
+                    <th>ESTADO</th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach($articulos as $articulo)
                     <tr>
-                        <td class="align-middle">{{$articulo->articulo}}</td>
-                        <td class="align-middle">{{$articulo->descripcion}}<input type="text" class="form-control"></td>
-                        <td class="align-middle">{{$articulo->cantidad}}<input type="text" class="form-control"></td>
-                        <td>
+                        <td class="align-middle articulo">{{$articulo->articulo}}</td>
+                        <td class="align-middle" style="max-width: 2rem">
+                            {{ Form::number(null, $articulo->cantidad, array_merge(['class' => 'form-control article text-center', 'id'=> "quantity:".$request->alumno.":".$articulo->id], [])) }}
+                        </td>
+                        <td class="align-middle">
+                            {{ Form::text(null, $articulo->descripcion, array_merge(['class' => 'form-control article', 'id' => "description:".$request->alumno.":".$articulo->id], [])) }}
+                        </td>
+                        <td class="align-middle">
                             @if(!$articulo->guardar)
-                                <a href="{{route('atendido', $articulo->cita)}}">
-                                    <button type="button" class="btn btn-outline-success">
-                                        <i class="far fa-save"></i>
-                                    </button>
-                                </a>
+                                <i class="fas fa-times" style="color: red"></i>
                             @else
-                                <a href="{{route('atendido', $articulo->cita)}}">
-                                    <button type="button" class="btn btn-outline-success">
-                                        <i class="fas fa-check"></i>
-                                    </button>
-                                </a>
+                                <i class="fas fa-check" style="color: green"></i>
+                            @endif
+                        </td>
+                        <td class="align-middle estado">
+                            @if($articulo->id)
+                                <i class="fas fa-check" style="color: green"></i>
+                            @else
+                                <i class="fas fa-exclamation" style="color: hsl(60,70%,50%)"></i>
                             @endif
                         </td>
                     </tr>
@@ -74,47 +72,53 @@
 
     </div>
 
-{{--    <div class="row">--}}
-{{--        <div class="form-group col-8">--}}
-{{--            {{ Form::button('Guardar', ['type' => 'submit', 'class' => 'btn btn-success btn-sm'] )  }}--}}
-{{--        </div>--}}
-{{--    </div>--}}
-
-    {!! Form::close() !!}
-
     <script>
-        var escuadron = document.getElementById("escuadron")
-        var excel = document.getElementById("excel")
-        var load_icon = document.getElementById("load-icon")
 
-        escuadron.addEventListener('change', function() {
+        var formulario = document.getElementById("form");
+        var escuadron = document.getElementById("escuadron");
+        var alumno = document.getElementById("alumno");
 
-            axios.post('/alumnos_por_escuadron', {
-                escuadron: escuadron.value
-            })
-                .then(function(response) {
+        function form_submit(option) {
 
-                    var alumnos = document.getElementById("alumno")
+            if(option==="escuadron") alumno.value = null
 
-                    alumnos.innerHTML =`<option value="">Seleccionar ...</option>`
-                    response.data.forEach(agregar_alumnos)
-
-                })
-                .catch(function(error) {
-                    console.log(error);
-                });
-        })
-
-        function agregar_alumnos(item,index) {
-            document.getElementById("alumno").innerHTML+=`<option value="${item.id}">${item.nombre}</option>`
+            formulario.submit()
         }
 
-        excel.addEventListener('change', function() {
-
-            if(excel.value) load_icon.classList.add("color-blue");
-            else load_icon.classList.remove("color-blue");
-
-        })
     </script>
+
+    @if($request->alumno)
+
+        <script>
+
+            function guardar_cambios(id, value, url) {
+
+                axios.post(url, {
+                    id: id,
+                    value
+                })
+                    .then(function(response) {
+                        console.log(response)
+                    })
+                    .catch(function(error) {
+                        console.log(error)
+                    });
+            }
+
+
+            var articulos = document.querySelectorAll(".article");
+
+            for (var i = 0; i < articulos.length; i++) {
+
+                var articulo = articulos[i];
+
+                articulo.addEventListener('change', function() {
+                    guardar_cambios(this.id, this.value, "/post_intendencia_articulo")
+                })
+            }
+
+        </script>
+
+    @endif
 
 @endsection
