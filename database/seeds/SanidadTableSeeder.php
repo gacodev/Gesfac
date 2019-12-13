@@ -1,5 +1,8 @@
 <?php
 
+use App\Alumno;
+use App\Novedad;
+use App\Sanidad;
 use Illuminate\Database\Seeder;
 use Carbon\Carbon;
 use Faker\Factory as Faker;
@@ -16,6 +19,8 @@ class SanidadTableSeeder extends Seeder
         $faker = Faker::create();
 
         $date = Carbon::now();
+
+        $novedad = Novedad::where("novedad", "SANIDAD")->get()->first()->id;
 
         for ($i=1; $i <= 80; $i++) {
 
@@ -48,7 +53,7 @@ class SanidadTableSeeder extends Seeder
             }
 
 
-            \DB::table('sanidad')->insert(array(
+            $sanidad = Sanidad::create([
                 'alumno' => $i,
                 'estado' => $estado,
                 'asignado' => $i<=40?1:0,
@@ -62,7 +67,16 @@ class SanidadTableSeeder extends Seeder
                 'motivo_incapacidad' => $i<=20?$faker->text($maxNbChars = 30):null,
                 'observaciones_incapacidad' => $i<=20?$faker->text($maxNbChars = 120):null,
                 'lugar_incapacidad' => $i<=20?$faker->text($maxNbChars = 30):null,
-            ));
+            ]);
+
+            if($i<=20){
+                Alumno::where("alumnos.id", $sanidad->id)
+                    ->update([
+                        "novedad" => $novedad
+                    ]);
+            }
+
+
         }
     }
 }

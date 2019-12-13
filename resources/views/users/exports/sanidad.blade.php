@@ -109,24 +109,14 @@
         </tr>
         <thead>
         <tbody>
+        @foreach($ALFA as $alfa)
         <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td>{{$alfa->fecha_asignacion}}</td>
+            <td>{{$alfa->fecha_incapacidad}}</td>
+            <td>{{$alfa->alumno}}</td>
+            <td>{{$alfa->novedad}}</td>
         </tr>
-        <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
+        @endforeach
         <tr>
             <td>Total</td>
             <td>&nbsp;</td>
@@ -153,24 +143,14 @@
         </tr>
         <thead>
         <tbody>
-        <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
+        @foreach($BRAVO as $bravo)
+            <tr>
+                <td>{{$bravo->fecha_asignacion}}</td>
+                <td>{{$bravo->fecha_incapacidad}}</td>
+                <td>{{$bravo->alumno}}</td>
+                <td>{{$bravo->novedad}}</td>
+            </tr>
+        @endforeach
         <tr>
             <td>Total</td>
             <td>&nbsp;</td>

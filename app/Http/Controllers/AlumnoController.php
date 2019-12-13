@@ -6,7 +6,7 @@ use App\Alumno;
 use App\AlumnoArmerillo;
 use App\AlumnoVisitantes;
 use App\Familiar;
-use App\novedad;
+use App\Novedad;
 use App\Sanidad;
 use App\visitante;
 use App\armerillo;
@@ -242,7 +242,7 @@ class AlumnoController extends Controller
 
     public function listar(){
 
-        $novedades = novedad::pluck('novedad', 'id');
+        $novedades = Novedad::pluck('novedad', 'id');
 
         $listar = Alumno::leftJoin('escuadrones', 'escuadrones.id', '=', 'alumnos.escuadron')
             ->leftJoin('novedades', 'novedades.id', '=', 'alumnos.novedad')
