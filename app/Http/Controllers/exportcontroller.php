@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Alumno;
+use App\Escuadron;
+use App\Novedad;
 use App\Sanidad;
 use Barryvdh\DomPDF\Facade as PDF;
 use Carbon\Carbon;
@@ -63,9 +65,30 @@ class exportcontroller extends Controller
         return $pdf->setPaper('a4', 'landscape')->stream('sanidad.pdf');
     }
     public function exportpersonal(){
-//        return view('users.exports.personal');
-        $listar = Alumno::get();
-        $pdf   = PDF::loadView('users.exports.personal', compact('listar'));
+
+        $novedades = novedad::pluck('id', 'novedad');
+        $escuadrones = Escuadron::pluck('escuadron');
+
+        foreach ($novedades as $key => $novedad) $novedades[$key] = 0;
+
+        $novedades_escuadrones = [];
+
+        foreach ($escuadrones as $escuadron){
+            $novedades_escuadrones[$escuadron] = clone $novedades;
+
+            $filtrar_novedades = Alumno::leftJoin('escuadrones', 'escuadrones.id', '=', 'alumnos.escuadron')
+                ->leftJoin('novedades', 'novedades.id', '=', 'alumnos.novedad')
+                ->where('escuadrones.escuadron', '=', $escuadron);
+
+            foreach ($filtrar_novedades->get(["novedades.novedad AS novedad"]) as $index)
+                $novedades_escuadrones[$escuadron][$index->novedad] +=1;
+
+            $novedades_escuadrones[$escuadron]["TOTAL"]=$filtrar_novedades->count();
+            $novedades_escuadrones[$escuadron]["TOTAL_NOVEDADES"]=$filtrar_novedades->count()-$novedades_escuadrones[$escuadron]["NINGUNA"];
+
+        }
+
+        $pdf   = PDF::loadView('users.exports.personal', compact('novedades_escuadrones'));
         return $pdf->setPaper('a4', 'landscape')->stream('personal.pdf');
     }
 }

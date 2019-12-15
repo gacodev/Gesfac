@@ -1,5 +1,4 @@
 <!-- Sidebar -->
-<div>
 <div id="sidebar-container" class="sidebar-expanded d-none d-md-block">
 
     <!-- d-* hiddens the Sidebar in smaller devices. Its itens can be kept on the Navbar 'Menu' -->
@@ -7,17 +6,19 @@
 
     <ul class="list-group">
         <!-- Separator with title -->
-        <div id="personal">
-        <li class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed">
-            <small>PERSONAL</small>
-        </li>
-        </div>
-        <!-- /END Separator -->
         <a href="" id="ocultar_sidebar" data-toggle="sidebar-colapse" class="bg-dark list-group-item list-group-item-action d-flex align-items-center text-center">
             <div class="d-flex w-100 justify-content-start align-items-center text-center">
                 <span id="collapse-icon" class="fa fa-1x mr-2"></span>
             </div>
         </a>
+
+        <div id="personal">
+            <li class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed">
+                <small>PERSONAL</small>
+            </li>
+        </div>
+        <!-- /END Separator -->
+
         @can ('/registrar_alumno')
             <a href="{{ url('/registrar_alumno') }}" class="bg-dark list-group-item list-group-item-action">
                 <div class="d-flex w-100 justify-content-start align-items-center">
@@ -84,31 +85,31 @@
             </a>
         @endcan
         @can ('/agendar')
-        <a href="{{ url('/agendar') }}" class="bg-dark list-group-item list-group-item-action">
-            <div class="d-flex w-100 justify-content-start align-items-center">
-                <span class="fas fa-stethoscope mr-3"></span>
-                <small><span class="menu-collapsed">AGENDAR</span></small>
-            </div>
-        </a>
+            <a href="{{ url('/agendar') }}" class="bg-dark list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-start align-items-center">
+                    <span class="fas fa-stethoscope mr-3"></span>
+                    <small><span class="menu-collapsed">AGENDAR</span></small>
+                </div>
+            </a>
         @endcan
         @can ('/sanidad')
-        <a href="{{ url('/sanidad') }}" class="bg-dark list-group-item list-group-item-action">
-            <div class="d-flex w-100 justify-content-start align-items-center">
-                <span class="fas fa-ambulance mr-3"></span>
-                <small><span class="menu-collapsed">ASISTENCIA</span></small>
-            </div>
-        </a>
+            <a href="{{ url('/sanidad') }}" class="bg-dark list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-start align-items-center">
+                    <span class="fas fa-ambulance mr-3"></span>
+                    <small><span class="menu-collapsed">ASISTENCIA</span></small>
+                </div>
+            </a>
         @endcan
         @can ('/informes')
-        <a href="{{ url('/informes') }}" class="bg-dark list-group-item list-group-item-action">
-            <div class="d-flex w-100 justify-content-start align-items-center">
-                <span class="fas fa-list-ol mr-3"></span>
-                <small><span class="menu-collapsed">INFORMES</span></small>
-            </div>
-        </a>
+            <a href="{{ url('/informes') }}" class="bg-dark list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-start align-items-center">
+                    <span class="fas fa-list-ol mr-3"></span>
+                    <small><span class="menu-collapsed">INFORMES</span></small>
+                </div>
+            </a>
 
         @endcan
-        <!-- Separator with title -->
+    <!-- Separator with title -->
 
 
         <li class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed">
@@ -124,16 +125,14 @@
             </a>
         @endcan
 
-        @can ('intendencia')
-            <a href="{{ route('intendencia') }}" class="bg-dark list-group-item list-group-item-action">
-                <div class="d-flex w-100 justify-content-start align-items-center">
-                    <span class="fas fa-tshirt mr-3"></span>
-                    <small><span class="menu-collapsed">DETALLES ENTREGA</span></small>
-                </div>
-            </a>
-        @endcan
-
-
+{{--        @can ('intendencia')--}}
+{{--            <a href="{{ route('intendencia') }}" class="bg-dark list-group-item list-group-item-action">--}}
+{{--                <div class="d-flex w-100 justify-content-start align-items-center">--}}
+{{--                    <span class="fas fa-tshirt mr-3"></span>--}}
+{{--                    <small><span class="menu-collapsed">DETALLES ENTREGA</span></small>--}}
+{{--                </div>--}}
+{{--            </a>--}}
+{{--        @endcan--}}
 
 
         <li class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed">
@@ -141,35 +140,34 @@
         </li>
         <!-- /END Separator -->
 
-                            @can ('/ingreso')
-        <a href="{{ url('/ingreso') }}" class="bg-dark list-group-item list-group-item-action">
-            <div class="d-flex w-100 justify-content-start align-items-center">
-                <span class="fas fa-user-check mr-3"></span>
-                <small>  <span class="menu-collapsed">INGRESO</span>   </small>
-            </div>
-        </a>
-@endcan
-                                @can ('/invitados')
-        <a href="{{ url('/invitados') }}" class="bg-dark list-group-item list-group-item-action">
-            <div class="d-flex w-100 justify-content-start align-items-center">
-                <span class="fas fa-user-plus mr-3"></span>
-                <small><span class="menu-collapsed">REGISTRO INVITADOS</span></small>
-            </div>
-        </a>
+        @can ('/ingreso')
+            <a href="{{ url('/ingreso') }}" class="bg-dark list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-start align-items-center">
+                    <span class="fas fa-user-check mr-3"></span>
+                    <small>  <span class="menu-collapsed">INGRESO</span>   </small>
+                </div>
+            </a>
+        @endcan
+        @can ('/invitados')
+            <a href="{{ url('/invitados') }}" class="bg-dark list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-start align-items-center">
+                    <span class="fas fa-user-plus mr-3"></span>
+                    <small><span class="menu-collapsed">REGISTRO INVITADOS</span></small>
+                </div>
+            </a>
 
-                        @endcan
-        <!-- Separator without title -->
+    @endcan
+    <!-- Separator without title -->
 
     </ul><!-- List Group END-->
 </div><!-- sidebar-container END -->
-</div>
 
-<script>
-    $("#sidebar-container").click(function() {
-        if ( $("ul").first().is( ":hidden" ) ) {
-            $("ul" ).show( "slow" );
-        } else {
-            $("ul").slideUp();
-        }
-    });
-</script>
+{{--<script>--}}
+{{--    $("#sidebar-container").click(function() {--}}
+{{--        if ( $("ul").first().is( ":hidden" ) ) {--}}
+{{--            $("ul" ).show( "slow" );--}}
+{{--        } else {--}}
+{{--            $("ul").slideUp();--}}
+{{--        }--}}
+{{--    });--}}
+{{--</script>--}}

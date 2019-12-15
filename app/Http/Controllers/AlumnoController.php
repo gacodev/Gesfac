@@ -276,8 +276,7 @@ class AlumnoController extends Controller
         $novedades = novedad::pluck('id', 'novedad');
         $escuadrones = Escuadron::pluck('escuadron');
 
-        foreach ($novedades as $key => $novedad)
-            $novedades[$key] = 0;
+        foreach ($novedades as $key => $novedad) $novedades[$key] = 0;
 
         $novedades_escuadrones = [];
 
@@ -291,7 +290,8 @@ class AlumnoController extends Controller
             foreach ($filtrar_novedades->get(["novedades.novedad AS novedad"]) as $index)
                 $novedades_escuadrones[$escuadron][$index->novedad] +=1;
 
-            $novedades_escuadrones[$escuadron]["total"]=$filtrar_novedades->count();
+            $novedades_escuadrones[$escuadron]["TOTAL"]=$filtrar_novedades->count();
+            $novedades_escuadrones[$escuadron]["TOTAL_NOVEDADES"]=$filtrar_novedades->count()-$novedades_escuadrones[$escuadron]["NINGUNA"];
 
         }
 

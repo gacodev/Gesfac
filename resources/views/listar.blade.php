@@ -9,10 +9,12 @@
 
     <div class="table-container">
 
+        <h2 class="title_page">NOVEDADES</h2>
+
         <!-- trigger modal -->
-        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" id="total_weapons">
-            CONTAR ALUMNOS
-        </button>
+{{--        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" id="total_weapons">--}}
+{{--            CONTAR ALUMNOS--}}
+{{--        </button>--}}
 
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -162,20 +164,20 @@
             })
         }
 
-        var total_novedades = document.getElementById("total_weapons");
-
-        total_novedades.addEventListener('click', function() {
-
-            axios.post("contar_novedades")
-                .then(function(response) {
-
-                    console.log(response.data)
-
-                })
-                .catch(function(error) {
-                    location.reload();
-                });
-        })
+        // var total_novedades = document.getElementById("total_weapons");
+        //
+        // total_novedades.addEventListener('click', function() {
+        //
+        //     axios.post("contar_novedades")
+        //         .then(function(response) {
+        //
+        //             console.log(response.data)
+        //
+        //         })
+        //         .catch(function(error) {
+        //             location.reload();
+        //         });
+        // })
 
     </script>
 @endsection

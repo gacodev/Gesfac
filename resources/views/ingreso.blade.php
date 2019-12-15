@@ -5,6 +5,8 @@
 
 @section('page_content')
 
+    <h2 class="title_page">BORRAR VISITANTES</h2>
+
     <a href="{{ url('/borrado') }}"><button type="button" class="btn btn-danger" id="total_weapons">
             ELIMINAR VISITAS
         </button>

@@ -41,6 +41,10 @@
             font-size: .9rem;
         }
 
+        .center{
+            text-align: center;
+        }
+
         .table_2{
             position: absolute;
             top: 0;
@@ -124,69 +128,69 @@
         </tr>
         <tr>
             <td><b>FUERZA EFECTIVA</b></td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="center">&nbsp;</td>
+            <td class="center">&nbsp;</td>
         </tr>
         <tr>
-            <td><b>IAAFA</b></td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td><b>IIAFA</b></td>
+            <td class="center">&nbsp;</td>
+            <td class="center">{{$novedades_escuadrones["ALFA"]["IIAFA"]}}</td>
         </tr>
         <tr>
             <td><b>SERVICIOS</b></td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="center">&nbsp;</td>
+            <td class="center">{{$novedades_escuadrones["ALFA"]["SERVICIO"]}}</td>
 
         </tr>
         <tr>
             <td><b>PERMISO</b></td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="center">&nbsp;</td>
+            <td class="center"></td>
         </tr>
         <tr>
             <td><b>ADMINISTRATIVA</b></td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="center">&nbsp;</td>
+            <td class="center">{{$novedades_escuadrones["ALFA"]["ADMINISTRATIVA"]}}</td>
         </tr>
         <tr>
             <td><b>SANIDAD</b></td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="center">&nbsp;</td>
+            <td class="center">{{$novedades_escuadrones["ALFA"]["SANIDAD"]}}</td>
         </tr>
         <tr>
             <td><b>HMC</b></td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="center">&nbsp;</td>
+            <td class="center">&nbsp;</td>
         </tr>
         <tr>
             <td><b>EXC CASA</b></td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="center">&nbsp;</td>
+            <td class="center">&nbsp;</td>
         </tr>
         <tr>
             <td><b>EXC ESUFA</b></td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="center">&nbsp;</td>
+            <td class="center">&nbsp;</td>
         </tr>
         <tr>
             <td><b>OTROS</b></td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="center">&nbsp;</td>
+            <td class="center">&nbsp;</td>
         </tr>
         <tr>
             <td><b>TOTAL NOVEDADES</b></td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="center">&nbsp;</td>
+            <td class="center">{{$novedades_escuadrones["ALFA"]["TOTAL_NOVEDADES"]}}</td>
         </tr>
         <tr>
             <td><b>FORMAN</b></td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="center">&nbsp;</td>
+            <td class="center">{{$novedades_escuadrones["ALFA"]["NINGUNA"]}}</td>
         </tr>
         <tr>
             <td><b>TOTAL</b></td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="center">&nbsp;</td>
+            <td class="center">{{$novedades_escuadrones["ALFA"]["TOTAL"]}}</td>
         </tr>
         </tbody>
     </table>
@@ -201,57 +205,57 @@
             <td><b>ALUMNOS</b></td>
         </tr>
         <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="center">&nbsp;</td>
+            <td class="center">&nbsp;</td>
         </tr>
         <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="center">&nbsp;</td>
+            <td class="center">{{$novedades_escuadrones["BRAVO"]["IIAFA"]}}</td>
         </tr>
         <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="center">&nbsp;</td>
+            <td class="center">{{$novedades_escuadrones["BRAVO"]["SERVICIO"]}}</td>
 
         </tr>
         <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="center">&nbsp;</td>
+            <td class="center"></td>
         </tr>
         <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="center">&nbsp;</td>
+            <td class="center">{{$novedades_escuadrones["BRAVO"]["ADMINISTRATIVA"]}}</td>
         </tr>
         <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="center">&nbsp;</td>
+            <td class="center">{{$novedades_escuadrones["BRAVO"]["SANIDAD"]}}</td>
         </tr>
         <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="center">&nbsp;</td>
+            <td class="center">&nbsp;</td>
         </tr>
         <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="center">&nbsp;</td>
+            <td class="center">&nbsp;</td>
         </tr>
         <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="center">&nbsp;</td>
+            <td class="center">&nbsp;</td>
         </tr>
         <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="center">&nbsp;</td>
+            <td class="center">&nbsp;</td>
         </tr>
         <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="center">&nbsp;</td>
+            <td class="center">{{$novedades_escuadrones["BRAVO"]["TOTAL_NOVEDADES"]}}</td>
         </tr>
         <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="center">&nbsp;</td>
+            <td class="center">{{$novedades_escuadrones["BRAVO"]["NINGUNA"]}}</td>
         </tr>
         <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="center">&nbsp;</td>
+            <td class="center">{{$novedades_escuadrones["BRAVO"]["TOTAL"]}}</td>
         </tr>
         </tbody>
     </table>
@@ -266,125 +270,125 @@
             <td><b>ALUMNOS</b></td>
         </tr>
         <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="center">&nbsp;</td>
+            <td class="center">&nbsp;</td>
         </tr>
         <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="center">&nbsp;</td>
+            <td class="center">{{$novedades_escuadrones["DELTA"]["IIAFA"]}}</td>
         </tr>
         <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="center">&nbsp;</td>
+            <td class="center">{{$novedades_escuadrones["DELTA"]["SERVICIO"]}}</td>
 
         </tr>
         <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="center">&nbsp;</td>
+            <td class="center"></td>
         </tr>
         <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="center">&nbsp;</td>
+            <td class="center">{{$novedades_escuadrones["DELTA"]["ADMINISTRATIVA"]}}</td>
         </tr>
         <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="center">&nbsp;</td>
+            <td class="center">{{$novedades_escuadrones["DELTA"]["SANIDAD"]}}</td>
         </tr>
         <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="center">&nbsp;</td>
+            <td class="center">&nbsp;</td>
         </tr>
         <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="center">&nbsp;</td>
+            <td class="center">&nbsp;</td>
         </tr>
         <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="center">&nbsp;</td>
+            <td class="center">&nbsp;</td>
         </tr>
         <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="center">&nbsp;</td>
+            <td class="center">&nbsp;</td>
         </tr>
         <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="center">&nbsp;</td>
+            <td class="center">{{$novedades_escuadrones["DELTA"]["TOTAL_NOVEDADES"]}}</td>
         </tr>
         <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="center">&nbsp;</td>
+            <td class="center">{{$novedades_escuadrones["DELTA"]["NINGUNA"]}}</td>
         </tr>
         <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="center">&nbsp;</td>
+            <td class="center">{{$novedades_escuadrones["DELTA"]["TOTAL"]}}</td>
         </tr>
         </tbody>
     </table>
 
-        <table cellpadding="5" width="20%" class="table_4">
-            <tbody>
-            <tr>
-                <td colspan="2" class="text-center"><b>CHARLIE</b></td>
-            </tr>
-            <tr>
-                <td><b>DISTINGUIDOS</b></td>
-                <td><b>ALUMNOS</b></td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
+    <table cellpadding="5" width="20%" class="table_4">
+        <tbody>
+        <tr>
+            <td colspan="2" class="text-center"><b>CHARLIE</b></td>
+        </tr>
+        <tr>
+            <td><b>DISTINGUIDOS</b></td>
+            <td><b>ALUMNOS</b></td>
+        </tr>
+        <tr>
+            <td class="center">&nbsp;</td>
+            <td class="center">&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="center">&nbsp;</td>
+            <td class="center">{{$novedades_escuadrones["CHARLIE"]["IIAFA"]}}</td>
+        </tr>
+        <tr>
+            <td class="center">&nbsp;</td>
+            <td class="center">{{$novedades_escuadrones["CHARLIE"]["SERVICIO"]}}</td>
 
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            </tbody>
-        </table>
+        </tr>
+        <tr>
+            <td class="center">&nbsp;</td>
+            <td class="center"></td>
+        </tr>
+        <tr>
+            <td class="center">&nbsp;</td>
+            <td class="center">{{$novedades_escuadrones["CHARLIE"]["ADMINISTRATIVA"]}}</td>
+        </tr>
+        <tr>
+            <td class="center">&nbsp;</td>
+            <td class="center">{{$novedades_escuadrones["CHARLIE"]["SANIDAD"]}}</td>
+        </tr>
+        <tr>
+            <td class="center">&nbsp;</td>
+            <td class="center">&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="center">&nbsp;</td>
+            <td class="center">&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="center">&nbsp;</td>
+            <td class="center">&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="center">&nbsp;</td>
+            <td class="center">&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="center">&nbsp;</td>
+            <td class="center">{{$novedades_escuadrones["CHARLIE"]["TOTAL_NOVEDADES"]}}</td>
+        </tr>
+        <tr>
+            <td class="center">&nbsp;</td>
+            <td class="center">{{$novedades_escuadrones["CHARLIE"]["NINGUNA"]}}</td>
+        </tr>
+        <tr>
+            <td class="center">&nbsp;</td>
+            <td class="center">{{$novedades_escuadrones["CHARLIE"]["TOTAL"]}}</td>
+        </tr>
+        </tbody>
+    </table>
 
 </div>
 

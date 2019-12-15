@@ -98,6 +98,8 @@
         // Collapse/Expand icon
         $('#collapse-icon').toggleClass('fa-angle-double-left fa-angle-double-right');
     }
+
+    SidebarCollapse();
 </script>
 <script src="{{ asset('js/popper.min.js') }}"></script>
 <script src="{{ asset('js/bootstrap.min.js') }}"></script>

@@ -12,7 +12,7 @@
 
 <div class="form-group row">
     <div class="form-group col-sm-6">
-        <form action="{{route('armas')}}>
+        <form action="{{route('armas')}}">
         <label for="send">FORMANDO</label>
         <input type="text" class="form-control" id="send" required >
     </div>
@@ -65,10 +65,10 @@
                 <thead>
 
                 <tr>
-                    <th>ARMAMENTO</th>
                     <th>FUSIL</th>
-                    <th>ALUMNO</th>
+                    <th>ARMAMENTO</th>
                     <th>ESCUADRON</th>
+                    <th>ALUMNO</th>
                     <th>ARMERILLO</th>
                 </tr>
 
@@ -78,10 +78,10 @@
                 <tbody>
                 @foreach($armas as $arma)
                     <tr>
-                        <td>{{$arma->fusil_serial}}</td>
                         <td>{{$arma->tipo_fusil}}</td>
-                        <td>{{$arma->alumno}}</td>
+                        <td>{{$arma->fusil_serial}}</td>
                         <td>{{$arma->escuadron}}</td>
+                        <td>{{$arma->alumno}}</td>
                         <td>
                             <div class="onoffswitch">
 
