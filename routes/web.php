@@ -118,7 +118,13 @@ Route::middleware(['auth'])->group(function () {
     Route::post('import-visitantes', 'ReportesController@visitantes')->name('visitante')
     ->middleware('can:visitante');
 
+    Route::post('import-alumnos', 'ReportesController@import_alumnos')->name('import_alumnos')
+        ->middleware('can:visitante');
+
     Route::get('formato_invitados', 'VisitanteController@formato_invitados')->name('formato_invitados')
+        ->middleware('can:visitante');
+
+    Route::get('formato_registro_alumnos', 'AlumnoController@formato_registro_alumnos')->name('formato_registro_alumnos')
         ->middleware('can:visitante');
 
     Route::get('export-sanidad-pdf', 'UserController@sanidad')->name('export-sanidad-pdf')

@@ -17,6 +17,7 @@ use App\Escuadron;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class AlumnoController extends Controller
 {
@@ -52,6 +53,7 @@ class AlumnoController extends Controller
     {
         return view('reportes');
     }
+
     public function registrar_alumno()
     {
         $tipo_documentos = TipoDocumento::pluck('tipo', 'id');
@@ -422,5 +424,10 @@ class AlumnoController extends Controller
         }
 
         return "error";
+    }
+
+    public function formato_registro_alumnos()
+    {
+        return Storage::response("excel/formato_registro_alumnos.xlsx");
     }
 }

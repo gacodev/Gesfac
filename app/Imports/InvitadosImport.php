@@ -4,7 +4,6 @@ namespace App\Imports;
 use App\Alumno;
 use App\visitante;
 use Maatwebsite\Excel\Concerns\{Importable, ToModel, WithHeadingRow};
-use Illuminate\Support\Facades\DB;
 
 
 class InvitadosImport implements ToModel, WithHeadingRow
