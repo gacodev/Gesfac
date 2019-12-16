@@ -97,7 +97,7 @@
 
         <div class="form-group col-12 col-lg-4 load-file custom-center">
             {!! Html::decode(Form::label('excel', '<i id="load-icon" class="fas fa-cloud-upload-alt fa-2x"></i> Cargar Excel', ['class' => 'subir'])) !!}
-            {{ Form::file("excel", array_merge(['class' => 'form-control hidden'], [])) }}
+            {{ Form::file("excel", array_merge(['class' => 'form-control hidden', 'required'], [])) }}
             <div id="info"></div>
         </div>
 

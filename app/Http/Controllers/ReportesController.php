@@ -28,7 +28,7 @@ class ReportesController extends Controller
     public function import_alumnos(Request $request){
 
         $data = [
-            'escuadron' => $request["escuadron"],
+            'escuadron' => $request["excel_escuadron"],
         ];
 
         $file = $request->file('excel');

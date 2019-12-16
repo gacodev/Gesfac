@@ -3,10 +3,10 @@
 namespace App\Imports;
 use App\Alumno;
 use App\visitante;
-use Maatwebsite\Excel\Concerns\{Importable, ToModel, WithHeadingRow};
+use Maatwebsite\Excel\Concerns\{Importable, ToModel, WithHeadingRow, WithChunkReading};
 
 
-class AlumnosImport implements ToModel, WithHeadingRow
+class AlumnosImport implements ToModel, WithHeadingRow, WithChunkReading
 {
 
     use Importable;
@@ -45,5 +45,18 @@ class AlumnosImport implements ToModel, WithHeadingRow
             'numero_documento' => 'regex:/[0-9]/',
             'telefono' => 'regex:/[0-9]/'
         ];
+    }
+
+    /**
+     * @return int
+     */
+    public function batchSize(): int
+    {
+        return 100;
+    }
+
+    public function chunkSize(): int
+    {
+        return 100;
     }
 }

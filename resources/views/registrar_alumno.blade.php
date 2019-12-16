@@ -223,8 +223,8 @@
         </div>
 
         <div class="form-group col-12 col-lg-6">
-            {{ Form::label("escuadron", "Seleccione El Escuadron", ['class' => 'control-label']) }}
-            {{Form::select('escuadron', $escuadrones, null, array('class'=>'form-control', 'required', 'placeholder'=>'Seleccionar ...'))}}
+            {{ Form::label("excel_escuadron", "Seleccione El Escuadron", ['class' => 'control-label']) }}
+            {{Form::select('excel_escuadron', $escuadrones, null, array('class'=>'form-control', 'required', 'placeholder'=>'Seleccionar ...'))}}
         </div>
 
     </div>
@@ -245,6 +245,8 @@
     {!! Form::close() !!}
 
     <script>
+        var excel = document.getElementById("excel")
+        var load_icon = document.getElementById("load-icon")
         var registrar_madre = document.getElementById("mother_registration");
         var registrar_padre = document.getElementById("father_registration");
         var madre = document.getElementById("madre");
@@ -288,6 +290,13 @@
                 elementos[i].required = value
             }
         }
+
+        excel.addEventListener('change', function() {
+
+            if(excel.value) load_icon.classList.add("color-blue");
+            else load_icon.classList.remove("color-blue");
+
+        })
 
     </script>
 
