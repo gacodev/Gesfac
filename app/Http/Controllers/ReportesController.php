@@ -29,21 +29,6 @@ class ReportesController extends Controller
         $import = new InvitadosImport();
         $import->import($file);
 
-        $alumnos = Alumno::all();
-
-        $data = [
-            ['tipo_familiar' => 'PADRE'],
-            ['tipo_familiar' => 'MADRE'],
-        ];
-
-        foreach ($alumnos as $alumno) {
-
-            if(!Sanidad::where("alumno", $alumno->id)->count()){
-                Sanidad::create([
-                   "alumno" => $alumno->id
-                ]);
-            }
-        }
 
         return redirect()->route('registro_inv')->with('failures', $import->failures());
     }
@@ -58,8 +43,18 @@ class ReportesController extends Controller
 
         $import = new AlumnosImport($data);
         $import->import($file);
-
 //        dd($import->errors());
+
+        $alumnos = Alumno::all();
+
+        foreach ($alumnos as $alumno) {
+
+            if(!Sanidad::where("alumno", $alumno->id)->count()){
+                Sanidad::create([
+                    "alumno" => $alumno->id
+                ]);
+            }
+        }
 
         return redirect()->route('registrar_alumno')->with('failures', $import->failures());
 
