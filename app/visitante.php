@@ -13,6 +13,7 @@ class visitante extends Model
         "nombre",
         "telefono",
         "alumno",
+        "parentesco",
     ];
 
     protected $table = "visitantes";

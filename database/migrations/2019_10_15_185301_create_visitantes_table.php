@@ -16,9 +16,10 @@ class CreateVisitantesTable extends Migration
         Schema::create('visitantes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('tipo_documento')->nullable();
-            $table->string('numero_documento');
+            $table->string('numero_documento')->nullable();
             $table->string('nombre');
-            $table->string('telefono');
+            $table->string('telefono')->nullable();
+            $table->string('parentesco')->nullable();
             $table->foreign('tipo_documento')->references('id')->on('tipo_documento');
             $table->unsignedBigInteger('alumno');
             $table->foreign('alumno')->references('id')->on('alumnos');

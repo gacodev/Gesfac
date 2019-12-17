@@ -23,8 +23,11 @@ class ReportesController extends Controller
     public function visitantes(Request $request){
 
         $file = $request->file('excel');
-        Excel::import(new InvitadosImport, $file);
-        return back();
+
+        $import = new InvitadosImport();
+        $import->import($file);
+
+        return redirect()->route('registro_inv')->with('failures', $import->failures());
     }
 
     public function import_alumnos(Request $request){

@@ -8,6 +8,14 @@
 
     <h2 class="title_page">REGISTRAR VISITANTES</h2>
 
+    @if(Session::get('failures'))
+        @foreach (Session::get('failures') as $failure)
+            <div class="alert alert-danger col-12" role="alert">
+                {{ "Hubo un error en la fila ".$failure->row().", ".$failure->errors()[0] }}
+            </div>
+        @endforeach
+    @endisset
+
     {!! Form::open(['url' => 'registrar_visitante']) !!}
 
     <div class="row">

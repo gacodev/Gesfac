@@ -1,15 +1,20 @@
 <?php
 
 namespace App\Imports;
-use App\Alumno;
 use App\visitante;
-use Maatwebsite\Excel\Concerns\{Importable, ToModel, WithHeadingRow, WithChunkReading};
+use App\Alumno;
+use Maatwebsite\Excel\Concerns\{Importable, ToModel, WithHeadingRow, WithChunkReading, WithValidation};
+use Illuminate\Validation\Rule;
+use Maatwebsite\Excel\Concerns\SkipsFailures;
+use Maatwebsite\Excel\Concerns\SkipsOnFailure;
+use Maatwebsite\Excel\Concerns\SkipsOnError;
+use Maatwebsite\Excel\Concerns\SkipsErrors;
 
 
-class InvitadosImport implements ToModel, WithHeadingRow, WithChunkReading
+class InvitadosImport implements ToModel, WithHeadingRow, WithChunkReading, WithValidation, SkipsOnFailure, SkipsOnError
 {
 
-    use Importable;
+    use Importable, SkipsFailures, SkipsErrors;
 
     public function model(array $row)
     {
@@ -18,34 +23,33 @@ class InvitadosImport implements ToModel, WithHeadingRow, WithChunkReading
             'tipo_documento'=> 1,
             'numero_documento' => $row["identificacion_visitante"],
             'nombre' => $row["nombre_visitante"],
-            'telefono' => $row["telefono_visitante"],
-            'alumno' => $this->alumno($row["identificacion_alumno"]),
+            'parentesco' => $row["parentesco"],
+            'alumno' => $this->alumno($row["nombre_alumno"]),
         ]);
     }
 
     public function alumno($alumno)
     {
-        $output_alumno = NULL;
 
-        if($alumno == 0){
-            $output_alumno = Alumno::where("nombre", "COMANDO")
-                ->whereNull('numero_documento')
-                ->first()->id;
-        }
-        else{
-            $output_alumno = Alumno::where("numero_documento", $alumno)
-                ->first()->id;
-        }
+        $output_alumno = Alumno::where("nombre", $alumno);
 
-        return $output_alumno;
+        return $output_alumno->count()? $output_alumno->first()->id : 1;
 
     }
 
-    public function rules()
+    public function rules():array
     {
         return [
-            'numero_documento' => 'regex:/[0-9]/',
-            'telefono' => 'regex:/[0-9]/'
+            'identificacion_visitante' => Rule::unique("visitantes", "numero_documento"),
+            'nombre_visitante' => 'required',
+            'nombre_alumno' => 'required',
+        ];
+    }
+
+    public function customValidationMessages()
+    {
+        return [
+            'identificacion_visitante.unique' => 'El número de documento ya esta en uso',
         ];
     }
 
@@ -54,11 +58,11 @@ class InvitadosImport implements ToModel, WithHeadingRow, WithChunkReading
      */
     public function batchSize(): int
     {
-        return 100;
+        return 10;
     }
 
     public function chunkSize(): int
     {
-        return 100;
+        return 10;
     }
 }
