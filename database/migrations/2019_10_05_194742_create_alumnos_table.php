@@ -19,7 +19,7 @@ class CreateAlumnosTable extends Migration
             $table->string('telefono')->nullable();
             $table->string('direccion')->nullable();
             $table->string('correo')->nullable();
-            $table->string('numero_documento')->nullable();
+            $table->string('numero_documento')->unique()->nullable();
             $table->string('rh')->nullable();
             $table->string('numero_documento_padre')->nullable();
             $table->string('nombre_padre')->nullable();

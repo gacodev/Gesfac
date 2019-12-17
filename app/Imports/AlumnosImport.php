@@ -2,14 +2,18 @@
 
 namespace App\Imports;
 use App\Alumno;
-use App\visitante;
-use Maatwebsite\Excel\Concerns\{Importable, ToModel, WithHeadingRow, WithChunkReading};
+use Maatwebsite\Excel\Concerns\{Importable, ToModel, WithHeadingRow, WithChunkReading, WithValidation};
+use Illuminate\Validation\Rule;
+use Maatwebsite\Excel\Concerns\SkipsFailures;
+use Maatwebsite\Excel\Concerns\SkipsOnFailure;
+use Maatwebsite\Excel\Concerns\SkipsOnError;
+use Maatwebsite\Excel\Concerns\SkipsErrors;
 
 
-class AlumnosImport implements ToModel, WithHeadingRow, WithChunkReading
+class AlumnosImport implements ToModel, WithHeadingRow, WithChunkReading, WithValidation, SkipsOnFailure, SkipsOnError
 {
 
-    use Importable;
+    use Importable, SkipsFailures, SkipsErrors;
 
     private $data;
 
@@ -27,6 +31,7 @@ class AlumnosImport implements ToModel, WithHeadingRow, WithChunkReading
             'nombre' => $row["nombre"],
             'escuadron' => $this->data["escuadron"],
         ]);
+
     }
 
     public function tipo_documento($tipo_documento)
@@ -39,24 +44,32 @@ class AlumnosImport implements ToModel, WithHeadingRow, WithChunkReading
 
     }
 
-    public function rules()
+    public function rules():array
     {
         return [
-            'numero_documento' => 'regex:/[0-9]/',
-            'telefono' => 'regex:/[0-9]/'
+            'tipo_documento' => Rule::in(["C.C.", "C.C", "CC", "T.I.", "T.I", "TI", "C.E.", "C.E", "CE"]),
+            'numero_documento' => 'required|unique:alumnos',
+            'nombre' => 'required',
         ];
     }
 
+    public function customValidationMessages()
+    {
+        return [
+            'tipo_documento.in' => 'Los tipos de documentos válidos son C.C. T.T. C.E. en la columna TIPO DOCUMENTO',
+            'numero_documento.unique' => 'El número de documento ya esta en uso',
+        ];
+    }
     /**
      * @return int
      */
     public function batchSize(): int
     {
-        return 100;
+        return 10;
     }
 
     public function chunkSize(): int
     {
-        return 100;
+        return 10;
     }
 }

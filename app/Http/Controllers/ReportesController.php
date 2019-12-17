@@ -1,11 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Escuadron;
 use App\Imports\AlumnosImport;
 use App\Imports\ArmerilloImport;
 use App\Imports\InvitadosImport;
 
 
+use App\TipoDocumento;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
 
@@ -32,7 +34,13 @@ class ReportesController extends Controller
         ];
 
         $file = $request->file('excel');
-        Excel::import(new AlumnosImport($data), $file);
-        return back();
+
+        $import = new AlumnosImport($data);
+        $import->import($file);
+
+//        dd($import->errors());
+
+        return redirect()->route('registrar_alumno')->with('failures', $import->failures());
+
     }
 }

@@ -65,6 +65,8 @@ class AlumnoController extends Controller
             ->with("tipo_documentos",$tipo_documentos)
             ->with("escuadrones", $escudrones)
             ->with("success", request("success"));
+//            ->with("failures", request("failures")?request("failures"):NULL);
+//            ->with("import_errors", NULL);
     }
 
     public function crear_alumno()

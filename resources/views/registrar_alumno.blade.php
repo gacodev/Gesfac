@@ -7,6 +7,22 @@
 @section('page_content')
     <h2 class="title_page">REGISTRAR ALUMNO</h2>
 
+    @if($errors->any())
+        @foreach ($errors->all() as $error)
+            <div class="alert alert-danger col-12" role="alert">
+                {{ $error }}
+            </div>
+        @endforeach
+    @endif
+
+    @if(Session::get('failures'))
+        @foreach (Session::get('failures') as $failure)
+            <div class="alert alert-danger col-12" role="alert">
+                {{ "Hubo un error en la fila ".$failure->row().", ".$failure->errors()[0] }}
+            </div>
+        @endforeach
+    @endisset
+
     {!! Form::open(['url' => 'registrar_alumno']) !!}
 
 
@@ -178,14 +194,6 @@
 
         </div>
     </div>
-
-    @if($errors->any())
-        @foreach ($errors->all() as $error)
-            <div class="alert alert-danger col-12" role="alert">
-                {{ $error }}
-            </div>
-        @endforeach
-    @endif
 
     <div class="form-group col-8">
         {{ Form::button('Guardar', ['type' => 'submit', 'class' => 'btn btn-success btn-sm'] )  }}
