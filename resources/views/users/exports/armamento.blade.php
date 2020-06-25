@@ -1,5 +1,6 @@
 <html>
 <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <style>
         header{
             text-align: center;
@@ -56,13 +57,13 @@
         .firm_2{
             position: absolute;
             top: 0;
-            left: 42%;
+            left: 22%;
         }
 
         .firm_3{
             position: absolute;
             top: 0;
-            left: 80%;
+            left: 60%;
         }
 
         .total{
@@ -87,144 +88,82 @@
     <div class="subtitle">PARTE DE ARMAMENTO</div>
 </div>
 
-<div class="container">
-    <table cellpadding="5" width="48%">
-        <tbody>
-        <tr>
-            <td colspan="2"width="65%"><b>FECHA</b></td>
-            <td colspan="2"  rowspan="2" class="text-center"><b>ALFA</b></td>
-        </tr>
-        <tr>
-            <td colspan="2"><b></b></td>
-        </tr>
-        <tr>
-            <td><b></b></td>
-            <td><b>GALIL</b></td>
-            <td><b>PROVEEDORES</b></td>
-            <td><b>CARTUCHOS</b></td>
-        </tr>
 
-        <tr>
-            <td><b>FUERZA EFECTIVA</b></td>
-            <td class="text-center"><b>{{$data ?? ''}}</b></td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+<div class="text-center"><h5>Escuadron </h5></div>
+<table class="table table-bordered text-center">
+  <thead class="thead-dark">
+    <tr>
+        <th scope="col" COLSPAN="1">ELEMENTOS</th>
+      <th scope="col" COLSPAN="1">NORINCO</th>
+      <th scope="col" COLSPAN="1">M16</th>
+      <th scope="col" COLSPAN="1">GALIL</th>
+    </tr>
 
-        </tr>
+  </thead>
+  <tbody>
+  <tr>
+      <td>FUSILES</td>
+      <td>data 1</td>
+      <td>data 2</td>
+       <td>data 3</td>
+    </tr>
 
-        <tr>
-            <td><b>COMISION DE ESTUDIOS</b></td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+    <tr>
+      <td>PROVEEDORES</td>
+        <td>data 1</td>
+      <td>data 2</td>
+       <td>data 3</td>
+    </tr>
+   <tr>
+      <td>CARTUCHOS</td>
+      <td>data 1</td>
+      <td>data 2</td>
+       <td>data 3</td>
+    </tr>
 
-        </tr>
-        <tr>
-            <td><b>SERVICIOS</b></td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td><b>ARMERILLO</b></td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td><b>OTROS</b></td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td><b>EN MANO</b></td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td><b>TOTAL</b></td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        </tbody>
-    </table>
+  </tbody>
+</table>
 
-    <table cellpadding="5" width="48%" class="table_2">
-        <tbody>
-        <tr class="text-center">
-            <td colspan="2" width="65%"><b>FECHA</b></td>
-            <td colspan="2"  rowspan="2" class="text-center"><b>BRAVO</b></td>
-        </tr>
-        <tr>
-            <td colspan="2"><b></b></td>
-        </tr>
-        <tr class="text-center">
-            <td><b></b></td>
-            <td><b>GALIL</b></td>
-            <td><b>PROVEEDORES</b></td>
-            <td><b>CARTUCHOS</b></td>
-        </tr>
 
-        <tr>
-            <td><b>FUERZA EFECTIVA</b></td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
 
-        </tr>
-        <tr>
-            <td><b>COMISION DE ESTUDIOS</b></td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
 
-        </tr>
-        <tr>
-            <td><b>SERVICIOS</b></td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td><b>ARMERILLO</b></td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td><b>OTROS</b></td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td><b>EN MANO</b></td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td><b>TOTAL</b></td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        </tbody>
-    </table>
-</div>
+<div class="text-center"><h5>Escuadron </h5></div>
+<table class="table table-bordered text-center">
+  <thead class="thead-dark">
+    <tr>
+        <th scope="col" COLSPAN="1">MATERIAL DE GUERRA</th>
+      <th scope="col" COLSPAN="1">NORINCO</th>
+      <th scope="col" COLSPAN="1">M16</th>
+      <th scope="col" COLSPAN="1">GALIL</th>
+    </tr>
 
-<div class="total">
-    TOTAL ARMAMENTO:
-</div>
+  </thead>
+  <tbody>
+  <tr>
+      <td>FUSILES</td>
+      <td>data 1</td>
+      <td>data 2</td>
+       <td>data 3</td>
+    </tr>
 
-<div class="container-firm">
-    <div class="firm_1">
-        <u><b>COMANDANTE ESUFA</b></u>
-    </div>
+    <tr>
+      <td>PROVEEDORES</td>
+        <td>data 1</td>
+      <td>data 2</td>
+       <td>data 3</td>
+    </tr>
+   <tr>
+      <td>CARTUCHOS</td>
+      <td>data 1</td>
+      <td>data 2</td>
+       <td>data 3</td>
+    </tr>
 
+  </tbody>
+</table>
+
+
+<div class="container-firm mt-">
     <div class="firm_2">
         <u><b>CONTROL ALUMNOS</b></u>
     </div>
@@ -234,5 +173,23 @@
     </div>
 </div>
 
+
+ <script>
+        var total_weapons = axios.get('/totalWeapons')
+                .then(function(response) {
+                    document.getElementById("norinco").innerHTML=response.data.norinco
+                    document.getElementById("m16").innerHTML=response.data.m16
+                    document.getElementById("galil").innerHTML=response.data.galil
+
+                    var total_count_weapons = response.data.norinco + response.data.m16 + response.data.galil
+
+                    document.getElementById("total_count_weapons").innerHTML=total_count_weapons
+                })
+                .catch(function(error) {
+                    console.log(error);
+                });
+        })
+
+    </script>
 </body>
 </html>

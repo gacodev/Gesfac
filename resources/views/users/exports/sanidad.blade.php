@@ -3,6 +3,7 @@
 
 
 <head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <style>
         header{
             text-align: center;
@@ -52,25 +53,24 @@
         }
 
         .container-firm{
-            position:relative;
-            margin-top: 5cm;
-        }
-
-        .firm_2{
             position: absolute;
-            top: 0;
+            margin: auto;
+        }
+ .firm_1{
+            position: absolute;
+            top: 10cm;
+
+        }
+   .firm_2{
+            position: absolute;
+            top: 10cm;
             left: 42%;
         }
 
         .firm_3{
             position: absolute;
-            top: 0;
+            top: 10cm;
             left: 80%;
-        }
-
-        .total{
-            margin-top: 2rem;
-            margin-bottom: 2rem;
         }
 
         .text-center{
@@ -91,9 +91,9 @@
     <div class="subtitle">REPORTE DE SANIDAD</div>
 </div>
 
-<div class="container mb-5">
+<div class="container mb-5 mt-5">
     <table cellpadding="5" width="48%" class="text-center">
-        <thead>
+        <thead class="thead-dark">
         <tr>
             <th colspan="2"><b>FECHA</b></th>
             <th colspan="2"  rowspan="2" class="text-center"><b>ALFA</b></th>
@@ -160,12 +160,11 @@
         </tbody>
     </table>
 </div>
-<div class="firmas mt-5">
-<div class="total my-5">
-    TOTAL:
-</div>
 
-<div class="container-firm">
+
+
+
+<div class="container-firm mt-5">
     <div class="firm_1 ">
         <u><b>COMANDANTE ESUFA</b></u>
     </div>

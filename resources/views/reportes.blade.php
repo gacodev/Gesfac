@@ -56,5 +56,26 @@
         </div>
     </div>
 
+     <script>
+        var total_weapons = document.getElementById("total_weapons")
+
+        total_weapons.addEventListener('submit', function() {
+            axios.get('/totalWeapons')
+                .then(function(response) {
+                    document.getElementById("norinco").innerHTML=response.data.norinco
+                    document.getElementById("m16").innerHTML=response.data.m16
+                    document.getElementById("galil").innerHTML=response.data.galil
+
+                    var total_count_weapons = response.data.norinco + response.data.m16 + response.data.galil
+
+                    document.getElementById("total_count_weapons").innerHTML=total_count_weapons
+                })
+                .catch(function(error) {
+                    console.log(error);
+                });
+        })
+
+    </script>
+
 @endsection
 
