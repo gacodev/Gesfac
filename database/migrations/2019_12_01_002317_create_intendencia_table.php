@@ -13,6 +13,7 @@ class CreateIntendenciaTable extends Migration
      */
     public function up()
     {
+
         Schema::create('intendencia', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('alumno');

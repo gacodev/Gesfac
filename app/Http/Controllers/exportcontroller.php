@@ -91,4 +91,10 @@ class exportcontroller extends Controller
         $pdf   = PDF::loadView('users.exports.personal', compact('novedades_escuadrones'));
         return $pdf->setPaper('a4', 'landscape')->stream('personal.pdf');
     }
+
+     public function acta()
+    {
+        $pdf   = PDF::loadView('users.exports.acta', compact('users'));
+        return $pdf->setPaper('letter', 'portrait')->download('acta.pdf');
+    }
 }

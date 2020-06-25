@@ -11,6 +11,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0;');
         $this->call(PermissionsTableSeeder::class);
         $this->call(UsersTableSeeder::class);
         $this->call(EscuadronTableSeeder::class);
@@ -19,13 +21,16 @@ class DatabaseSeeder extends Seeder
         $this->call(AlumnosTableSeeder::class);
         $this->call(TipoFusilTableSeeder::class);
         $this->call(ArmerilloSeeder::class);
-//        $this->call(AlumnoArmerilloTableSeeder::class);
-//        $this->call(VisitanteTableSeeder::class);
-//        $this->call(DoctorTableSeeder::class);
+        $this->call(AlumnoArmerilloTableSeeder::class);
+        $this->call(VisitanteTableSeeder::class);
+        $this->call(DoctorTableSeeder::class);
         $this->call(TipoCitaTableSeeder::class);
-//        $this->call(SanidadTableSeeder::class);
+        $this->call(SanidadTableSeeder::class);
         $this->call(TipoFamiliarSeeder::class);
         $this->call(ArticuloIntendenciaSeeder::class);
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1;');
+
+
 
     }
 }

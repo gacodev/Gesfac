@@ -53,7 +53,7 @@
 
         .container-firm{
             position:relative;
-            margin-top: 2rem;
+            margin-top: 5cm;
         }
 
         .firm_2{
@@ -91,7 +91,7 @@
     <div class="subtitle">REPORTE DE SANIDAD</div>
 </div>
 
-<div class="container">
+<div class="container mb-5">
     <table cellpadding="5" width="48%" class="text-center">
         <thead>
         <tr>
@@ -160,13 +160,13 @@
         </tbody>
     </table>
 </div>
-
-<div class="total">
+<div class="firmas mt-5">
+<div class="total my-5">
     TOTAL:
 </div>
 
 <div class="container-firm">
-    <div class="firm_1">
+    <div class="firm_1 ">
         <u><b>COMANDANTE ESUFA</b></u>
     </div>
 
@@ -178,6 +178,6 @@
         <u><b>COMANDANTE GRUAL</b></u>
     </div>
 </div>
-
+</div>
 </body>
 </html>

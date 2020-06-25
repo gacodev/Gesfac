@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('armas2', 'ArmerilloController@reportar')->name('reportar');
-Route::get('acta', 'actacontroller@acta')->name('acta');
+Route::get('acta', 'exportcontroller@acta')->name('acta');
 Route::get('intendencia', 'intendenciacontroller@index')->name('intendencia');
 Route::post('post_intendencia_articulo', 'intendenciacontroller@post_intendencia_articulo')->name('post_intendencia_articulo');
 
@@ -81,6 +81,11 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/personal-export', 'exportcontroller@exportpersonal')->name('personal-export')
     ->middleware('can:personal-export');
+
+    Route::get('acta', 'exportcontroller@acta')->name('acta')
+    ->middleware('can:acta');
+
+
 
     Route::get('/sanidad-export', 'exportcontroller@exportsanidad')->name('sanidad-export')
     ->middleware('can:sanidad-export');

@@ -12,6 +12,6 @@ class actacontroller extends Controller
     {
         $users = User::get();
         $pdf   = PDF::loadView('users.exports.acta', compact('users'));
-        return $pdf->setPaper('a4', 'landscape')->download('acta.pdf');
+        return $pdf->setPaper('letter', 'portrait')->download('acta.pdf');
     }
 }
